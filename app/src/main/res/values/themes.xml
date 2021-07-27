@@ -35,5 +35,24 @@
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/darkgrey</item>
         <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@string/subtitulo1</item>
+    </style>
+
+    <style name="config_account_label">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">32dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/darkgrey</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@string/subtitulo1</item>
+        <item name="android:drawableRight">@drawable/ic_edit</item>
+    </style>
+
+    <style name="config_account_field">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">32dp</item>
+        <item name="android:enabled">false</item>
     </style>
 </resources>
