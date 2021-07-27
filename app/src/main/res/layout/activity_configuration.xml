@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ConfigurationActivity">
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:text="Datos de cuenta"
         android:textColor="@color/darkgrey"
         android:background="@android:color/white"
@@ -19,8 +20,9 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:text="Metodos de pago"
         android:textColor="@color/darkgrey"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,8 +31,9 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:text="Direcciones"
         android:textColor="@color/darkgrey"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,8 +42,9 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:text="Cerrar sesión"
         android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
