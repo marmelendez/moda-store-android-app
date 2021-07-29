@@ -27,18 +27,18 @@ class ConfigAccountDataActivity : AppCompatActivity() {
         setContentView(R.layout.activity_config_account_data)
 
         returnIcon = findViewById(R.id.btn_Return)
-        editUsernameIcon = findViewById(R.id.btn_EditUsername)
-        editEmailIcon = findViewById(R.id.btn_EditEmail)
+        editUsernameIcon = findViewById(R.id.btn_EditDebitCard)
+        editEmailIcon = findViewById(R.id.btn_EditCreditCard)
         editTelephoneIcon = findViewById(R.id.btn_EditTelephone)
         editPasswordIcon = findViewById(R.id.btn_EditPassword)
-        inputUsername = findViewById(R.id.input_Username)
-        inputEmail = findViewById(R.id.input_Email)
+        inputUsername = findViewById(R.id.input_DebitCard)
+        inputEmail = findViewById(R.id.input_CreditCard)
         inputTelephone = findViewById(R.id.input_Telephone)
         inputPassword = findViewById(R.id.input_Password)
         updateButton = findViewById(R.id.btn_Submit)
 
         returnIcon.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, ConfigurationActivity::class.java)
             startActivity(intent)
         }
 

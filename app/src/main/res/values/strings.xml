@@ -17,4 +17,9 @@
     <string name="label_email">Correo</string>
     <string name="label_telephone">Telefono</string>
     <string name="label_password">Contraseña</string>
+    <string name="label_creditCard">Tarjeta de credito</string>
+    <string name="label_debitCard">Tarjeta de debito</string>
+    <string name="label_name">Nombre</string>
+    <string name="user_address">Calle #00, Ciudad, Estado, Pais, 31522</string>
+    <string name="status_default">Default</string>
 </resources>
