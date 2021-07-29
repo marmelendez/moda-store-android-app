@@ -6,12 +6,19 @@
     android:layout_height="match_parent"
     android:layout_margin="32dp">
 
+    <Button
+        android:id="@+id/btn_Return"
+        style="@style/returnButton"
+        app:layout_constraintEnd_toStartOf="@+id/title_Configuration"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/title_Configuration"
         style="@style/header_title"
         android:text="@string/txt_configuration"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

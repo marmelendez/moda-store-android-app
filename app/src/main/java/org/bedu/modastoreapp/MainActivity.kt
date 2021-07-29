@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
         btn3 = findViewById(R.id.btn_PaymentMethod)
         btn4 = findViewById(R.id.btn_LogOut)*/
 
+
         btn1.setOnClickListener{
-            //Utilizamos putExtras para pasar nuestro bundle entre las Activities.
             val intent = Intent(this, ConfigAccountDataActivity::class.java)
-            startActivity(intent) //inicializa la sig. actividad
+            startActivity(intent)
         }
 
     }
