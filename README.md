@@ -13,6 +13,7 @@ Puedes visualizar el mockup meta de este proyecto en el siguiente [link](https:/
 
 ### Flujo
 Tambien puedes checar los flujos dentro de la aplicación en este video
+<br>
 <img src="images/flow.gif" width="30%">
 
 ## Contribuir
