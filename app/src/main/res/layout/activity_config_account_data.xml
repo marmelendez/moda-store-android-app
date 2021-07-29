@@ -133,4 +133,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_Password" />
+
+    <Button
+        android:id="@+id/btn_Submit"
+        style="@style/generalButton"
+        android:text="@string/btn_submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_Password" />
 </androidx.constraintlayout.widget.ConstraintLayout>
