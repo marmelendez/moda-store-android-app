@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConfigurationActivity">
+    android:layout_margin="32dp">
 
     <TextView
         android:id="@+id/title_Configuration"
@@ -20,12 +20,13 @@
         style="@style/configButtons"
         android:drawableRight="@drawable/ic_next"
         android:text="@string/btn_accountData"
+        android:onClick="displayAccountData"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_Configuration" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_PaymentMethod"
         style="@style/configButtons"
         android:drawableRight="@drawable/ic_next"
         android:text="@string/btn_paymentMethods"
@@ -40,7 +41,7 @@
         android:text="@string/btn_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_PaymentMethod" />
 
     <Button
         android:id="@+id/btn_LogOut"
