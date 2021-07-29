@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/label_Username"
+        android:id="@+id/label_DebitCard"
         style="@style/config_account_label"
         android:layout_marginTop="28dp"
         android:text="@string/label_debitCard"
@@ -35,50 +35,50 @@
         app:layout_constraintTop_toBottomOf="@+id/title_Payment" />
 
     <Button
-        android:id="@+id/btn_EditUsername"
+        android:id="@+id/btn_EditDebitCard"
         style="@style/editButton"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/input_Username"
+        app:layout_constraintBottom_toTopOf="@+id/input_DebitCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/label_Username" />
+        app:layout_constraintStart_toEndOf="@+id/label_DebitCard" />
 
     <EditText
-        android:id="@+id/input_Username"
+        android:id="@+id/input_DebitCard"
         style="@style/config_account_field"
         android:hint="@string/label_debitCard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_Username"
+        app:layout_constraintTop_toBottomOf="@+id/label_DebitCard"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/label_Email"
+        android:id="@+id/label_UserName"
         style="@style/config_account_label"
         android:layout_marginTop="32dp"
         android:text="@string/label_creditCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_Username" />
+        app:layout_constraintTop_toBottomOf="@+id/input_DebitCard" />
 
     <Button
-        android:id="@+id/btn_EditEmail"
+        android:id="@+id/btn_EditCreditCard"
         style="@style/editButton"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/input_Email"
+        app:layout_constraintBottom_toTopOf="@+id/input_CreditCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/label_Email" />
+        app:layout_constraintStart_toEndOf="@+id/label_UserName" />
 
     <EditText
-        android:id="@+id/input_Email"
+        android:id="@+id/input_CreditCard"
         style="@style/config_account_field"
         android:hint="@string/label_creditCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_Email" />
+        app:layout_constraintTop_toBottomOf="@+id/label_UserName" />
 
     <Button
         android:id="@+id/btn_Submit"
@@ -87,6 +87,6 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_Email" />
+        app:layout_constraintTop_toBottomOf="@+id/input_CreditCard" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
