@@ -11,6 +11,10 @@ Este es un proyecto para curso de Desarrollo Movil en Android de Bedu.
 ## Diseño 
 Puedes visualizar el mockup meta de este proyecto en el siguiente [link](https://www.figma.com/file/CgTBCmmRmLiYO1QwHiP2KQ/MODA-Store-Project?node-id=0%3A1) 
 
+### Flujo
+Tambien puedes checar los flujos dentro de la aplicación en este video
+<img src="images/flow.gif" width="30%">
+
 ## Contribuir
 ### ¿Como puedo contribuir?
 1. Lo primero es ir al apartado Project del repositorio
