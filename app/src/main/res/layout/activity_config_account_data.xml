@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="32dp">
+
+    <Button
+        android:id="@+id/btn_Return"
+        style="@style/returnButton"
+        app:layout_constraintEnd_toStartOf="@+id/title_DataAccount"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title_DataAccount"
+        style="@style/header_title"
+        android:text="@string/txt_config_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label_Username"
+        style="@style/config_account_label"
+        android:layout_marginTop="28dp"
+        android:text="@string/label_username"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_DataAccount" />
+
+    <Button
+        android:id="@+id/btn_EditUsername"
+        style="@style/editButton"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/input_Username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/label_Username" />
+
+    <EditText
+        android:id="@+id/input_Username"
+        style="@style/config_account_field"
+        android:hint="@string/label_username"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_Username"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/label_Email"
+        style="@style/config_account_label"
+        android:layout_marginTop="32dp"
+        android:text="@string/label_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_Username" />
+
+    <Button
+        android:id="@+id/btn_EditEmail"
+        style="@style/editButton"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/input_Email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/label_Email" />
+
+    <EditText
+        android:id="@+id/input_Email"
+        style="@style/config_account_field"
+        android:hint="@string/label_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_Email" />
+
+    <TextView
+        android:id="@+id/label_Telephone"
+        style="@style/config_account_label"
+        android:layout_marginTop="36dp"
+        android:text="@string/label_telephone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_Email" />
+
+    <Button
+        android:id="@+id/btn_EditTelephone"
+        style="@style/editButton"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/input_Telephone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/label_Telephone" />
+
+    <EditText
+        android:id="@+id/input_Telephone"
+        style="@style/config_account_field"
+        android:hint="@string/label_telephone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_Telephone" />
+
+    <TextView
+        android:id="@+id/label_Password"
+        style="@style/config_account_label"
+        android:layout_marginTop="28dp"
+        android:text="@string/label_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_Telephone" />
+
+    <Button
+        android:id="@+id/btn_EditPassword"
+        style="@style/editButton"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/input_Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/label_Password" />
+
+    <EditText
+        android:id="@+id/input_Password"
+        style="@style/config_account_field"
+        android:hint="@string/label_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_Password" />
+
+    <Button
+        android:id="@+id/btn_Submit"
+        style="@style/generalButton"
+        android:text="@string/btn_submit"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_Password" />
+</androidx.constraintlayout.widget.ConstraintLayout>
