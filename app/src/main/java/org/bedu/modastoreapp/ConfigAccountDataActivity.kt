@@ -3,8 +3,12 @@ package org.bedu.modastoreapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import androidx.core.view.isVisible
 
 class ConfigAccountDataActivity : AppCompatActivity() {
     private lateinit var returnIcon: Button
@@ -16,6 +20,7 @@ class ConfigAccountDataActivity : AppCompatActivity() {
     private lateinit var inputEmail: EditText
     private lateinit var inputTelephone: EditText
     private lateinit var inputPassword: EditText
+    private lateinit var updateButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +35,7 @@ class ConfigAccountDataActivity : AppCompatActivity() {
         inputEmail = findViewById(R.id.input_Email)
         inputTelephone = findViewById(R.id.input_Telephone)
         inputPassword = findViewById(R.id.input_Password)
+        updateButton = findViewById(R.id.btn_Submit)
 
         returnIcon.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -50,6 +56,42 @@ class ConfigAccountDataActivity : AppCompatActivity() {
 
         editPasswordIcon.setOnClickListener{
             inputPassword.isEnabled = true
+        }
+
+        inputUsername.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                updateButton.isVisible = true
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        inputEmail.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                updateButton.isVisible = true
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        inputTelephone.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                updateButton.isVisible = true
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        inputPassword.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                updateButton.isVisible = true
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        updateButton.setOnClickListener {
+            Toast.makeText(applicationContext ,"Tus datos han sido actualizados", Toast.LENGTH_LONG).show()
         }
     }
 }
