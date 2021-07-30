@@ -1,4 +1,12 @@
 <resources>
+<<<<<<< HEAD
+    <string name="app_name">Moda Store</string>
+    <string name="logo">Moda Store</string>
+    <string name="inputName">Name</string>
+    <string name="inputPassword">Password</string>
+    <string name="login">Login</string>
+    <string name="sign">Sign In</string>
+=======
     <string name="app_name">Moda store app</string>
     <string name="btn_accountData">Datos de cuenta</string>
     <string name="btn_paymentMethods">Metodos de pago</string>
@@ -22,4 +30,5 @@
     <string name="label_name">Nombre</string>
     <string name="user_address">Calle #00, Ciudad, Estado, Pais, 31522</string>
     <string name="status_default">Default</string>
+>>>>>>> 9217808ecee268f4dc02d3d03593d4e16ad4e8be
 </resources>
