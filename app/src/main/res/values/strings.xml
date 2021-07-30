@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">Moda store app</string>
+
+    <string name="app_name">Moda store</string>
     <string name="btn_accountData">Datos de cuenta</string>
     <string name="btn_paymentMethods">Metodos de pago</string>
     <string name="btn_address">Direcciones</string>
     <string name="btn_logout">Cerrar sesión</string>
     <string name="btn_submit">Actualizar</string>
+    <string name="btn_logIn">Log in</string>
+    <string name="btn_signIn">Sign in</string>
     <string name="font_family_light">sans-serif-light</string>
     <string name="subtitulo2">sans-serif-medium</string>
     <string name="subtitulo1">sans-serif</string>
