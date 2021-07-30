@@ -1,4 +1,4 @@
-package org.bedu.modastoreapp
+package org.bedu.login
 
 import org.junit.Test
 
