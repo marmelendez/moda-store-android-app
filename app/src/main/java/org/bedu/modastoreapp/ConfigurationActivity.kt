@@ -24,7 +24,7 @@ class ConfigurationActivity : AppCompatActivity() {
 
 
         btn_return.setOnClickListener {
-            val intent = Intent(this, ConfigurationActivity::class.java)
+            val intent = Intent(this, LogInActivity::class.java)
             startActivity(intent)
         }
 
