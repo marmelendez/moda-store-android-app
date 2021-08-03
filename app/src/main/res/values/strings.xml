@@ -25,4 +25,13 @@
     <string name="label_name">Nombre</string>
     <string name="user_address">Calle #00, Ciudad, Estado, Pais, 31522</string>
     <string name="status_default">Default</string>
+    <string name="explore">Explore</string>
+    <string name="search">Search</string>
+    <string name="favorite">Favorite</string>
+    <string name="shop">Shop</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="profile">Profile</string>
+    <string name="cart">Cart</string>
+    <string name="welcome_to_moda_store">Welcome to MODA Store</string>
+    <string name="mujer">Mujer</string>
 </resources>
