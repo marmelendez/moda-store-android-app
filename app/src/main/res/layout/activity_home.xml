@@ -89,7 +89,4 @@
         app:textColor="#212121"
         app:textSize="16sp" />
 
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
