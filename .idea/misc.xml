@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/drawable/background_star_rating.xml" value="0.18541666666666667" />
-        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_log_in.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/item_container_location.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/menu/navigation_menu.xml" value="0.18" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.4722222222222222" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.4722222222222222" />
       </map>
     </option>
   </component>

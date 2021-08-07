@@ -34,4 +34,5 @@
     <string name="cart">Cart</string>
     <string name="welcome_to_moda_store">Welcome to MODA Store</string>
     <string name="mujer">Mujer</string>
+    <string name="hombre">Hombre</string>
 </resources>
