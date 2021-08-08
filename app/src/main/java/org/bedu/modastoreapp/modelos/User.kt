@@ -10,96 +10,12 @@ package org.bedu.modastoreapp.modelos
 import java.util.*
 
 open class User (open val idUser: String) {
-
-    /**
-     * Register a new user
-     * @param store the app store
-     * @return RegisteredUser the new registered user
-     * */
-    suspend fun signIn(store: Store): RegisteredUser {
-        println("\n---------- MODA Store | SIGN IN ----------")
-
-        val name = askUsername(store)
-        val email = askEmail(store)
-        val password = askPassword()
-
-        val newUser = RegisteredUser(store.listOfUsers.size.toString(), name, email, password)
-        store.addUser(newUser)
-
-        println("\nWelcome ${newUser.getName()}! now you have an account")
-
-        readLine()
-        return newUser
-    }
-
-    /**
-     * Ask for the username and validates it
-     * @param store the app store
-     * @return String a valid username
-     * */
-    internal fun askUsername(store: Store): String {
-        print("-> Enter your username: ")
-        var name = readLine().toString()
-        val error1 = "--- Enter a valid username (start with a letter, can contain letters and numbers and at least 6 characters): "
-        val error2 = "--- The given username is already registered: "
-        while (!validate(error1, Form.validateUsername(name))
-            || !validate(error2, store.isInListOfUsersUsername(name))) {
-            name = readLine().toString()
-        }
-        return name
-    }
-
-    /**
-     * Ask for the email and validates it
-     * @param store the app store
-     * @return String a valid email
-     * */
-    internal fun askEmail(store: Store): String {
-        print("-> Enter your email: ")
-        var email = readLine().toString()
-        val error1 = "--- Enter a valid email (ends with @domain.com): "
-        val error2 = "--- The given email is already registered: "
-        while (!validate(error1, Form.validateEmail(email))
-            || !validate(error2, store.isInListOfUsersEmail(email))) {
-            email = readLine().toString()
-        }
-        return email
-    }
-
-    /**
-     * Ask for the password and validates it
-     * @return String a valid password
-     * */
-    internal fun askPassword(): String {
-        print("-> Enter your password, we recommend you this one ${Form.passwordGenerator()}: ")
-        var password = readLine().toString()
-        val error1 = "--- Enter a valid password (minimum length: 8,can contain letters, numbers or . / _): "
-        while (!validate(error1, Form.validatePassword(password))) {
-            password = readLine().toString()
-        }
-        return password
-    }
-
-    /**
-     * Validate the data with the given function
-     * @param error the error message to print
-     * @param funValidate the function we're going to use to validate the data
-     * @return Boolean false if there's and error, true if there's not
-     * */
-    private fun validate(error: String, funValidate: Boolean): Boolean {
-        if (!funValidate) {
-            print(error)
-            return false
-        }
-        return true
-    }
-
     /**
      * Search if a product is in the store catalog
      * @param store the app store
      * @param user the registered user
      * */
-    suspend fun searchProduct(store: Store, user: RegisteredUser? = null) {
+    fun searchProduct(store: Store, user: RegisteredUser? = null) {
         var flag = true
         var option: String
 
@@ -122,7 +38,7 @@ open class User (open val idUser: String) {
             flag = when (option) {
                 "1" -> true
                 "2" -> {
-                    //selectProduct(store, user)
+                    selectProduct(store, user)
                     false
                 }
                 "3" -> {
@@ -134,7 +50,7 @@ open class User (open val idUser: String) {
         }
         readLine()
     }
-/*
+
     /**
      * Select a product from the store catalog
      * @param store the app store
@@ -165,8 +81,8 @@ open class User (open val idUser: String) {
             if (op == "1" || op == "2") {
                 if(user != null){
                     when (op){
-                        "1" -> user.addToCart(product)
-                        "2" -> user.addToFavorite(product)
+                        "1" -> println("Returning to menu, press ENTER")//user.addToCart(product)
+                        "2" -> println("Returning to menu, press ENTER")//user.addToFavorite(product)
                         "3" -> println("Returning to menu, press ENTER")
                     }
                 } else {
@@ -176,5 +92,5 @@ open class User (open val idUser: String) {
         } catch (e: Exception) {
             println("Sorry, couldn't find a product with the $id id :(")
         }
-    }*/
+    }
 }

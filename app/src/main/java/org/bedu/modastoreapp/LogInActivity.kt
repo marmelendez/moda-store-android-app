@@ -22,8 +22,8 @@ class LogInActivity : AppCompatActivity() {
     private lateinit var inputName: EditText
     private lateinit var inputPassword: EditText
     private lateinit var regUser: RegisteredUser
-    private lateinit var inpUser: String
-    private lateinit var inpPassword: String
+    private var inpUser = ""
+    private var inpPassword = ""
 
 
     val myStore: Store = BaseDatos.start()
@@ -31,10 +31,6 @@ class LogInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
-
-        var inpUser = ""
-        val user = "maribel"
-        val password = "123"
 
         buttonLogIn = findViewById(R.id.buttonLogin)
         buttonSignIn = findViewById(R.id.buttonSign)
@@ -55,7 +51,9 @@ class LogInActivity : AppCompatActivity() {
                 if (myStore.getUser(inputName.text.toString()) == null) {
                     warningUser.isVisible = true
                     warningUser.setText("No se encontro un usuario registrado con ese nombre")
+                    buttonLogIn.isEnabled = false
                 } else {
+                    inpUser = inputName.text.toString()
                     warningUser.isVisible = false
                     inputPassword.isVisible = true
                     Toast.makeText(applicationContext ,"Hola de nuevo ${inputName.text}", Toast.LENGTH_LONG).show()
@@ -71,7 +69,9 @@ class LogInActivity : AppCompatActivity() {
                 if (regUser.getPassword() != inputPassword.text.toString()) {
                     warningPassword.isVisible = true
                     warningPassword.setText("Contraseña incorrecta")
+                    buttonLogIn.isEnabled = false
                 } else {
+                    inpPassword = inputPassword.text.toString()
                     warningPassword.isVisible = false
                     buttonLogIn.isEnabled = true
                 }
@@ -82,10 +82,10 @@ class LogInActivity : AppCompatActivity() {
 
 
         buttonLogIn.setOnClickListener {
-            //validar datos nuevamente
-
             val intent = Intent(this, ConfigurationActivity::class.java)
             startActivity(intent)
+
+            //mandar usuario registrado
 
             /*val boxName = Bundle()
             boxName.putString(USER_NAME, input.text.toString())

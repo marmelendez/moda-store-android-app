@@ -75,7 +75,7 @@ class RegisteredUser(
      * */
     private fun setPassword(password:String) {
         this.password= password
-    }
+    }*/
 
     /**
      * Set a new value to the address property
@@ -94,6 +94,7 @@ class RegisteredUser(
         this.paymentMethod[type] = data
     }
 
+    /*
     /**
      * Find a product with a specific id
      * @param list the list of products
@@ -573,7 +574,7 @@ class RegisteredUser(
                 }
             }
         }
-    }
+    }*/
 
     /**
      * Add a product to the shopping cart
@@ -618,5 +619,5 @@ class RegisteredUser(
     private fun addOrder(order: Order) {
         println("The order ${order.id} with a total of $ ${order.total} has been completed!")
         this.orders.add(order)
-    }*/
+    }
 }

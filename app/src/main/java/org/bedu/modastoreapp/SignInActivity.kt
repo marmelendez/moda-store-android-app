@@ -67,7 +67,7 @@ class SignInActivity : AppCompatActivity() {
                 if (!validateEmail(inputEmail.text.toString())) {
                     warnEmail.isVisible = true
                     warnEmail.setText("Ingresa un correo valido: termina con @domain.com")
-                } else if (!myStore.isInListOfUsersUsername(inputEmail.text.toString())) {
+                } else if (!myStore.isInListOfUsersEmail(inputEmail.text.toString())) {
                     warnEmail.isVisible = true
                     warnEmail.setText("Este correo ya esta registrado")
                 } else {
@@ -96,11 +96,12 @@ class SignInActivity : AppCompatActivity() {
         })
 
         signInButton.setOnClickListener {
-            //validar datos nuevamente
             Toast.makeText(applicationContext ,"Bienvenido ${inputUsername.text}", Toast.LENGTH_LONG).show()
             val intent = Intent(this, ConfigurationActivity::class.java)
             startActivity(intent)
-            /*val boxName = Bundle()
+
+            //mandar usuario registrado
+        /*val boxName = Bundle()
             boxName.putString(USER_NAME, input.text.toString())
 
             val intent = Intent(this, ConfigurationActivity::class.java).apply {

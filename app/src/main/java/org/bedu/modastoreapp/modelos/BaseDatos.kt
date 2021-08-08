@@ -14,13 +14,13 @@ class BaseDatos {
         private var idCategory = 1
 
         fun start(): Store {
-            //setCategory()
-            //setProducts()
+            setCategory()
+            setProducts()
             setUsers()
-            //setShoppingCart()
-            //setFavorites()
-            //setAddress()
-            //setPaymentMethod()
+            setShoppingCart()
+            setFavorites()
+            setAddress()
+            setPaymentMethod()
             return myStore
         }
 
@@ -64,7 +64,7 @@ class BaseDatos {
             myStore.addUser(RegisteredUser(idUser++.toString(), "maribel07", "maribel@live.com", "123456"))
         }
 
-        /*private fun setShoppingCart() {
+        private fun setShoppingCart() {
             // User: tomas11
             myStore.listOfUsers[0].addToCart(myStore.catalogProduct[0])
             myStore.listOfUsers[0].addToCart(myStore.catalogProduct[1])
@@ -121,6 +121,6 @@ class BaseDatos {
 
             // User: josearm21
             myStore.listOfUsers[2].setPaymentMethod("Credit card", mapOf("Number" to "1234567890123458", "Date" to "10/23", "Security Number" to "789"))
-        }*/
+        }
     }
 }
