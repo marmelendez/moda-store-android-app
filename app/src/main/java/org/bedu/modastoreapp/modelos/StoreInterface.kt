@@ -5,8 +5,6 @@
  */
 package org.bedu.modastoreapp.modelos
 
-import modelos.RegisteredUser
-
 interface StoreInterface {
     val name: String
     val catalogProduct: MutableList<Product>

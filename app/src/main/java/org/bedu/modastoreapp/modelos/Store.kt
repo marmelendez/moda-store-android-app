@@ -7,7 +7,6 @@
  */
 package org.bedu.modastoreapp.modelos
 
-import modelos.RegisteredUser
 import java.util.*
 
 class Store (override val name: String): StoreInterface {

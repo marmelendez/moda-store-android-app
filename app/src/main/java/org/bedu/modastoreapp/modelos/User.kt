@@ -7,7 +7,6 @@
  */
 package org.bedu.modastoreapp.modelos
 
-import modelos.RegisteredUser
 import java.util.*
 
 open class User (open val idUser: String) {
@@ -123,7 +122,7 @@ open class User (open val idUser: String) {
             flag = when (option) {
                 "1" -> true
                 "2" -> {
-                    selectProduct(store, user)
+                    //selectProduct(store, user)
                     false
                 }
                 "3" -> {
@@ -135,7 +134,7 @@ open class User (open val idUser: String) {
         }
         readLine()
     }
-
+/*
     /**
      * Select a product from the store catalog
      * @param store the app store
@@ -177,5 +176,5 @@ open class User (open val idUser: String) {
         } catch (e: Exception) {
             println("Sorry, couldn't find a product with the $id id :(")
         }
-    }
+    }*/
 }

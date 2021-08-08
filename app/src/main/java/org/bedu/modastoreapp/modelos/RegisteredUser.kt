@@ -8,12 +8,8 @@
  * @property email email registered
  * @property password password of the account
  */
-package modelos
+package org.bedu.modastoreapp.modelos
 
-import org.bedu.modastoreapp.modelos.Order
-import org.bedu.modastoreapp.modelos.Product
-import org.bedu.modastoreapp.modelos.Store
-import org.bedu.modastoreapp.modelos.User
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -29,6 +25,7 @@ class RegisteredUser(
     private var orders = mutableListOf<Order>()
     private var paymentMethod: MutableMap<String,Map<String, String>> =
         mutableMapOf("Credit card" to mapOf(), "Debit card" to mapOf())
+
 
     /**
      * Get the username
@@ -46,14 +43,16 @@ class RegisteredUser(
         return this.email
     }
 
+
     /**
      * Get the password
      * @return String password
      * */
-    private fun getPassword(): String {
+    internal fun getPassword(): String {
         return this.password
     }
 
+    /*
     /**
      * Set a new value to the name property
      * @param name new value of username
@@ -200,13 +199,6 @@ class RegisteredUser(
         if (paymentMethod.getValue(type).values.isNotEmpty()) ask = false
         checkPaymentMethod(type)
         println()
-
-        withTimeout(10_000L) {
-            repeat(10) {
-                print(".")
-                delay(200)
-            }
-        }
 
         addOrder(Order(this.orders.size.toString(), this.shoppingCart,total,this.address, this.paymentMethod, LocalDateTime.now()))
 
@@ -427,13 +419,6 @@ class RegisteredUser(
         print("Password: ")
         var password : String = readLine().toString()
 
-        withTimeout(10_000L) {
-            repeat(10) {
-                print(".")
-                delay(200)
-            }
-        }
-
         if (regUser != null) {
             while (regUser.getPassword() != password) {
                 print("Incorrect password: ")
@@ -633,5 +618,5 @@ class RegisteredUser(
     private fun addOrder(order: Order) {
         println("The order ${order.id} with a total of $ ${order.total} has been completed!")
         this.orders.add(order)
-    }
+    }*/
 }
