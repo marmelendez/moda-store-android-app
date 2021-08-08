@@ -8,6 +8,7 @@
     <string name="btn_submit">Actualizar</string>
     <string name="btn_logIn">Log in</string>
     <string name="btn_signIn">Sign in</string>
+    <string name="btn_signIn2">Registrarse</string>
     <string name="font_family_light">sans-serif-light</string>
     <string name="subtitulo2">sans-serif-medium</string>
     <string name="subtitulo1">sans-serif</string>
@@ -16,6 +17,7 @@
     <string name="font_family_thin">sans-serif-thin</string>
     <string name="txt_configuration">Configuracion</string>
     <string name="txt_config_account">Datos de cuenta</string>
+    <string name="txt_signIn">Registrarse</string>
     <string name="label_username">Nombre de usuario</string>
     <string name="label_email">Correo</string>
     <string name="label_telephone">Telefono</string>
@@ -25,4 +27,5 @@
     <string name="label_name">Nombre</string>
     <string name="user_address">Calle #00, Ciudad, Estado, Pais, 31522</string>
     <string name="status_default">Default</string>
+    <string name="warning">error</string>
 </resources>
