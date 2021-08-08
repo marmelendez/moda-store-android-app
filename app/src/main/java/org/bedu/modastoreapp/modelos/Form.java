@@ -8,7 +8,7 @@ public class Form {
     private static final SecureRandom random = new SecureRandom();
     private static final String DICTIONARY = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._/";
 
-    static String passwordGenerator() {
+    public static String passwordGenerator() {
         StringBuilder password = new StringBuilder();
         char dictionaryChar;
         int count = 0;
@@ -23,7 +23,7 @@ public class Form {
         return password.toString();
     }
 
-    static boolean validateUsername(String username) {
+    public static boolean validateUsername(String username) {
         String regex = "^[a-zA-Z][[a-zA-Z]+[0-9]*]{5,}$";
 
         Pattern pattern = Pattern.compile(regex);
@@ -31,7 +31,7 @@ public class Form {
         return matcher.matches();
     }
 
-    static boolean validateEmail(String email) {
+    public static boolean validateEmail(String email) {
         String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
 
         Pattern pattern = Pattern.compile(regex);
@@ -39,7 +39,7 @@ public class Form {
         return matcher.matches();
     }
 
-    static boolean validatePassword(String password) {
+    public static boolean validatePassword(String password) {
         String regex = "^[[a-zA-Z]+[0-9]*[._/]*]{8,}$";
 
         Pattern pattern = Pattern.compile(regex);

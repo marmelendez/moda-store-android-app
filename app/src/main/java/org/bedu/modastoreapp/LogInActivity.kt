@@ -13,10 +13,10 @@ import androidx.core.view.isVisible
 import org.bedu.modastoreapp.modelos.BaseDatos
 import org.bedu.modastoreapp.modelos.RegisteredUser
 import org.bedu.modastoreapp.modelos.Store
-import org.bedu.modastoreapp.modelos.User
 
 class LogInActivity : AppCompatActivity() {
-    private lateinit var boton: Button
+    private lateinit var buttonLogIn: Button
+    private lateinit var buttonSignIn: Button
     private lateinit var warningUser: TextView
     private lateinit var warningPassword: TextView
     private lateinit var inputName: EditText
@@ -36,7 +36,8 @@ class LogInActivity : AppCompatActivity() {
         val user = "maribel"
         val password = "123"
 
-        boton = findViewById(R.id.buttonLogin)
+        buttonLogIn = findViewById(R.id.buttonLogin)
+        buttonSignIn = findViewById(R.id.buttonSign)
         warningUser = findViewById(R.id.warningUser)
         warningPassword = findViewById(R.id.warningPassword)
         inputName = findViewById(R.id.textName)
@@ -47,7 +48,7 @@ class LogInActivity : AppCompatActivity() {
         inputPassword.isVisible = false
 
 
-        boton.isEnabled = false
+        buttonLogIn.isEnabled = false
 
         inputName.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
@@ -72,7 +73,7 @@ class LogInActivity : AppCompatActivity() {
                     warningPassword.setText("Contraseña incorrecta")
                 } else {
                     warningPassword.isVisible = false
-                    boton.isEnabled = true
+                    buttonLogIn.isEnabled = true
                 }
             }
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
@@ -80,9 +81,12 @@ class LogInActivity : AppCompatActivity() {
         })
 
 
-        boton.setOnClickListener {
+        buttonLogIn.setOnClickListener {
+            //validar datos nuevamente
+
             val intent = Intent(this, ConfigurationActivity::class.java)
             startActivity(intent)
+
             /*val boxName = Bundle()
             boxName.putString(USER_NAME, input.text.toString())
 
@@ -90,6 +94,11 @@ class LogInActivity : AppCompatActivity() {
                 putExtras(boxName)
             }
             startActivity(intent)*/
+        }
+
+        buttonSignIn.setOnClickListener {
+            val intent = Intent(this, SignInActivity::class.java)
+            startActivity(intent)
         }
     }
 }

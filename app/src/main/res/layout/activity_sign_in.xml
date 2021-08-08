@@ -44,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_AskUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/username_error" />
 
     <TextView
         android:id="@+id/label_AskPassword"
@@ -56,12 +56,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_AskEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/email_error" />
 
     <EditText
         android:id="@+id/inp_AskUsername"
         style="@style/config_account_field"
         android:hint="@string/label_username"
+        android:enabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,6 +73,7 @@
         android:id="@+id/inp_AskEmail"
         style="@style/config_account_field"
         android:hint="@string/label_email"
+        android:enabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,6 +84,8 @@
         android:id="@+id/inp_AskPassword"
         style="@style/config_account_field"
         android:hint="@string/label_password"
+        android:enabled="true"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +99,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_AskPassword"  />
+        app:layout_constraintTop_toBottomOf="@+id/password_error"  />
 
     <TextView
         android:id="@+id/username_error"
