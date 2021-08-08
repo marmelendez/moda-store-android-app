@@ -51,21 +51,15 @@ class LogInActivity : AppCompatActivity() {
 
         inputName.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
-                if (inputName.text.toString() != user) {
+                if (myStore.getUser(inputName.text.toString()) == null) {
                     warningUser.isVisible = true
                     warningUser.setText("No se encontro un usuario registrado con ese nombre")
                 } else {
                     warningUser.isVisible = false
-                    Toast.makeText(applicationContext ,"Hola de nuevo ${inputName.text}", Toast.LENGTH_LONG).show()
                     inputPassword.isVisible = true
+                    Toast.makeText(applicationContext ,"Hola de nuevo ${inputName.text}", Toast.LENGTH_LONG).show()
+                    regUser = myStore.getUser(inputName.text.toString())!!
                 }
-
-                /*
-                if (myStore.getUser(inputName.text.toString()) == null) {
-                    Toast.makeText(applicationContext ,"No se encontro un usuario registrado con ese nombre", Toast.LENGTH_LONG).show()
-                }
-                regUser = myStore.getUser(inputName.text.toString())!!
-                inputPassword.isVisible = true*/
             }
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -73,23 +67,18 @@ class LogInActivity : AppCompatActivity() {
 
         inputPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
-                if (inputPassword.text.toString() != password) {
+                if (regUser.getPassword() != inputPassword.text.toString()) {
                     warningPassword.isVisible = true
                     warningPassword.setText("Contraseña incorrecta")
                 } else {
                     warningPassword.isVisible = false
-                    Toast.makeText(applicationContext, "Contraseña correcta :)", Toast.LENGTH_LONG).show()
                     boton.isEnabled = true
                 }
-                    /*if (regUser.getPassword() != inputPassword.text.toString()) {
-                        Toast.makeText(applicationContext ,"Contraseña incorrecta", Toast.LENGTH_LONG).show()
-                    }*/
             }
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
         })
 
-        //si input password e input name son validos activar boton de input
 
         boton.setOnClickListener {
             val intent = Intent(this, ConfigurationActivity::class.java)
