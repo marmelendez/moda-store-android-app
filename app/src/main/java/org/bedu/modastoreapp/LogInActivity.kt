@@ -32,7 +32,7 @@ class LogInActivity : AppCompatActivity() {
         }
 
         boton_sign.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, ShopActivity::class.java)
             startActivity(intent)
         }
 

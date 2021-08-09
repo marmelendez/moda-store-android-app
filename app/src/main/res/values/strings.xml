@@ -32,7 +32,7 @@
     <string name="shopping_cart">Shopping Cart</string>
     <string name="profile">Profile</string>
     <string name="cart">Cart</string>
-    <string name="welcome_to_moda_store">Welcome to MODA Store</string>
-    <string name="mujer">Mujer</string>
-    <string name="hombre">Hombre</string>
+    <string name="mujer">MUJER</string>
+    <string name="hombre">HOMBRE</string>
+    <string name="ninos">NIÑOS</string>
 </resources>

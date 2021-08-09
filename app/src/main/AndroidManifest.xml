@@ -16,7 +16,7 @@
         <activity android:name=".ConfigurationActivity" />
         <activity android:name=".ConfigAccountDataActivity" />
         <activity android:name=".LogInActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".ShopActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
