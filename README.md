@@ -19,6 +19,9 @@ Tambien puedes checar los flujos dentro de la aplicación en este video
 <br>
 <img src="images/flow.gif" width="30%">
 
+## Video
+En el siguiente video se muestra el funcionamiento general de la aplicación
+
 ## Contribuir
 ### ¿Como puedo contribuir?
 1. Lo primero es ir al apartado Project del repositorio
