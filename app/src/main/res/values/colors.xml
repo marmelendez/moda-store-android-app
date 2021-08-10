@@ -13,4 +13,13 @@
     <color name="blue">#8199BC</color>
     <color name="red">#C9230D</color>
     <color name="transparent">#00000000</color>
+
+    <color name="primaryColor">#8199bc</color>
+    <color name="primaryLightColor">#b2caef</color>
+    <color name="primaryDarkColor">#536b8c</color>
+    <color name="secondaryColor">#18ffff</color>
+    <color name="secondaryLightColor">#76ffff</color>
+    <color name="secondaryDarkColor">#00cbcc</color>
+    <color name="primaryTextColor">#fafafa</color>
+    <color name="secondaryTextColor">#fafafa</color>
 </resources>
