@@ -5,28 +5,28 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 
 class LogInActivity : AppCompatActivity() {
-    private lateinit var boton: Button
-    private lateinit var input: EditText
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
 
-        boton = findViewById(R.id.buttonLogin)
-        input = findViewById(R.id.textName)
+        var buttonLogin: Button = findViewById(R.id.buttonLogin)
+        buttonLogin.setOnClickListener {
+            val intent2 = Intent(this, ConfigurationActivity::class.java)
+            startActivity(intent2)
+        }
 
-        boton.setOnClickListener {
-            val intent = Intent(this, ConfigurationActivity::class.java)
+        //Quito AppBar
+        supportActionBar?.hide()
+
+        //Conexion a Sign In
+        var newAccount: TextView = findViewById(R.id.textCreate)
+
+        newAccount.setOnClickListener {
+            val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
-            /*val boxName = Bundle()
-            boxName.putString(USER_NAME, input.text.toString())
-
-            val intent = Intent(this, ConfigurationActivity::class.java).apply {
-                putExtras(boxName)
-            }
-            startActivity(intent)*/
         }
     }
 }
