@@ -12,7 +12,7 @@ Se desarrollará una aplicación para sistema Android mediante la herramienta An
 ## Correr el programa
 1. Clona el repositorio en tu computadora con `Git clone`
 2. Ingresa a la carpeta y corre el programa con un emulador
-3. Puedes utilizar los siguientes nombres de usuario y contraseñas para iniciar sesión a la aplicación, los cuales cuentan con algunos datos por default (direcciones, metodos de pago, correo) 
+3. Puedes utilizar los siguientes nombres de usuario y contraseñas para iniciar sesión a la aplicación, los cuales cuentan con algunos datos por default (direcciones, metodos de pago, correo, carrito de compras, favoritos) 
 
 nombre de usuario | contraseña |
 --- | --- |
