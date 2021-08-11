@@ -1,5 +1,5 @@
 # MODA Store App
-Aplicación Android de tienda de ropa Moda Store. 
+Aplicación Android de tienda de ropa Moda Store. <br>
 Este es un proyecto para curso de Desarrollo Movil en Android de Bedu.
 
 ## Alcance del Proyecto
@@ -10,13 +10,24 @@ Se desarrollará una aplicación para sistema Android mediante la herramienta An
 - SDK: Android 5.0 (Lollipop)
 
 ## Correr el programa
+1. Clona el repositorio en tu computadora con `Git clone`
+2. Ingresa a la carpeta y corre el programa con un emulador
+3. Puedes utilizar los siguientes nombres de usuario y contraseñas para iniciar sesión a la aplicación, los cuales cuentan con algunos datos por default (direcciones, metodos de pago, correo) 
 
+nombre de usuario | contraseña |
+--- | --- |
+tomas11 | 123 |
+didier32 | 1234 |
+josearm21 | 12345 |
+maribel07 | 123456 |
 
-## Video
-#### Video general
+> Nota: Tambien puedes registrarte como un nuevo usuario 
+
+## Videos
+### Video general
 En el siguiente enlace se habla de forma general acerca del funcionamiento de la aplicación
 
-#### Video demostrativo
+### Video demostrativo
 Si quieres conocer todas las funcionalidades de la aplicación ve este video
 
 ## Diseño 
