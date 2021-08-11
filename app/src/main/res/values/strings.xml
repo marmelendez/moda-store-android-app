@@ -28,12 +28,19 @@
     <string name="label_address">Dirección</string>
     <string name="user_address">Calle #00, Ciudad, Estado, Pais, 31522</string>
     <string name="status_default">Default</string>
+    <string name="login">Login</string>
+    <string name="sign">Sign In</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="create_account">Create account</string>
+    <string name="username">UserName</string>
+    <string name="email">E-mail</string>
+    <string name="phone">Phone</string>
+    <string name="confirm">ConfirmPassword</string>
     <string name="warning">error</string>
-
     <string name="show_dialog">Show Dialog</string>
     <string name="confirm">Confirm</string>
     <string name="are_you_sure">Are you sure?</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
-
 </resources>

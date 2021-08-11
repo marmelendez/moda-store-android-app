@@ -31,7 +31,6 @@
     <style name="generalButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginVertical">32dp</item>
         <item name="android:padding">16dp</item>
         <item name="android:background">@drawable/button_general</item>
         <item name="android:textAlignment">center</item>
@@ -63,7 +62,6 @@
     <style name="config_account_label">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginVertical">32dp</item>
         <item name="android:textAlignment">textStart</item>
         <item name="android:textColor">@color/darkgrey</item>
         <item name="android:textSize">16dp</item>
