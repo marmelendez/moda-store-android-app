@@ -13,6 +13,7 @@ import androidx.core.view.isVisible
 import org.bedu.modastoreapp.modelos.BaseDatos
 import org.bedu.modastoreapp.modelos.Form
 import org.bedu.modastoreapp.modelos.Form.*
+import org.bedu.modastoreapp.modelos.RegisteredUser
 import org.bedu.modastoreapp.modelos.Store
 
 class SignInActivity : AppCompatActivity() {
@@ -24,7 +25,6 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var warnUsername: TextView
     private lateinit var warnEmail: TextView
     private lateinit var warnPassword: TextView
-    val myStore: Store = BaseDatos.start()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,12 +45,17 @@ class SignInActivity : AppCompatActivity() {
         warnEmail.isVisible = false
         warnPassword.isVisible = false
 
+        returnIcon.setOnClickListener {
+            val intent = Intent(this, LogInActivity::class.java)
+            startActivity(intent)
+        }
+
         inputUsername.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
                 if (!validateUsername(inputUsername.text.toString())) {
                     warnUsername.isVisible = true
                     warnUsername.setText("Ingresa un nombre de usuario valido: empieza con letra, minimo 6 caracteres, letras y numeros")
-                } else if (!myStore.isInListOfUsersUsername(inputUsername.text.toString())) {
+                } else if (!MYSTORE.isInListOfUsersUsername(inputUsername.text.toString())) {
                     warnUsername.isVisible = true
                     warnUsername.setText("Este nombre de usuario ya esta registrado, escoge otro disponible")
                 } else {
@@ -67,7 +72,7 @@ class SignInActivity : AppCompatActivity() {
                 if (!validateEmail(inputEmail.text.toString())) {
                     warnEmail.isVisible = true
                     warnEmail.setText("Ingresa un correo valido: termina con @domain.com")
-                } else if (!myStore.isInListOfUsersEmail(inputEmail.text.toString())) {
+                } else if (!MYSTORE.isInListOfUsersEmail(inputEmail.text.toString())) {
                     warnEmail.isVisible = true
                     warnEmail.setText("Este correo ya esta registrado")
                 } else {
@@ -96,18 +101,17 @@ class SignInActivity : AppCompatActivity() {
         })
 
         signInButton.setOnClickListener {
+            MYSTORE.addUser(RegisteredUser(MYSTORE.catalogProduct.size,inputUsername.text.toString(), inputEmail.text.toString(),inputPassword.text.toString()))
             Toast.makeText(applicationContext ,"Bienvenido ${inputUsername.text}", Toast.LENGTH_LONG).show()
-            val intent = Intent(this, ConfigurationActivity::class.java)
-            startActivity(intent)
 
-            //mandar usuario registrado
-        /*val boxName = Bundle()
-            boxName.putString(USER_NAME, input.text.toString())
+            val bundle = Bundle()
+            bundle.putString(USERNAME, inputUsername.text.toString())
 
             val intent = Intent(this, ConfigurationActivity::class.java).apply {
-                putExtras(boxName)
+                putExtras(bundle)
             }
-            startActivity(intent)*/
+
+            startActivity(intent)
         }
     }
 }

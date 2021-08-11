@@ -9,9 +9,10 @@ import org.bedu.modastoreapp.modelos.Category
 
 data class Product(
     val idProduct: Int,
-    var name: String,
-    var category: Category,
-    var color: String,
-    var price: Float,
+    val name: String,
+    val category: Category,
+    val color: String,
+    val price: Float,
+    val image: Int,
     var quantity: Map<String, Int>)
 

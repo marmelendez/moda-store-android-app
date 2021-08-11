@@ -13,13 +13,15 @@ package org.bedu.modastoreapp.modelos
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class RegisteredUser(
-    override val idUser: String,
+class RegisteredUser (
+    val idUser: Int,
     private var name: String,
     private var email: String,
-    private var password: String): User(idUser){
+    private var password: String) {
 
     private var address = ""
+    private var debitCard = ""
+    private var creditCard = ""
     private var shoppingCart = mutableListOf<Product>()
     private var favorites = mutableListOf<Product>()
     private var orders = mutableListOf<Order>()
@@ -52,12 +54,36 @@ class RegisteredUser(
         return this.password
     }
 
-    /*
+    /**
+     * Get the password
+     * @return String password
+     * */
+    internal fun getAddress(): String {
+        return this.address
+    }
+
+    /**
+     * Get the password
+     * @return String password
+     * */
+    internal fun getDebitCard(): String {
+        return this.debitCard
+    }
+
+    /**
+     * Get the password
+     * @return String password
+     * */
+    internal fun getCreditCard(): String {
+        return this.creditCard
+    }
+
+
     /**
      * Set a new value to the name property
      * @param name new value of username
      * */
-    private fun setName(name: String) {
+    fun setName(name: String) {
         this.name = name
     }
 
@@ -65,7 +91,7 @@ class RegisteredUser(
      * Set a new value to the email property
      * @param email new value of email
      * */
-    private fun setEmail(email:String) {
+    fun setEmail(email:String) {
         this.email = email
     }
 
@@ -73,9 +99,9 @@ class RegisteredUser(
      * Set a new value to the password property
      * @param password new value of password
      * */
-    private fun setPassword(password:String) {
+    fun setPassword(password:String) {
         this.password= password
-    }*/
+    }
 
     /**
      * Set a new value to the address property
@@ -83,6 +109,22 @@ class RegisteredUser(
      * */
     fun setAddress(address: String) {
         this.address = address
+    }
+
+    /**
+     * Set a new value to the address property
+     * @param address new value of address
+     * */
+    fun setCreditCard(creditCard: String) {
+        this.creditCard = creditCard
+    }
+
+    /**
+     * Set a new value to the address property
+     * @param address new value of address
+     * */
+    fun setDebitCard(debitCard: String) {
+        this.debitCard = debitCard
     }
 
     /**

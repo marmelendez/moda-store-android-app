@@ -7,18 +7,21 @@
  */
 package org.bedu.modastoreapp.modelos
 
+import android.os.Parcel
+import android.os.Parcelable
+import java.io.Serializable
 import java.util.*
 
-class Store (override val name: String): StoreInterface {
-    override val catalogProduct: MutableList<Product> = mutableListOf()
-    override val catalogCategory: MutableList<Category> = mutableListOf()
-    override val listOfUsers: MutableList<RegisteredUser> = mutableListOf()
+class Store(var name: String?) : Serializable, Parcelable {
+    val catalogProduct: MutableList<Product> = mutableListOf()
+    val catalogCategory: MutableList<Category> = mutableListOf()
+    val listOfUsers: MutableList<RegisteredUser> = mutableListOf()
 
     /**
      * Add a new Category to the catalog product
      * @param category the new category
      * */
-    override fun addCategory(category: Category) {
+    fun addCategory(category: Category) {
         this.catalogCategory.add(category)
     }
 
@@ -26,7 +29,7 @@ class Store (override val name: String): StoreInterface {
      * Add a new Product to the product product
      * @param product the new product
      * */
-    override fun addProduct(product: Product) {
+    fun addProduct(product: Product) {
         this.catalogProduct.add(product)
     }
 
@@ -34,7 +37,7 @@ class Store (override val name: String): StoreInterface {
      * Add a new User to the list of users
      * @param user the new user
      * */
-    override fun addUser(user: RegisteredUser) {
+    fun addUser(user: RegisteredUser) {
         this.listOfUsers.add(user)
     }
 
@@ -59,15 +62,62 @@ class Store (override val name: String): StoreInterface {
 
     /**
      * Get the Registered User that has a given username
-     * @param username the username of the Registered User
-     * @return RegisteredUser If the username doesn't correspond to a RegisteredUser returns null
+     * @param id the id of the Registered User
+     * @return RegisteredUser If the id user doesn't correspond to a RegisteredUser returns null
      * */
-    fun getUser(username: String): RegisteredUser? {
+    fun getUser(id: Int?): RegisteredUser? {
+        val possibleUser = this.listOfUsers.filter{ it.idUser == id }
+        return try {
+            possibleUser[0]
+        } catch(e: Exception) {
+            null
+        }
+    }
+
+    /**
+     * Get the Registered User that has a given username
+     * @param id the id of the Registered User
+     * @return RegisteredUser If the id user doesn't correspond to a RegisteredUser returns null
+     * */
+    fun getUserName(username: String): RegisteredUser? {
         val possibleUser = this.listOfUsers.filter{ it.getName() == username }
         return try {
             possibleUser[0]
         } catch(e: Exception) {
             null
+        }
+    }
+
+
+    /**
+     * Search if a product is in the store catalog
+     * @param productName the product name the user wants to search
+     * @return List<Product> list of products found
+     * */
+    fun searchProduct(productName : String) : List<Product> {
+        val result = this.catalogProduct.filter { it.name.lowercase(Locale.getDefault()).contains(productName.lowercase(Locale.getDefault())) }
+        return result//.forEach { println("\t${it.idProduct} \t${it.name}") }
+    }
+
+    constructor(parcel: Parcel) : this(parcel.readString()) {
+        this.name = parcel.toString()
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(name)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<Store> {
+        override fun createFromParcel(parcel: Parcel): Store {
+            return Store(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Store?> {
+            return arrayOfNulls(size)
         }
     }
 }

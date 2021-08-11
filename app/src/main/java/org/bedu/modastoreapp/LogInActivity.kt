@@ -1,5 +1,6 @@
 package org.bedu.modastoreapp
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,9 @@ import org.bedu.modastoreapp.modelos.BaseDatos
 import org.bedu.modastoreapp.modelos.RegisteredUser
 import org.bedu.modastoreapp.modelos.Store
 
+val MYSTORE = BaseDatos.start()
+const val USERNAME = "org.bedu.activity.USERNAME" //ubicacion donde el bundle guardara variable
+
 class LogInActivity : AppCompatActivity() {
     private lateinit var buttonLogIn: Button
     private lateinit var buttonSignIn: Button
@@ -24,9 +28,6 @@ class LogInActivity : AppCompatActivity() {
     private lateinit var regUser: RegisteredUser
     private var inpUser = ""
     private var inpPassword = ""
-
-
-    val myStore: Store = BaseDatos.start()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +49,7 @@ class LogInActivity : AppCompatActivity() {
 
         inputName.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
-                if (myStore.getUser(inputName.text.toString()) == null) {
+                if (MYSTORE.getUserName(inputName.text.toString()) == null) {
                     warningUser.isVisible = true
                     warningUser.setText("No se encontro un usuario registrado con ese nombre")
                     buttonLogIn.isEnabled = false
@@ -57,7 +58,7 @@ class LogInActivity : AppCompatActivity() {
                     warningUser.isVisible = false
                     inputPassword.isVisible = true
                     Toast.makeText(applicationContext ,"Hola de nuevo ${inputName.text}", Toast.LENGTH_LONG).show()
-                    regUser = myStore.getUser(inputName.text.toString())!!
+                    regUser = MYSTORE.getUserName(inputName.text.toString())!!
                 }
             }
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
@@ -82,18 +83,14 @@ class LogInActivity : AppCompatActivity() {
 
 
         buttonLogIn.setOnClickListener {
-            val intent = Intent(this, ConfigurationActivity::class.java)
-            startActivity(intent)
-
-            //mandar usuario registrado
-
-            /*val boxName = Bundle()
-            boxName.putString(USER_NAME, input.text.toString())
+            val bundle = Bundle()
+            bundle.putString(USERNAME, inputName.text.toString())
 
             val intent = Intent(this, ConfigurationActivity::class.java).apply {
-                putExtras(boxName)
+                putExtras(bundle)
             }
-            startActivity(intent)*/
+
+            startActivity(intent)
         }
 
         buttonSignIn.setOnClickListener {
