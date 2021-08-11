@@ -24,7 +24,7 @@ maribel07 | 123456 |
 > Nota: Tambien puedes registrarte como un nuevo usuario 
 
 <br>
-<img src="images/login-signin.gif" width="20%">
+<img src="images/login-signin.gif" width="30%">
 
 ## Videos
 ### Video general
