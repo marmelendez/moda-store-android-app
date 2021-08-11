@@ -117,11 +117,11 @@ class BaseDatos {
 
         private fun setPaymentMethod() {
             // User: tomas11
-            myStore.listOfUsers[0].setPaymentMethod("Credit card", mapOf("Number" to "1234567890123456", "Date" to "04/22", "Security Number" to "123"))
-            myStore.listOfUsers[0].setPaymentMethod("Debit card", mapOf("Number" to "1234567890123457", "Date" to "06/24", "Security Number" to "456"))
+            myStore.listOfUsers[0].setDebitCard("1234567890123456")
+            myStore.listOfUsers[0].setCreditCard("1234567890123457")
 
             // User: josearm21
-            myStore.listOfUsers[2].setPaymentMethod("Credit card", mapOf("Number" to "1234567890123458", "Date" to "10/23", "Security Number" to "789"))
+            myStore.listOfUsers[2].setCreditCard("1234567890123458")
         }
     }
 }

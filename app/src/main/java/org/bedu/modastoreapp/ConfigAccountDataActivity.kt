@@ -57,7 +57,6 @@ class ConfigAccountDataActivity : AppCompatActivity() {
         if (regUser != null) {
             inputUsername.hint = regUser.getName()
             inputEmail.hint = regUser.getEmail()
-            inputPassword.hint = regUser.getPassword()
 
             editUsernameIcon.setOnClickListener{
                 inputUsername.isEnabled = true
@@ -118,8 +117,8 @@ class ConfigAccountDataActivity : AppCompatActivity() {
             R.string.ok
         ) { dialogInterface, i ->
             if (inputUsername.text.toString()!="") regUser.setName(inputUsername.text.toString())
-            if (inputEmail.text.toString()!="") regUser.setName(inputEmail.text.toString())
-            if (inputPassword.text.toString()!="") regUser.setName(inputPassword.text.toString())
+            if (inputEmail.text.toString()!="") regUser.setEmail(inputEmail.text.toString())
+            if (inputPassword.text.toString()!="") regUser.setPassword(inputPassword.text.toString())
             Toast.makeText(applicationContext, "Tus datos han sido actualizados", Toast.LENGTH_SHORT).show()
             dialogInterface.dismiss()
         }
