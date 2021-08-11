@@ -23,6 +23,9 @@ maribel07 | 123456 |
 
 > Nota: Tambien puedes registrarte como un nuevo usuario 
 
+<br>
+<img src="images/login-signin.gif" width="20%">
+
 ## Videos
 ### Video general
 En el siguiente enlace se habla de forma general acerca del funcionamiento de la aplicación
@@ -36,7 +39,7 @@ Puedes visualizar los mockups y wireframes meta de este proyecto en el siguiente
 ### Flujo
 Tambien puedes checar los flujos dentro de la aplicación en este video
 <br>
-<img src="images/flow.gif" width="30%">
+<img src="images/flow.gif" width="20%">
 
 ## Contribuir
 Si te interesa contribuir a este proyecto visita el siguiente documento: [Guia de contribución](https://github.com/marmelendez/moda-store-android-app/blob/master/CONTRIBUIR.md)
