@@ -11,6 +11,14 @@ Se desarrollará una aplicación para sistema Android mediante la herramienta An
 
 ## Correr el programa
 
+
+## Video
+#### Video general
+En el siguiente enlace se habla de forma general acerca del funcionamiento de la aplicación
+
+#### Video demostrativo
+Si quieres conocer todas las funcionalidades de la aplicación ve este video
+
 ## Diseño 
 Puedes visualizar los mockups y wireframes meta de este proyecto en el siguiente [link](https://www.figma.com/file/CgTBCmmRmLiYO1QwHiP2KQ/MODA-Store-Project?node-id=0%3A1) 
 
@@ -18,9 +26,6 @@ Puedes visualizar los mockups y wireframes meta de este proyecto en el siguiente
 Tambien puedes checar los flujos dentro de la aplicación en este video
 <br>
 <img src="images/flow.gif" width="30%">
-
-## Video
-En el siguiente video se muestra el funcionamiento general de la aplicación
 
 ## Contribuir
 Si te interesa contribuir a este proyecto visita el siguiente documento: [Guia de contribución](https://github.com/marmelendez/moda-store-android-app/blob/master/CONTRIBUIR.md)
