@@ -21,3 +21,6 @@ Tambien puedes checar los flujos dentro de la aplicación en este video
 
 ## Video
 En el siguiente video se muestra el funcionamiento general de la aplicación
+
+## Contribuir
+Si te interesa contribuir a este proyecto visita el siguiente documento: [Guia de contribución](https://github.com/marmelendez/moda-store-android-app/blob/master/CONTRIBUIR.md)
