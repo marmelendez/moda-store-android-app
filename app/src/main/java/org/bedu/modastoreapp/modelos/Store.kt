@@ -86,6 +86,20 @@ class Store(var name: String?) {
     }
 
     /**
+     * Get the Registered User that has a given id
+     * @param id the id of the Registered User
+     * @return RegisteredUser If the id user doesn't correspond to a RegisteredUser returns null
+     * */
+    fun getProduct(id: Int?): Product? {
+        val product = this.catalogProduct.filter{ it.idProduct == id }
+        return try {
+            product[0]
+        } catch(e: Exception) {
+            null
+        }
+    }
+
+    /**
      * Search if a product is in the store catalog
      * @param productName the product name the user wants to search
      * @return List<Product> list of products found

@@ -44,7 +44,6 @@
         android:textColor="@color/grey"
         android:textColorHint="@color/grey"
         android:fontFamily="@font/nunitoregular"
-        app:layout_constraintBottom_toTopOf="@id/warningUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/moda" />
@@ -64,7 +63,6 @@
         android:textAllCaps="false"
         android:textColor="@color/grey"
         android:textColorHint="@color/grey"
-        app:layout_constraintBottom_toTopOf="@id/warningPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
