@@ -11,7 +11,8 @@ import android.widget.Toast
 class ProductActivity : AppCompatActivity() {
 
     private lateinit var btnReturn : Button
-    private lateinit var btnAddFav : Button
+    private lateinit var btnAddCart : Button
+    private lateinit var btnAddFav : ImageView
     private lateinit var imgProduct : ImageView
     private lateinit var txtProductName : TextView
     private lateinit var txtProductPrice : TextView
@@ -21,6 +22,7 @@ class ProductActivity : AppCompatActivity() {
         setContentView(R.layout.activity_product)
 
         btnReturn = findViewById(R.id.btn_Return)
+        btnAddCart = findViewById(R.id.btn_addcart)
         btnAddFav = findViewById(R.id.btn_addfav)
         imgProduct = findViewById(R.id.productImage)
         txtProductName = findViewById(R.id.productName)
@@ -50,6 +52,16 @@ class ProductActivity : AppCompatActivity() {
         }
 
         btnAddFav.setOnClickListener {
+            if (userName != null && userName != "" && product != null) {
+                MYSTORE.getUserName(userName)?.addToFavorite(product)
+                btnAddFav.setImageResource(R.drawable.ic_productfav)
+                Toast.makeText(applicationContext ,"El producto ha sido añadido a tus favoritos", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(applicationContext ,"Inicia sesión", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        btnAddCart.setOnClickListener {
             if (userName != null && userName != "" && product != null) {
                 MYSTORE.getUserName(userName)?.addToCart(product)
                 Toast.makeText(applicationContext ,"El producto ha sido añadido a tu carrito", Toast.LENGTH_LONG).show()

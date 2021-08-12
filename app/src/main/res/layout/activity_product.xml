@@ -22,8 +22,8 @@
     <ImageView
         android:id="@+id/productImage"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:scaleType="center"
+        android:layout_height="400dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,10 +36,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/label_productname"
-        android:drawableRight="@drawable/ic_favorite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productImage" />
+
+    <ImageView
+        android:id="@+id/btn_addfav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_favorite"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/productName"
+        app:layout_constraintTop_toBottomOf="@+id/productImage"/>
 
     <TextView
         android:id="@+id/productPrice"
@@ -56,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/productName" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_addfav"
+        android:id="@+id/btn_addcart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_addCart"
