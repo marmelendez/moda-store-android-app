@@ -41,6 +41,7 @@ class LogInActivity : AppCompatActivity() {
 
         newAccount.setOnClickListener {
           val intent = Intent(this, SignInActivity::class.java)
+
             startActivity(intent)
         }*/
         
@@ -108,5 +109,12 @@ class LogInActivity : AppCompatActivity() {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
+
+        boton_sign.setOnClickListener {
+            val intent = Intent(this, ShopActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 }
