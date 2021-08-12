@@ -78,6 +78,18 @@ class RegisteredUser (
         return this.creditCard
     }
 
+    fun getShoppingCart(): MutableList<Product> {
+        return this.shoppingCart
+    }
+
+    fun getTotal(): Float {
+        var total = 0F
+        this.shoppingCart.forEach {
+            total += it.price
+        }
+        return total
+    }
+
 
     /**
      * Set a new value to the name property

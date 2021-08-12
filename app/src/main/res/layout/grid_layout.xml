@@ -25,7 +25,8 @@
             android:layout_height="240dp"
             android:layout_gravity="bottom"
             android:background="#FFFFFF"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:fontFamily="@font/nunitoregular">
 
             <ImageView
                 android:id="@+id/imgProduct"

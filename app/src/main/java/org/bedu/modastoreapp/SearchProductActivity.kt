@@ -1,5 +1,6 @@
 package org.bedu.modastoreapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -8,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView;
+import me.ibrahimsn.lib.SmoothBottomBar
 import org.bedu.modastoreapp.modelos.BaseDatos
 import org.bedu.modastoreapp.modelos.Product
 import org.bedu.modastoreapp.modelos.Store
@@ -16,6 +18,7 @@ class SearchProductActivity : AppCompatActivity() {
     private lateinit var dataList: RecyclerView
     private lateinit var products: MutableList<Product>
     private lateinit var inpSearch: EditText
+    private lateinit var bottomBar : SmoothBottomBar
     val myStore: Store = BaseDatos.start()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +28,26 @@ class SearchProductActivity : AppCompatActivity() {
         products = myStore.catalogProduct
         dataList = findViewById(R.id.datalist)
         inpSearch = findViewById(R.id.inp_Search)
+        bottomBar = findViewById(R.id.bottomBarSearch)
 
         setAdapter(products)
+
+        bottomBar.onItemSelected = {
+            when (it) {
+                0 -> {
+                    val intent = Intent(this, ShopActivity::class.java)
+                    startActivity(intent)
+                }
+                1 -> {
+                    val intent = Intent(this, CartActivity::class.java)
+                    startActivity(intent)
+                }
+                2 -> {
+                    val intent = Intent(this, ConfigurationActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+        }
 
         inpSearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {

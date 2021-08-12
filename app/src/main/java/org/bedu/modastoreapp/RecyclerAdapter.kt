@@ -12,7 +12,7 @@ import org.bedu.modastoreapp.modelos.Product
 
 class RecyclerAdapter(
     private val context: Context,
-    private val products: MutableList<Product>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>()  {
+    private val products: MutableList<org.bedu.modastoreapp.modelos.Product>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>()  {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
