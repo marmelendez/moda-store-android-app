@@ -13,16 +13,12 @@ import org.bedu.modastoreapp.R
 //Declaración con constructor
 class RecyclerAdapterShop (
     private val context:Context,
-    private val products: MutableList<Product>,
-    private val clickListener: (Product) -> Unit): RecyclerView.Adapter<RecyclerAdapterShop.ViewHolder>() {
+    private val products: MutableList<org.bedu.modastoreapp.modelos.Product>): RecyclerView.Adapter<RecyclerAdapterShop.ViewHolder>() { //private val clickListener: (Product) -> Unit
 
     //Aquí atamos el ViewHolder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val product = products.get(position)
         holder.bind(product, context)
-
-        holder.view.setOnClickListener{clickListener(product)}
-
     }
 
 
@@ -39,17 +35,17 @@ class RecyclerAdapterShop (
     //También se encarga de gestionar los eventos de la View, como los clickListeners
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         //obteniendo las referencias a las Views
-        val productName = view.findViewById(R.id.tvProduct) as TextView
+        val productName = view.findViewById(R.id.itemName) as TextView
         //val description = view.findViewById(R.id.tvDescription) as TextView
-        val price = view.findViewById(R.id.tvPrice) as TextView
-        val image = view.findViewById(R.id.imgProduct) as ImageView
+        val price = view.findViewById(R.id.itemPrice) as TextView
+        val image = view.findViewById(R.id.itemImage) as ImageView
 
         //"atando" los datos a las Views
-        fun bind(product: Product, context: Context){
+        fun bind(product: org.bedu.modastoreapp.modelos.Product, context: Context){
             productName.text = product.name
             //description.text = product.description
-            price.text = product.price
-            image.setImageResource(product.idImage)
+            price.text = product.price.toString()
+            image.setImageResource(product.image)
         }
     }
 

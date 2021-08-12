@@ -3,26 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="32dp">
-    tools:context=".ConfigPayment">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_Return"
-        style="@style/returnButton"
-        app:layout_constraintEnd_toStartOf="@+id/title_Payment"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/topbarConfigPay"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:elevation="8dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/label_DebitCard"
+        >
 
-    <TextView
-        android:id="@+id/title_Payment"
-        style="@style/header_title"
-        android:text="@string/btn_paymentMethods"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btn_Return"
+            style="@style/returnButton"
+            android:layout_marginStart="16dp"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toStartOf="@+id/title_Payment"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title_Payment"
+            style="@style/header_title"
+            android:layout_marginEnd="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_paymentMethods" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/label_DebitCard"
@@ -32,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_Payment" />
+        app:layout_constraintTop_toBottomOf="@+id/topbarConfigPay" />
 
     <Button
         android:id="@+id/btn_EditDebitCard"
@@ -82,11 +98,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_CreditCard" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_Submit"
-        style="@style/generalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/btn_submit"
+        android:layout_gravity="center"
         android:visibility="invisible"
+        app:cornerRadius="16dp"
+        android:backgroundTint="@color/primaryColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_CreditCard" />

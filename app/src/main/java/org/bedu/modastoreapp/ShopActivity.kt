@@ -4,7 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -18,29 +21,68 @@ class ShopActivity : AppCompatActivity() {
 
     private lateinit var btn_cart: Button
     private lateinit var bottomBar : SmoothBottomBar
+    private lateinit var searchInp : EditText
 
     override fun onCreate(saveWomenInstanceState: Bundle?) {
         super.onCreate(saveWomenInstanceState)
         setContentView(R.layout.activity_shop)
 
         bottomBar = findViewById(R.id.bottomBar)
+        searchInp = findViewById(R.id.search_input)
+
         val womenViewPager = findViewById<ViewPager2>(R.id.WomenSlider)
         val sliderWomen: MutableList<ShopContainer> = ArrayList()
+
+        val bundle = intent.extras
+        val userName = bundle?.getString(USERNAME)
+
+        searchInp.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString(USERNAME, userName)
+
+            val intent = Intent(this, SearchProductActivity::class.java).apply {
+                putExtras(bundle)
+            }
+
+            startActivity(intent)
+        }
 
         bottomBar.onItemSelected = {
             when (it) {
                 1 -> {
-                    val intent = Intent(this, CartActivity::class.java)
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, userName)
+
+                    val intent = Intent(this, CartActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
                     startActivity(intent)
                 }
                 2 -> {
-                    val intent = Intent(this, ConfigurationActivity::class.java)
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, userName)
+
+                    val intent = Intent(this, ConfigurationActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
                     startActivity(intent)
                 }
             }
         }
 
-        val sliderWomenv1 = ShopContainer()
+        val products = MYSTORE.catalogProduct
+
+        for (i in 1..5) {
+            val sliderWomenv = ShopContainer()
+            sliderWomenv.image = products[i].image
+            sliderWomenv.title = products[i].name
+            sliderWomenv.location = products[i].price
+            sliderWomen.add(sliderWomenv)
+        }
+
+        /*val sliderWomenv1 = ShopContainer()
         sliderWomenv1.image = R.drawable.image_m1
         sliderWomenv1.title = "Blusa blanca"
         sliderWomenv1.location = "CDMX"
@@ -66,7 +108,7 @@ class ShopActivity : AppCompatActivity() {
         sliderWomenv4.title = "Blusa azul"
         sliderWomenv4.location = "CDMX"
         sliderWomenv4.starRating = 4.2f
-        sliderWomen.add(sliderWomenv4)
+        sliderWomen.add(sliderWomenv4)*/
 
         womenViewPager.adapter = ShopContainerAdapter(sliderWomen)
         womenViewPager.clipToPadding = false
@@ -81,14 +123,19 @@ class ShopActivity : AppCompatActivity() {
         }
         womenViewPager.setPageTransformer(compositeWomenPageTransformer)
 
-
-
-
-
         val menViewPager = findViewById<ViewPager2>(R.id.MenSlider)
         val sliderMEN: MutableList<ShopContainer> = ArrayList()
 
-        val sliderMenv1 = ShopContainer()
+        for (i in 11..15) {
+            val sliderMenv1 = ShopContainer()
+            sliderMenv1.image = products[i].image
+            sliderMenv1.title = products[i].name
+            sliderMenv1.location = products[i].price
+            sliderMEN.add(sliderMenv1)
+        }
+
+
+        /*val sliderMenv1 = ShopContainer()
         sliderMenv1.image = R.drawable.image_h1
         sliderMenv1.title = "Chamarra negra "
         sliderMenv1.location = "CDMX"
@@ -114,7 +161,7 @@ class ShopActivity : AppCompatActivity() {
         sliderMenv4.title = "Chamarra gris"
         sliderMenv4.location = "CDMX"
         sliderMenv4.starRating = 4.2f
-        sliderMEN.add(sliderMenv4)
+        sliderMEN.add(sliderMenv4)*/
 
         menViewPager.adapter = ShopContainerAdapter(sliderMEN)
         menViewPager.clipToPadding = false
@@ -136,29 +183,25 @@ class ShopActivity : AppCompatActivity() {
         val sliderKidv1 = ShopContainer()
         sliderKidv1.image = R.drawable.image_n1
         sliderKidv1.title = "Chamarra negra "
-        sliderKidv1.location = "CDMX"
-        sliderKidv1.starRating = 4.8f
+        sliderKidv1.location = 400.0F
         sliderKid.add(sliderKidv1)
 
         val sliderKidv2 = ShopContainer()
         sliderKidv2.image = R.drawable.image_n2
         sliderKidv2.title = "Gorra naranja"
-        sliderKidv2.location = "CDMX"
-        sliderKidv2.starRating = 4.5f
+        sliderKidv2.location = 100.0F
         sliderKid.add(sliderKidv2)
 
         val sliderKidv3 = ShopContainer()
         sliderKidv3.image = R.drawable.image_n3
         sliderKidv3.title = "Chaleco azul"
-        sliderKidv3.location = "CDMX"
-        sliderKidv3.starRating = 4.3f
+        sliderKidv3.location = 200.0F
         sliderKid.add(sliderKidv3)
 
         val sliderKidv4 = ShopContainer()
         sliderKidv4.image = R.drawable.image_n4
         sliderKidv4.title = "Chamarra gris"
-        sliderKidv4.location = "CDMX"
-        sliderKidv4.starRating = 4.2f
+        sliderKidv4.location = 300.0F
         sliderKid.add(sliderKidv4)
 
         kidViewPager.adapter = ShopContainerAdapter(sliderKid)
@@ -182,3 +225,4 @@ class ShopActivity : AppCompatActivity() {
     }
 
 }
+

@@ -67,23 +67,25 @@ class BaseDatos {
 
         private fun setShoppingCart() {
             // User: tomas11
-            myStore.listOfUsers[0].addToCart(myStore.catalogProduct[0])
-            myStore.listOfUsers[0].addToCart(myStore.catalogProduct[1])
-            myStore.listOfUsers[0].addToCart(myStore.catalogProduct[2])
-            myStore.listOfUsers[0].addToCart(myStore.catalogProduct[3])
+            myStore.listOfUsers[0].addToCart(myStore.catalogProduct[10])
+            myStore.listOfUsers[0].addToCart(myStore.catalogProduct[11])
+            myStore.listOfUsers[0].addToCart(myStore.catalogProduct[12])
+            myStore.listOfUsers[0].addToCart(myStore.catalogProduct[13])
 
             // User: didier32
-            myStore.listOfUsers[1].addToCart(myStore.catalogProduct[4])
-            myStore.listOfUsers[1].addToCart(myStore.catalogProduct[5])
+            myStore.listOfUsers[1].addToCart(myStore.catalogProduct[14])
+            myStore.listOfUsers[1].addToCart(myStore.catalogProduct[15])
 
 
             // User: josearm21
-            myStore.listOfUsers[2].addToCart(myStore.catalogProduct[6])
-            myStore.listOfUsers[2].addToCart(myStore.catalogProduct[7])
-            myStore.listOfUsers[2].addToCart(myStore.catalogProduct[8])
+            myStore.listOfUsers[2].addToCart(myStore.catalogProduct[16])
+            myStore.listOfUsers[2].addToCart(myStore.catalogProduct[17])
+            myStore.listOfUsers[2].addToCart(myStore.catalogProduct[18])
 
             // User: maribel07
-            myStore.listOfUsers[3].addToCart(myStore.catalogProduct[9])
+            myStore.listOfUsers[3].addToCart(myStore.catalogProduct[1])
+            myStore.listOfUsers[3].addToCart(myStore.catalogProduct[2])
+            myStore.listOfUsers[3].addToCart(myStore.catalogProduct[3])
         }
 
         private fun setFavorites() {

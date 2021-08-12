@@ -37,7 +37,7 @@ class ShopContainerAdapter(private val shopContainers: MutableList<ShopContainer
         fun setLocationData(shopContainer: ShopContainer) {
             shopContainer.image?.let { Picasso.get().load(it).into(kbvLocation) }
             textTitle.text = shopContainer.title
-            textStarRating.text = shopContainer.starRating.toString()
+            //textStarRating.text = shopContainer.starRating.toString()
         }
 
         init {

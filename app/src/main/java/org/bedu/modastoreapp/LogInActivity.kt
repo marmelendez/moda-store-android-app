@@ -69,7 +69,6 @@ class LogInActivity : AppCompatActivity() {
                     inpUser = inputName.text.toString()
                     warningUser.isVisible = false
                     inputPassword.isVisible = true
-                    Toast.makeText(applicationContext ,"Hola de nuevo ${inputName.text}", Toast.LENGTH_LONG).show()
                     regUser = MYSTORE.getUserName(inputName.text.toString())!!
                 }
             }

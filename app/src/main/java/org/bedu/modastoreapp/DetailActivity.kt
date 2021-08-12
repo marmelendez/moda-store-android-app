@@ -14,6 +14,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         val product = intent.getParcelableExtra<Product>(PRODUCT)
+
         val detailFragment = supportFragmentManager.findFragmentById(R.id.fragmentDetail) as? DetailFragment
         if (product != null) {
             detailFragment?.showProduct(product)
