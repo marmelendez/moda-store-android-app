@@ -5,13 +5,10 @@
  */
 package org.bedu.modastoreapp.modelos
 
-import org.bedu.modastoreapp.modelos.Product
 import java.time.LocalDateTime
 
 data class Order(
-    val id: String,
+    val id: Int,
     val products: List<Product>,
     val total: Float,
-    val address: String,
-    val pay: MutableMap<String,Map<String, String>>,
-    val date: LocalDateTime)
+    val address: String)

@@ -8,11 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import org.bedu.modastoreapp.PRODUCTID
-import org.bedu.modastoreapp.ProductActivity
-import org.bedu.modastoreapp.R
-import org.bedu.modastoreapp.USERNAME
+import org.bedu.modastoreapp.*
 import org.bedu.modastoreapp.modelos.Product
 
 class RecyclerAdapterShop (
@@ -38,6 +36,7 @@ class RecyclerAdapterShop (
         val productName = view.findViewById(R.id.itemName) as TextView
         val price = view.findViewById(R.id.itemPrice) as TextView
         val image = view.findViewById(R.id.itemImage) as ImageView
+        val deleteIcon = view.findViewById(R.id.delete_icon) as ImageView
 
         fun bind(product: Product, username: String, context: Context){
             productName.text = product.name
@@ -54,6 +53,15 @@ class RecyclerAdapterShop (
                 }
 
                 v.context.startActivity(intent)
+            }
+
+            deleteIcon.setOnClickListener{
+                if (username != null && username != "" && product != null) {
+                    MYSTORE.getUserName(username)?.removeFromCart(product)
+                    Toast.makeText(it.context ,"El producto ha sido eliminado de tu carrito", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(it.context ,"Inicia sesión", Toast.LENGTH_LONG).show()
+                }
             }
         }
     }

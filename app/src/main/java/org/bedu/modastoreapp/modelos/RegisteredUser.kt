@@ -52,6 +52,10 @@ class RegisteredUser (
         return this.shoppingCart
     }
 
+    fun getOrders(): MutableList<Order> {
+        return this.orders
+    }
+
     fun getTotal(): Float {
         var total = 0F
         this.shoppingCart.forEach {
@@ -85,12 +89,15 @@ class RegisteredUser (
         this.debitCard = debitCard
     }
 
+    fun setShoppingCart(shoppingCart: MutableList<Product>) {
+        this.shoppingCart = shoppingCart
+    }
+
     /**
      * Add a product to the shopping cart
      * @param product the product to add
      * */
     fun addToCart(product: Product) {
-        println("The product ${product.name} has been added to your cart")
         this.shoppingCart.add(product)
     }
 
@@ -98,8 +105,7 @@ class RegisteredUser (
      * Remove a product from the shopping cart
      * @param product the product to remove
      * */
-    private fun removeFromCart(product: Product) {
-        println("The product ${product.name} has been removed to your cart")
+    fun removeFromCart(product: Product) {
         this.shoppingCart.remove(product)
     }
 
@@ -108,7 +114,6 @@ class RegisteredUser (
      * @param product the product to add
      * */
     fun addToFavorite(product: Product) {
-        println("The product ${product.name} has been added to your favorite list")
         this.favorites.add(product)
     }
 
@@ -117,7 +122,6 @@ class RegisteredUser (
      * @param product the product to remove
      * */
     private fun removeFromFavorites(product: Product) {
-        println("The product ${product.name} has been removed to your cart")
         this.favorites.remove(product)
     }
 
@@ -125,8 +129,7 @@ class RegisteredUser (
      * Add a order to the orders list
      * @param order the order to add
      * */
-    private fun addOrder(order: Order) {
-        println("The order ${order.id} with a total of $ ${order.total} has been completed!")
+    fun addOrder(order: Order) {
         this.orders.add(order)
     }
 }

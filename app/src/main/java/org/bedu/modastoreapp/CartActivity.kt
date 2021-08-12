@@ -1,5 +1,6 @@
 package org.bedu.modastoreapp
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,11 +10,14 @@ import android.widget.Toast
 import me.ibrahimsn.lib.SmoothBottomBar
 import org.bedu.modastoreapp.listas.DetailFragment
 import org.bedu.modastoreapp.listas.ListFragment
+import org.bedu.modastoreapp.modelos.Order
+import org.bedu.modastoreapp.modelos.Product
+import org.bedu.modastoreapp.modelos.RegisteredUser
 
 class CartActivity : AppCompatActivity() {
 
     private lateinit var bottomBar : SmoothBottomBar
-    private lateinit var button : Button
+    private lateinit var payButton : Button
     private lateinit var totalPrice : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +25,7 @@ class CartActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cart)
 
         bottomBar = findViewById(R.id.bottomBar)
-        button = findViewById(R.id.next_button)
+        payButton = findViewById(R.id.next_button)
         totalPrice = findViewById(R.id.priceTotal)
 
         val bundle = intent.extras
@@ -39,8 +43,12 @@ class CartActivity : AppCompatActivity() {
             listFragment.setUsername("tomas11")
         }
 
-        button.setOnClickListener{
-            Toast.makeText(applicationContext, "Pronto contaremos con esta función", Toast.LENGTH_SHORT).show()
+        payButton.setOnClickListener{
+            if (regUser != null) {
+                buttonShowDialog_onClick(regUser)
+            } else {
+                Toast.makeText(applicationContext, "Inicia sesión", Toast.LENGTH_SHORT).show()
+            }
         }
 
 
@@ -66,6 +74,30 @@ class CartActivity : AppCompatActivity() {
         bottomBar.onItemSelected = {
             evalCase(it, userName)
         }
+    }
+
+    private fun buttonShowDialog_onClick(regUser: RegisteredUser) {
+        val builder = AlertDialog.Builder(this)
+        builder.setCancelable(true)
+        builder.setTitle("Pago")
+        builder.setMessage("¿Deseas pagar un total de ${regUser.getTotal()} por tu compra?")
+
+        builder.setNegativeButton(
+            "Cancelar"
+        ) { dialog, which -> }
+
+        builder.setPositiveButton(
+            R.string.ok
+        ) { dialogInterface, i ->
+            val order = Order(regUser.getOrders().size,regUser.getShoppingCart(),regUser.getTotal(),regUser.getAddress())
+            regUser.addOrder(order)
+            regUser.setShoppingCart(mutableListOf<Product>())
+            Toast.makeText(applicationContext, "Gracias por tu compra ID: ${order.id}", Toast.LENGTH_SHORT).show()
+            dialogInterface.dismiss()
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 
     private fun evalCase(it: Int, userName: String?) {
