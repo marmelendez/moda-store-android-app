@@ -1,5 +1,5 @@
 # MODA Store App
-Aplicación Android de tienda de ropa Moda Store. 
+Aplicación Android de tienda de ropa Moda Store. <br>
 Este es un proyecto para curso de Desarrollo Movil en Android de Bedu.
 
 ## Alcance del Proyecto
@@ -10,6 +10,28 @@ Se desarrollará una aplicación para sistema Android mediante la herramienta An
 - SDK: Android 5.0 (Lollipop)
 
 ## Correr el programa
+1. Clona el repositorio en tu computadora con `Git clone`
+2. Ingresa a la carpeta y corre el programa con un emulador
+3. Puedes utilizar los siguientes nombres de usuario y contraseñas para iniciar sesión a la aplicación, los cuales cuentan con algunos datos por default (direcciones, metodos de pago, correo, carrito de compras, favoritos) 
+
+nombre de usuario | contraseña |
+--- | --- |
+tomas11 | 123 |
+didier32 | 1234 |
+josearm21 | 12345 |
+maribel07 | 123456 |
+
+> Nota: Tambien puedes registrarte como un nuevo usuario 
+
+<br>
+<img src="images/login-signin.gif" width="30%">
+
+## Videos
+### Video general
+En el siguiente enlace se habla de forma general acerca del funcionamiento de la aplicación
+
+### Video demostrativo
+Si quieres conocer todas las funcionalidades de la aplicación ve este video
 
 ## Diseño 
 Puedes visualizar los mockups y wireframes meta de este proyecto en el siguiente [link](https://www.figma.com/file/CgTBCmmRmLiYO1QwHiP2KQ/MODA-Store-Project?node-id=0%3A1) 
@@ -17,40 +39,7 @@ Puedes visualizar los mockups y wireframes meta de este proyecto en el siguiente
 ### Flujo
 Tambien puedes checar los flujos dentro de la aplicación en este video
 <br>
-<img src="images/flow.gif" width="30%">
+<img src="images/flow.gif" width="20%">
 
 ## Contribuir
-### ¿Como puedo contribuir?
-1. Lo primero es ir al apartado Project del repositorio
-![Pagina Project](images/projectpage.png)
-
-2. Selecciona una tarea en la seccion de TO DO 
-![Asignación](images/issues.png)
-
-3. Lee la informacion de cada tarea y si te interesa asigna tu nombre para realizarla
-![Asignación](images/assign.png)
-![Asignación](images/card.png)
-
-> Nota: Escoge una tarea que no ha sigo asignada a nadie
-
-4. Crea una branch con el siguiente formato: major/minor
-Major puede ser:
-- `Documentation`
-- `Feature`
-- `Bugfix or Patch`
-- `Styling`
-
-Minor puede ser: 
-- el nombre de la tarea que escogiste
-
-Ejemplo:
-- `feature/activity-login`
-- `documentation/readme`
-
-En esta branch puedes hacer 
-`git add`
-`git commit`
-`git push`
-a los cambios que realices.
-
-5. Despues de terminar puedes realizar un `pull request`. 
+Si te interesa contribuir a este proyecto visita el siguiente documento: [Guia de contribución](https://github.com/marmelendez/moda-store-android-app/blob/master/CONTRIBUIR.md)

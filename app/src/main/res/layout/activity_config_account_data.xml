@@ -24,115 +24,88 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/label_DebitCard"
+        android:id="@+id/labelUserName"
         style="@style/config_account_label"
         android:layout_marginTop="28dp"
         android:text="@string/label_username"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_Payment" />
 
     <Button
-        android:id="@+id/btn_EditDebitCard"
+        android:id="@+id/btnEditUserName"
         style="@style/editButton"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/input_DebitCard"
+        app:layout_constraintBottom_toTopOf="@+id/inpUsername"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/label_DebitCard" />
+        app:layout_constraintStart_toEndOf="@+id/labelUserName" />
 
     <EditText
-        android:id="@+id/input_DebitCard"
+        android:id="@+id/inpUsername"
         style="@style/config_account_field"
         android:hint="@string/label_username"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_DebitCard"
+        app:layout_constraintTop_toBottomOf="@+id/labelUserName"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/label_UserName"
+        android:id="@+id/labelEmail"
         style="@style/config_account_label"
         android:layout_marginTop="32dp"
         android:text="@string/label_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_DebitCard" />
+        app:layout_constraintTop_toBottomOf="@+id/inpUsername" />
 
     <Button
-        android:id="@+id/btn_EditCreditCard"
+        android:id="@+id/btnEditEmail"
         style="@style/editButton"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/input_CreditCard"
+        app:layout_constraintBottom_toTopOf="@+id/inpEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/label_UserName" />
+        app:layout_constraintStart_toEndOf="@+id/labelEmail" />
 
     <EditText
-        android:id="@+id/input_CreditCard"
+        android:id="@+id/inpEmail"
         style="@style/config_account_field"
         android:hint="@string/label_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_UserName" />
+        app:layout_constraintTop_toBottomOf="@+id/labelEmail" />
 
     <TextView
-        android:id="@+id/label_Telephone"
-        style="@style/config_account_label"
-        android:layout_marginTop="36dp"
-        android:text="@string/label_telephone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_CreditCard" />
-
-    <Button
-        android:id="@+id/btn_EditTelephone"
-        style="@style/editButton"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/input_Telephone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/label_Telephone" />
-
-    <EditText
-        android:id="@+id/input_Telephone"
-        style="@style/config_account_field"
-        android:hint="@string/label_telephone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_Telephone" />
-
-    <TextView
-        android:id="@+id/label_Password"
+        android:id="@+id/labelPassword"
         style="@style/config_account_label"
         android:layout_marginTop="28dp"
         android:text="@string/label_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_Telephone" />
+        app:layout_constraintTop_toBottomOf="@+id/inpEmail" />
 
     <Button
-        android:id="@+id/btn_EditPassword"
+        android:id="@+id/btnEditPassword"
         style="@style/editButton"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/input_Password"
+        app:layout_constraintBottom_toTopOf="@+id/inpPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/label_Password" />
+        app:layout_constraintStart_toEndOf="@+id/labelPassword" />
 
     <EditText
-        android:id="@+id/input_Password"
+        android:id="@+id/inpPassword"
         style="@style/config_account_field"
         android:hint="@string/label_password"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_Password" />
+        app:layout_constraintTop_toBottomOf="@+id/labelPassword" />
 
     <Button
         android:id="@+id/btn_Submit"
@@ -141,5 +114,5 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_Password" />
+        app:layout_constraintTop_toBottomOf="@+id/inpPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>
