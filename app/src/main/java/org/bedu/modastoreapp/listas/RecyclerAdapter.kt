@@ -1,4 +1,4 @@
-package org.bedu.modastoreapp
+package org.bedu.modastoreapp.listas
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,11 +8,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import org.bedu.modastoreapp.R
 import org.bedu.modastoreapp.modelos.Product
 
 class RecyclerAdapter(
     private val context: Context,
-    private val products: MutableList<org.bedu.modastoreapp.modelos.Product>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>()  {
+    private val products: MutableList<Product>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>()  {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -41,7 +42,6 @@ class RecyclerAdapter(
             itemView.setOnClickListener { v ->
                 Toast.makeText( v.context, "CLICKK", Toast.LENGTH_SHORT).show()
             }
-
         }
     }
 }

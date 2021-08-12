@@ -1,4 +1,4 @@
-package org.bedu.modastoreapp
+package org.bedu.modastoreapp.listas
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.flaviofaria.kenburnsview.KenBurnsView
 import com.squareup.picasso.Picasso
-import org.bedu.modastoreapp.ShopContainerAdapter.TravelLocationViewHolder
+import org.bedu.modastoreapp.R
+import org.bedu.modastoreapp.listas.ShopContainerAdapter.TravelLocationViewHolder
 
 class ShopContainerAdapter(private val shopContainers: MutableList<ShopContainer>) :
     RecyclerView.Adapter<TravelLocationViewHolder>() {
@@ -37,7 +38,6 @@ class ShopContainerAdapter(private val shopContainers: MutableList<ShopContainer
         fun setLocationData(shopContainer: ShopContainer) {
             shopContainer.image?.let { Picasso.get().load(it).into(kbvLocation) }
             textTitle.text = shopContainer.title
-            //textStarRating.text = shopContainer.starRating.toString()
         }
 
         init {

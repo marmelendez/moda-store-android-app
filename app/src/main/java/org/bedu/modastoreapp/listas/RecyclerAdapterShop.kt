@@ -1,4 +1,4 @@
-package org.bedu.sesion5
+package org.bedu.modastoreapp.listas
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,20 +7,17 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import org.bedu.modastoreapp.Product
 import org.bedu.modastoreapp.R
+import org.bedu.modastoreapp.modelos.Product
 
-//Declaración con constructor
 class RecyclerAdapterShop (
     private val context:Context,
-    private val products: MutableList<org.bedu.modastoreapp.modelos.Product>): RecyclerView.Adapter<RecyclerAdapterShop.ViewHolder>() { //private val clickListener: (Product) -> Unit
+    private val products: MutableList<Product>): RecyclerView.Adapter<RecyclerAdapterShop.ViewHolder>() { //private val clickListener: (Product) -> Unit
 
-    //Aquí atamos el ViewHolder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val product = products.get(position)
         holder.bind(product, context)
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -31,22 +28,15 @@ class RecyclerAdapterShop (
         return products.size
     }
 
-    //El ViewHolder ata los datos del RecyclerView a la Vista para desplegar la información
-    //También se encarga de gestionar los eventos de la View, como los clickListeners
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        //obteniendo las referencias a las Views
         val productName = view.findViewById(R.id.itemName) as TextView
-        //val description = view.findViewById(R.id.tvDescription) as TextView
         val price = view.findViewById(R.id.itemPrice) as TextView
         val image = view.findViewById(R.id.itemImage) as ImageView
 
-        //"atando" los datos a las Views
-        fun bind(product: org.bedu.modastoreapp.modelos.Product, context: Context){
+        fun bind(product: Product, context: Context){
             productName.text = product.name
-            //description.text = product.description
             price.text = product.price.toString()
             image.setImageResource(product.image)
         }
     }
-
 }

@@ -5,8 +5,6 @@
  */
 package org.bedu.modastoreapp.modelos
 
-import org.bedu.modastoreapp.modelos.Category
-
 data class Product(
     val idProduct: Int,
     val name: String,

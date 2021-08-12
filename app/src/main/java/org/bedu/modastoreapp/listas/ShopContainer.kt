@@ -1,4 +1,4 @@
-package org.bedu.modastoreapp
+package org.bedu.modastoreapp.listas
 
 class ShopContainer {
     var title: String? = null
