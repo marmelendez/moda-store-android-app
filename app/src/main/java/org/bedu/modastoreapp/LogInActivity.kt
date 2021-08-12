@@ -33,13 +33,13 @@ class LogInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
 
-        //Quito AppBar
-        //supportActionBar?.hide()
+        /*Quito AppBar
+        supportActionBar?.hide()
 
         //Conexion a Sign In
-        //var newAccount: TextView = findViewById(R.id.textCreate)
+        var newAccount: TextView = findViewById(R.id.textCreate)
 
-        /*newAccount.setOnClickListener {
+        newAccount.setOnClickListener {
           val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }*/

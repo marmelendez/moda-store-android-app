@@ -10,11 +10,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
-import org.bedu.modastoreapp.modelos.BaseDatos
-import org.bedu.modastoreapp.modelos.Form
-import org.bedu.modastoreapp.modelos.Form.*
 import org.bedu.modastoreapp.modelos.RegisteredUser
-import org.bedu.modastoreapp.modelos.Store
+import org.bedu.modastoreapp.modelos.Form.*
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var returnIcon: Button

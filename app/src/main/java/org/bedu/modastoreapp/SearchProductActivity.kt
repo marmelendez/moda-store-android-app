@@ -6,11 +6,9 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.Toast
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView;
 import org.bedu.modastoreapp.modelos.BaseDatos
-import org.bedu.modastoreapp.modelos.Form
 import org.bedu.modastoreapp.modelos.Product
 import org.bedu.modastoreapp.modelos.Store
 
@@ -29,10 +27,6 @@ class SearchProductActivity : AppCompatActivity() {
         inpSearch = findViewById(R.id.inp_Search)
 
         setAdapter(products)
-        /*var adapter = RecyclerAdapter(this, products)
-        var gridLayoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
-        dataList.setLayoutManager(gridLayoutManager)
-        dataList.setAdapter(adapter)*/
 
         inpSearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {

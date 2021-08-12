@@ -1,23 +1,25 @@
 <resources>
-
     <string name="app_name">Moda store</string>
+
     <string name="btn_accountData">Datos de cuenta</string>
     <string name="btn_paymentMethods">Metodos de pago</string>
     <string name="btn_address">Direcciones</string>
     <string name="btn_logout">Cerrar sesión</string>
     <string name="btn_submit">Actualizar</string>
-    <string name="btn_logIn">Log in</string>
-    <string name="btn_signIn">Sign in</string>
-    <string name="btn_signIn2">Registrarse</string>
+    <string name="btn_logIn">Iniciar sesión</string>
+    <string name="btn_signIn">Registrarse</string>
+
     <string name="font_family_light">sans-serif-light</string>
     <string name="subtitulo2">sans-serif-medium</string>
     <string name="subtitulo1">sans-serif</string>
     <string name="font_family_condensed">sans-serif-condensed</string>
     <string name="boton">sans-serif-black</string>
     <string name="font_family_thin">sans-serif-thin</string>
+
     <string name="txt_configuration">Configuracion</string>
     <string name="txt_config_account">Datos de cuenta</string>
     <string name="txt_signIn">Registrarse</string>
+
     <string name="label_username">Nombre de usuario</string>
     <string name="label_email">Correo</string>
     <string name="label_telephone">Telefono</string>
@@ -26,21 +28,7 @@
     <string name="label_debitCard">Tarjeta de debito</string>
     <string name="label_name">Nombre</string>
     <string name="label_address">Dirección</string>
-    <string name="user_address">Calle #00, Ciudad, Estado, Pais, 31522</string>
+
     <string name="status_default">Default</string>
-    <string name="login">Login</string>
-    <string name="sign">Sign In</string>
-    <string name="name">Name</string>
-    <string name="password">Password</string>
-    <string name="create_account">Create account</string>
-    <string name="username">UserName</string>
-    <string name="email">E-mail</string>
-    <string name="phone">Phone</string>
-    <string name="confirm">ConfirmPassword</string>
     <string name="warning">error</string>
-    <string name="show_dialog">Show Dialog</string>
-    <string name="confirm">Confirm</string>
-    <string name="are_you_sure">Are you sure?</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Cancel</string>
 </resources>

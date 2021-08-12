@@ -6,10 +6,12 @@
         <entry key="app/src/main/res/layout/activity_config_account_data.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_config_address.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_config_payment.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/activity_configuration.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_recycler.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_search_product.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.1296875" />
+        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
         <entry key="app/src/main/res/layout/grid_layout.xml" value="0.253125" />
       </map>
     </option>
