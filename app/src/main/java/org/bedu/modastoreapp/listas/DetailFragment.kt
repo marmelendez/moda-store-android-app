@@ -1,4 +1,4 @@
-package org.bedu.modastoreapp
+package org.bedu.modastoreapp.listas
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.RatingBar
 import android.widget.TextView
+import org.bedu.modastoreapp.modelos.ProductPar
+import org.bedu.modastoreapp.R
 
 class DetailFragment : Fragment() {
 
@@ -28,11 +29,10 @@ class DetailFragment : Fragment() {
         return view
     }
 
-    fun showProduct(product: Product){
+    fun showProduct(product: ProductPar){
         view?.visibility = View.VISIBLE
         productName.text = product.name
         productPrice.text = product.price
         imgProduct.setImageResource(product.idImage)
     }
-
 }

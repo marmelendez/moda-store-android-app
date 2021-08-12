@@ -1,9 +1,9 @@
-package org.bedu.modastoreapp
+package org.bedu.modastoreapp.modelos
 
 import android.os.Parcel
 import android.os.Parcelable
 
-class Product (
+class ProductPar (
     val name: String,
     val description: String,
     val price: String,
@@ -31,12 +31,12 @@ class Product (
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Product> {
-        override fun createFromParcel(parcel: Parcel): Product {
-            return Product(parcel)
+    companion object CREATOR : Parcelable.Creator<ProductPar> {
+        override fun createFromParcel(parcel: Parcel): ProductPar {
+            return ProductPar(parcel)
         }
 
-        override fun newArray(size: Int): Array<Product?> {
+        override fun newArray(size: Int): Array<ProductPar?> {
             return arrayOfNulls(size)
         }
     }

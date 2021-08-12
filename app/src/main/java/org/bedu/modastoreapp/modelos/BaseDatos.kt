@@ -12,7 +12,6 @@ class BaseDatos {
         private val myStore = Store("MODA Store")
 
         private var idProduct = 1
-        private var idUser = 1
         private var idCategory = 1
 
         fun start(): Store {
@@ -57,7 +56,6 @@ class BaseDatos {
             myStore.addProduct(Product(idProduct++,"Camisa vaquera",category[1],"Azul",180F, R.drawable.producth10,mapOf("S" to 100, "M" to 50, "X" to 100)))
         }
 
-
         private fun setUsers() {
             myStore.addUser(RegisteredUser(myStore.catalogProduct.size, "tomas11", "tomas@hotmail.com", "123"))
             myStore.addUser(RegisteredUser(myStore.catalogProduct.size, "didier32", "didier@hotmail.com", "1234"))
@@ -90,22 +88,23 @@ class BaseDatos {
 
         private fun setFavorites() {
             // User: tomas11
-            myStore.listOfUsers[0].addToFavorite(myStore.catalogProduct[10])
+            myStore.listOfUsers[0].addToFavorite(myStore.catalogProduct[18])
+            myStore.listOfUsers[0].addToFavorite(myStore.catalogProduct[19])
 
             // User: didier32
-            myStore.listOfUsers[1].addToFavorite(myStore.catalogProduct[0])
-            myStore.listOfUsers[1].addToFavorite(myStore.catalogProduct[8])
+            myStore.listOfUsers[1].addToFavorite(myStore.catalogProduct[10])
+            myStore.listOfUsers[1].addToFavorite(myStore.catalogProduct[11])
 
             // User: josearm21
-            myStore.listOfUsers[2].addToFavorite(myStore.catalogProduct[9])
-            myStore.listOfUsers[2].addToFavorite(myStore.catalogProduct[10])
-            myStore.listOfUsers[2].addToFavorite(myStore.catalogProduct[11])
+            myStore.listOfUsers[2].addToFavorite(myStore.catalogProduct[12])
+            myStore.listOfUsers[2].addToFavorite(myStore.catalogProduct[14])
+            myStore.listOfUsers[2].addToFavorite(myStore.catalogProduct[15])
 
             // User: maribel07
-            myStore.listOfUsers[3].addToFavorite(myStore.catalogProduct[12])
-            myStore.listOfUsers[3].addToFavorite(myStore.catalogProduct[13])
-            myStore.listOfUsers[3].addToFavorite(myStore.catalogProduct[14])
-            myStore.listOfUsers[3].addToFavorite(myStore.catalogProduct[15])
+            myStore.listOfUsers[3].addToFavorite(myStore.catalogProduct[5])
+            myStore.listOfUsers[3].addToFavorite(myStore.catalogProduct[6])
+            myStore.listOfUsers[3].addToFavorite(myStore.catalogProduct[7])
+            myStore.listOfUsers[3].addToFavorite(myStore.catalogProduct[8])
         }
 
         private fun setAddress() {
@@ -114,7 +113,6 @@ class BaseDatos {
 
             // User: didier32
             myStore.listOfUsers[1].setAddress("Miguel Aleman 119, Mexico, Jalisco, Guadalajara, 21170")
-
         }
 
         private fun setPaymentMethod() {

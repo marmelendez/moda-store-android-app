@@ -1,6 +1,5 @@
 package org.bedu.modastoreapp
 
-import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,11 +8,9 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.view.isVisible
 import org.bedu.modastoreapp.modelos.BaseDatos
 import org.bedu.modastoreapp.modelos.RegisteredUser
-import org.bedu.modastoreapp.modelos.Store
 
 val MYSTORE = BaseDatos.start()
 const val USERNAME = "org.bedu.activity.USERNAME" //ubicacion donde el bundle guardara variable

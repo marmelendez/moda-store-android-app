@@ -3,13 +3,12 @@ package org.bedu.modastoreapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import me.ibrahimsn.lib.SmoothBottomBar
+import org.bedu.modastoreapp.listas.DetailFragment
+import org.bedu.modastoreapp.listas.ListFragment
 
 class CartActivity : AppCompatActivity() {
 

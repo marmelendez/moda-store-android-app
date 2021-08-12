@@ -46,7 +46,7 @@
 
         <fragment
             android:id="@+id/fragmentList"
-            class="org.bedu.modastoreapp.ListFragment"
+            class="org.bedu.modastoreapp.listas.ListFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

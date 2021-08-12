@@ -2,6 +2,8 @@ package org.bedu.modastoreapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import org.bedu.modastoreapp.listas.DetailFragment
+import org.bedu.modastoreapp.modelos.ProductPar
 
 class DetailActivity : AppCompatActivity() {
 
@@ -13,12 +15,10 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        val product = intent.getParcelableExtra<Product>(PRODUCT)
-
+        val product = intent.getParcelableExtra<ProductPar>(PRODUCT)
         val detailFragment = supportFragmentManager.findFragmentById(R.id.fragmentDetail) as? DetailFragment
         if (product != null) {
             detailFragment?.showProduct(product)
         }
-
     }
 }

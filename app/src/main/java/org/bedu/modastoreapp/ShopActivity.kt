@@ -3,18 +3,16 @@ package org.bedu.modastoreapp
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import me.ibrahimsn.lib.SmoothBottomBar
+import org.bedu.modastoreapp.listas.ShopContainer
+import org.bedu.modastoreapp.listas.ShopContainerAdapter
 import java.util.ArrayList
 
 class ShopActivity : AppCompatActivity() {
@@ -82,34 +80,6 @@ class ShopActivity : AppCompatActivity() {
             sliderWomen.add(sliderWomenv)
         }
 
-        /*val sliderWomenv1 = ShopContainer()
-        sliderWomenv1.image = R.drawable.image_m1
-        sliderWomenv1.title = "Blusa blanca"
-        sliderWomenv1.location = "CDMX"
-        sliderWomenv1.starRating = 4.8f
-        sliderWomen.add(sliderWomenv1)
-
-        val sliderWomenv2 = ShopContainer()
-        sliderWomenv2.image = R.drawable.image_m2
-        sliderWomenv2.title = "Sombrero negro"
-        sliderWomenv2.location = "CDMX"
-        sliderWomenv2.starRating = 4.5f
-        sliderWomen.add(sliderWomenv2)
-
-        val sliderWomenv3 = ShopContainer()
-        sliderWomenv3.image = R.drawable.image_m3
-        sliderWomenv3.title = "Blusa blanca"
-        sliderWomenv3.location = "CDMX"
-        sliderWomenv3.starRating = 4.3f
-        sliderWomen.add(sliderWomenv3)
-
-        val sliderWomenv4 = ShopContainer()
-        sliderWomenv4.image = R.drawable.image_m4
-        sliderWomenv4.title = "Blusa azul"
-        sliderWomenv4.location = "CDMX"
-        sliderWomenv4.starRating = 4.2f
-        sliderWomen.add(sliderWomenv4)*/
-
         womenViewPager.adapter = ShopContainerAdapter(sliderWomen)
         womenViewPager.clipToPadding = false
         womenViewPager.clipChildren = false
@@ -133,35 +103,6 @@ class ShopActivity : AppCompatActivity() {
             sliderMenv1.location = products[i].price
             sliderMEN.add(sliderMenv1)
         }
-
-
-        /*val sliderMenv1 = ShopContainer()
-        sliderMenv1.image = R.drawable.image_h1
-        sliderMenv1.title = "Chamarra negra "
-        sliderMenv1.location = "CDMX"
-        sliderMenv1.starRating = 4.8f
-        sliderMEN.add(sliderMenv1)
-
-        val sliderMenv2 = ShopContainer()
-        sliderMenv2.image = R.drawable.image_h2
-        sliderMenv2.title = "Gorra naranja"
-        sliderMenv2.location = "CDMX"
-        sliderMenv2.starRating = 4.5f
-        sliderMEN.add(sliderMenv2)
-
-        val sliderMenv3 = ShopContainer()
-        sliderMenv3.image = R.drawable.image_h3
-        sliderMenv3.title = "Chaleco azul"
-        sliderMenv3.location = "CDMX"
-        sliderMenv3.starRating = 4.3f
-        sliderMEN.add(sliderMenv3)
-
-        val sliderMenv4 = ShopContainer()
-        sliderMenv4.image = R.drawable.image_h4
-        sliderMenv4.title = "Chamarra gris"
-        sliderMenv4.location = "CDMX"
-        sliderMenv4.starRating = 4.2f
-        sliderMEN.add(sliderMenv4)*/
 
         menViewPager.adapter = ShopContainerAdapter(sliderMEN)
         menViewPager.clipToPadding = false
