@@ -9,14 +9,18 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
+import me.ibrahimsn.lib.SmoothBottomBar
 
 class CartActivity : AppCompatActivity() {
+
+    private lateinit var bottomBar : SmoothBottomBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
 
         val listFragment = supportFragmentManager.findFragmentById(R.id.fragmentList) as ListFragment
+        bottomBar = findViewById(R.id.bottomBar)
 
         listFragment.setListener{
             val detailFragment = supportFragmentManager.findFragmentById(R.id.fragmentDetail) as? DetailFragment
@@ -31,31 +35,21 @@ class CartActivity : AppCompatActivity() {
             }
         }
 
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-            val inflater = menuInflater
-            inflater.inflate(R.menu.navigation_menu, menu)
-            return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.menuShoppingCart -> {
-                Toast.makeText(this, "Carrito de compras", Toast.LENGTH_SHORT).show()
-                return true
-            }
-            R.id.menuShop -> {
-                val intent = Intent(this, ShopActivity::class.java)
-                startActivity(intent)
-                return true
-            }
-            R.id.menuProfile -> {
-                val intent = Intent(this, LogInActivity::class.java)
-                startActivity(intent)
-                return true
+        bottomBar.onItemSelected = {
+            when (it) {
+                /*0 -> {
+                    val intent = Intent(this, ShopActivity::class.java)
+                    startActivity(intent)
+                }*/
+                1 -> {
+                    val intent = Intent(this, CartActivity::class.java)
+                    startActivity(intent)
+                }
+                2 -> {
+                    val intent = Intent(this, ConfigurationActivity::class.java)
+                    startActivity(intent)
+                }
             }
         }
-        return super.onOptionsItemSelected(item)
     }
 }

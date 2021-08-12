@@ -11,21 +11,34 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import me.ibrahimsn.lib.SmoothBottomBar
 import java.util.ArrayList
 
 class ShopActivity : AppCompatActivity() {
 
     private lateinit var btn_cart: Button
+    private lateinit var bottomBar : SmoothBottomBar
 
     override fun onCreate(saveWomenInstanceState: Bundle?) {
         super.onCreate(saveWomenInstanceState)
         setContentView(R.layout.activity_shop)
 
+        bottomBar = findViewById(R.id.bottomBar)
         val womenViewPager = findViewById<ViewPager2>(R.id.WomenSlider)
         val sliderWomen: MutableList<ShopContainer> = ArrayList()
 
-
-
+        bottomBar.onItemSelected = {
+            when (it) {
+                1 -> {
+                    val intent = Intent(this, CartActivity::class.java)
+                    startActivity(intent)
+                }
+                2 -> {
+                    val intent = Intent(this, ConfigurationActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+        }
 
         val sliderWomenv1 = ShopContainer()
         sliderWomenv1.image = R.drawable.image_m1
