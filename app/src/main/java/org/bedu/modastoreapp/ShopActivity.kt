@@ -1,6 +1,11 @@
 package org.bedu.modastoreapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -10,12 +15,17 @@ import java.util.ArrayList
 
 class ShopActivity : AppCompatActivity() {
 
+    private lateinit var btn_cart: Button
+
     override fun onCreate(saveWomenInstanceState: Bundle?) {
         super.onCreate(saveWomenInstanceState)
         setContentView(R.layout.activity_shop)
 
         val womenViewPager = findViewById<ViewPager2>(R.id.WomenSlider)
         val sliderWomen: MutableList<ShopContainer> = ArrayList()
+
+
+
 
         val sliderWomenv1 = ShopContainer()
         sliderWomenv1.image = R.drawable.image_m1
@@ -150,6 +160,12 @@ class ShopActivity : AppCompatActivity() {
             page.scaleY = 0.95f + r * 0.05f
         }
         kidViewPager.setPageTransformer(compositeKidPageTransformer)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.navigation_menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
 }

@@ -35,4 +35,5 @@
     <string name="mujer">MUJER</string>
     <string name="hombre">HOMBRE</string>
     <string name="ninos">NIÑOS</string>
+    <string name="cartmessage">Carrito de compras</string>
 </resources>

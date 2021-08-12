@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="org.bedu.modastoreapp">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -17,6 +18,9 @@
         <activity android:name=".ConfigAccountDataActivity" />
         <activity android:name=".LogInActivity" />
         <activity android:name=".ShopActivity" />
+        <activity android:name=".CartActivity"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".DetailActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
