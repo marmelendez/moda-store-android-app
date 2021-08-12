@@ -41,6 +41,7 @@ class LogInActivity : AppCompatActivity() {
 
         newAccount.setOnClickListener {
           val intent = Intent(this, SignInActivity::class.java)
+
             startActivity(intent)
         }*/
         
@@ -97,7 +98,7 @@ class LogInActivity : AppCompatActivity() {
             val bundle = Bundle()
             bundle.putString(USERNAME, inputName.text.toString())
 
-            val intent = Intent(this, ConfigurationActivity::class.java).apply {
+            val intent = Intent(this, ShopActivity::class.java).apply {
                 putExtras(bundle)
             }
 

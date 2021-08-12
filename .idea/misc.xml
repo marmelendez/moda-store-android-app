@@ -3,16 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/drawable/background_star_rating.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/drawable/ic_search.xml" value="0.2203125" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_cart.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_config_address.xml" value="0.33" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_configuration.xml" value="0.25" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_home.xml" value="0.5" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_log_in.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_shop.xml" value="0.22" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/fragment_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/fragment_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/item_contact.xml" value="0.5" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/item_container_location.xml" value="0.25" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/prueba.xml" value="0.33" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/menu/navigation_menu.xml" value="0.18" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.4722222222222222" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.4722222222222222" />
+        <entry key="app/src/main/res/layout/activity_cart.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_config_account_data.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_config_address.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_config_payment.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_configuration.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_recycler.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_search_product.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_shop.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/fragment_list.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/grid_layout.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/item_contact.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/item_container_location.xml" value="0.253125" />
       </map>
     </option>
   </component>

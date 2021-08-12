@@ -27,6 +27,20 @@
     <string name="label_address">Dirección</string>
 
     <string name="status_default">Default</string>
+
+    <string name="explore">Explore</string>
+    <string name="search">Search</string>
+    <string name="favorite">Favorite</string>
+    <string name="shop">Shop</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="profile">Profile</string>
+    <string name="cart">Cart</string>
+    <string name="mujer">MUJER</string>
+    <string name="hombre">HOMBRE</string>
+    <string name="ninos">NIÑOS</string>
+    <string name="cartmessage">Carrito de compras</string>
+
     <string name="warning">error</string>
     <string name="ok">Ok</string>
+  
 </resources>
