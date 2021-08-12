@@ -34,4 +34,6 @@
     <string name="email">E-mail</string>
     <string name="phone">Phone</string>
     <string name="confirm">ConfirmPassword</string>
+    <string name="tallas">Tallas</string>
+    <string name="colores">Colores</string>
 </resources>
