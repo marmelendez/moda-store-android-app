@@ -28,7 +28,7 @@ maribel07 | 123456 |
 
 ### ¿Que puedes hacer en la aplicación?
 Tienes la opción de:
-- Iniciar sesión (con algunos de los usarios de la tabla anterior)
+- Iniciar sesión (con algunos de los usuarios de la tabla anterior)
 - Registrarte
 - Buscar un articulo
 - Ver tu carrito de compras
