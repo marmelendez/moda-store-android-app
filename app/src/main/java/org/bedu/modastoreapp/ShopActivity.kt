@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -17,9 +16,8 @@ import java.util.ArrayList
 
 class ShopActivity : AppCompatActivity() {
 
-    private lateinit var btn_cart: Button
     private lateinit var bottomBar : SmoothBottomBar
-    private lateinit var searchInp : EditText
+    private lateinit var searchInp : Button
 
     override fun onCreate(saveWomenInstanceState: Bundle?) {
         super.onCreate(saveWomenInstanceState)
@@ -164,6 +162,5 @@ class ShopActivity : AppCompatActivity() {
         inflater.inflate(R.menu.navigation_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
 }
 

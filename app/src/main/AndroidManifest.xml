@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="org.bedu.modastoreapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".ProductActivity"
+            android:exported="true" />
         <activity
             android:name=".SearchProductActivity"
             android:exported="true" />
@@ -22,7 +25,8 @@
         <activity android:name=".ConfigAccountDataActivity" />
         <activity android:name=".LogInActivity" />
         <activity android:name=".ShopActivity" />
-        <activity android:name=".CartActivity"
+        <activity
+            android:name=".CartActivity"
             tools:ignore="Instantiatable" />
         <activity android:name=".DetailActivity" />
         <activity

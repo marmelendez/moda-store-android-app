@@ -58,34 +58,47 @@ class CartActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        bottomBar.onItemReselected = {
+            evalCase(it, userName)
+        }
+
 
         bottomBar.onItemSelected = {
-            when (it) {
-                /*0 -> {
-                    val intent = Intent(this, ShopActivity::class.java)
-                    startActivity(intent)
-                }*/
-                1 -> {
-                    val bundle = Bundle()
-                    bundle.putString(USERNAME, userName)
+            evalCase(it, userName)
+        }
+    }
 
-                    val intent = Intent(this, CartActivity::class.java).apply {
-                        putExtras(bundle)
-                    }
+    private fun evalCase(it: Int, userName: String?) {
+        when (it) {
+            0 -> {
+                val bundle = Bundle()
+                bundle.putString(USERNAME, userName)
 
-                    startActivity(intent)
+                val intent = Intent(this, ShopActivity::class.java).apply {
+                    putExtras(bundle)
                 }
-                2 -> {
-                    val bundle = Bundle()
-                    bundle.putString(USERNAME, userName)
 
-                    val intent = Intent(this, ConfigurationActivity::class.java).apply {
-                        putExtras(bundle)
-                    }
+                startActivity(intent)
+            }1 -> {
+            val bundle = Bundle()
+            bundle.putString(USERNAME, userName)
 
-                    startActivity(intent)
-                }
+            val intent = Intent(this, CartActivity::class.java).apply {
+                putExtras(bundle)
+            }
+
+            startActivity(intent)
+        }2 -> {
+            val bundle = Bundle()
+            bundle.putString(USERNAME, userName)
+
+            val intent = Intent(this, ConfigurationActivity::class.java).apply {
+                putExtras(bundle)
+            }
+
+            startActivity(intent)
             }
         }
+
     }
 }

@@ -7,6 +7,7 @@
     <string name="btn_submit">Actualizar</string>
     <string name="btn_logIn">Iniciar sesión</string>
     <string name="txt_signIn">Registrarse</string>
+    <string name="btn_addCart">Agregar a carrito</string>
 
     <string name="font_family_light">sans-serif-light</string>
     <string name="subtitulo2">sans-serif-medium</string>
@@ -25,6 +26,8 @@
     <string name="label_creditCard">Tarjeta de credito</string>
     <string name="label_debitCard">Tarjeta de debito</string>
     <string name="label_address">Dirección</string>
+    <string name="label_productname">Nombre del producto</string>
+    <string name="label_productprice">Precio del producto</string>
 
     <string name="status_default">Default</string>
 
@@ -42,5 +45,5 @@
 
     <string name="warning">error</string>
     <string name="ok">Ok</string>
-  
+
 </resources>

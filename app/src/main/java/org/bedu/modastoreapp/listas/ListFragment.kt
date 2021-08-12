@@ -41,7 +41,7 @@ class ListFragment : Fragment() {
     private fun setUpRecyclerView(){
         recyclerProducts.setHasFixedSize(true)
         recyclerProducts.layoutManager = LinearLayoutManager(activity)
-        mAdapter = RecyclerAdapterShop (requireActivity(),getProducts())
+        mAdapter = RecyclerAdapterShop (requireActivity(),getProducts(), username)
         recyclerProducts.adapter = mAdapter
     }
 

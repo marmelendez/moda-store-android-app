@@ -13,7 +13,8 @@ import org.bedu.modastoreapp.modelos.BaseDatos
 import org.bedu.modastoreapp.modelos.RegisteredUser
 
 val MYSTORE = BaseDatos.start()
-const val USERNAME = "org.bedu.activity.USERNAME" //ubicacion donde el bundle guardara variable
+const val USERNAME = "org.bedu.activity.USERNAME"
+const val PRODUCTID = "org.bedu.activity.PRODUCTID"
 
 class LogInActivity : AppCompatActivity() {
     private lateinit var buttonLogIn: Button
@@ -60,7 +61,7 @@ class LogInActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable) {
                 if (MYSTORE.getUserName(inputName.text.toString()) == null) {
                     warningUser.isVisible = true
-                    warningUser.setText("No se encontro un usuario registrado con ese nombre")
+                    warningUser.setText("Usuario no registrado")
                     buttonLogIn.isEnabled = false
                 } else {
                     inpUser = inputName.text.toString()

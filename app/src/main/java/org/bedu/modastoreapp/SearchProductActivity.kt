@@ -20,31 +20,56 @@ class SearchProductActivity : AppCompatActivity() {
     private lateinit var products: MutableList<Product>
     private lateinit var inpSearch: EditText
     private lateinit var bottomBar : SmoothBottomBar
-    val myStore: Store = BaseDatos.start()
+    private var listener : (Product) ->Unit = {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_product)
 
-        products = myStore.catalogProduct
+        products = MYSTORE.catalogProduct
         dataList = findViewById(R.id.datalist)
         inpSearch = findViewById(R.id.inp_Search)
         bottomBar = findViewById(R.id.bottomBarSearch)
 
-        setAdapter(products)
+        val bundle = intent.extras
+        val userName = bundle?.getString(USERNAME)
+
+        if (userName != null) {
+            setAdapter(products, userName)
+        } else {
+            setAdapter(products, "")
+        }
 
         bottomBar.onItemSelected = {
             when (it) {
                 0 -> {
-                    val intent = Intent(this, ShopActivity::class.java)
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, userName)
+
+                    val intent = Intent(this, ShopActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
                     startActivity(intent)
                 }
                 1 -> {
-                    val intent = Intent(this, CartActivity::class.java)
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, userName)
+
+                    val intent = Intent(this, CartActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
                     startActivity(intent)
                 }
                 2 -> {
-                    val intent = Intent(this, ConfigurationActivity::class.java)
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, userName)
+
+                    val intent = Intent(this, ConfigurationActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
                     startActivity(intent)
                 }
             }
@@ -52,12 +77,16 @@ class SearchProductActivity : AppCompatActivity() {
 
         inpSearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
-                val result = myStore.searchProduct(inpSearch.text.toString())
+                val result = MYSTORE.searchProduct(inpSearch.text.toString())
                 if (!result.isNotEmpty()) {
                     Toast.makeText(applicationContext ,"Ups! no encontramos un producto con ese nombre pero esto es similar;)", Toast.LENGTH_LONG).show()
                 }  else {
                     products = result.toMutableList()
-                    setAdapter(products)
+                    if (userName != null) {
+                        setAdapter(products,userName)
+                    } else {
+                        setAdapter(products,"")
+                    }
                 }
             }
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
@@ -65,8 +94,9 @@ class SearchProductActivity : AppCompatActivity() {
         })
     }
 
-    private fun setAdapter(products: MutableList<Product>) {
-        var adapter = RecyclerAdapter(this, products)
+
+    private fun setAdapter(products: MutableList<Product>, userName: String) {
+        var adapter = RecyclerAdapter(this, products, userName)
         var gridLayoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
         dataList.setLayoutManager(gridLayoutManager)
         dataList.setAdapter(adapter)
