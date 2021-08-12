@@ -92,7 +92,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="80dp"
         android:background="@drawable/button_sign"
-        android:text="@string/btn_signIn"
+        android:text="@string/txt_signIn"
         android:textColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

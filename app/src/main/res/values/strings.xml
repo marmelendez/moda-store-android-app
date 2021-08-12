@@ -1,13 +1,12 @@
 <resources>
     <string name="app_name">Moda store</string>
 
-    <string name="btn_accountData">Datos de cuenta</string>
     <string name="btn_paymentMethods">Metodos de pago</string>
     <string name="btn_address">Direcciones</string>
     <string name="btn_logout">Cerrar sesión</string>
     <string name="btn_submit">Actualizar</string>
     <string name="btn_logIn">Iniciar sesión</string>
-    <string name="btn_signIn">Registrarse</string>
+    <string name="txt_signIn">Registrarse</string>
 
     <string name="font_family_light">sans-serif-light</string>
     <string name="subtitulo2">sans-serif-medium</string>
@@ -18,7 +17,6 @@
 
     <string name="txt_configuration">Configuracion</string>
     <string name="txt_config_account">Datos de cuenta</string>
-    <string name="txt_signIn">Registrarse</string>
 
     <string name="label_username">Nombre de usuario</string>
     <string name="label_email">Correo</string>
@@ -26,7 +24,6 @@
     <string name="label_password">Contraseña</string>
     <string name="label_creditCard">Tarjeta de credito</string>
     <string name="label_debitCard">Tarjeta de debito</string>
-    <string name="label_name">Nombre</string>
     <string name="label_address">Dirección</string>
 
     <string name="status_default">Default</string>

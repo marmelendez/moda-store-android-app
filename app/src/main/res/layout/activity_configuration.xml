@@ -26,7 +26,7 @@
         android:id="@+id/btn_Account"
         style="@style/configButtons"
         android:drawableRight="@drawable/ic_next"
-        android:text="@string/btn_accountData"
+        android:text="@string/txt_config_account"
         android:onClick="displayAccountData"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

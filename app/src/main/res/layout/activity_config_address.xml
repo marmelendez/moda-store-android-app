@@ -46,7 +46,6 @@
     <EditText
         android:id="@+id/input_Address"
         style="@style/config_account_field"
-        android:hint="@string/user_address"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

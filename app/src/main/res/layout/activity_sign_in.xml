@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="@string/label_name"
+        android:text="@string/label_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +95,7 @@
     <Button
         android:id="@+id/btn_SignIn"
         style="@style/generalButton"
-        android:text="@string/btn_signIn2"
+        android:text="@string/txt_signIn"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
