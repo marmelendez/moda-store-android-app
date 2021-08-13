@@ -12,6 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".OrderActivity"></activity>
+        <activity android:name=".ProfileActivity" />
         <activity
             android:name=".ProductActivity"
             android:exported="true" />
@@ -41,3 +43,7 @@
     </application>
 
 </manifest>
+
+    <!--android:theme="@style/Theme.ModaStoreApp">
+            <activity android:name=".Orders"></activity>
+            <activity android:name=".ProfileActivity" />-->

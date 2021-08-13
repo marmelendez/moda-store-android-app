@@ -59,7 +59,7 @@ class ShopActivity : AppCompatActivity() {
                     val bundle = Bundle()
                     bundle.putString(USERNAME, userName)
 
-                    val intent = Intent(this, ConfigurationActivity::class.java).apply {
+                    val intent = Intent(this, ProfileActivity::class.java).apply {
                         putExtras(bundle)
                     }
 

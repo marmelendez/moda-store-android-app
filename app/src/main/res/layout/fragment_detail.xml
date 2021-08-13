@@ -34,7 +34,7 @@
         android:id="@+id/imgCProduct"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/image_m1"
+        android:src="@drawable/productm1"
         app:layout_constraintTop_toBottomOf="@id/priceCProduct"
         app:layout_constraintStart_toStartOf="@id/guideline5"
         app:layout_constraintEnd_toEndOf="@id/guideline6"/>

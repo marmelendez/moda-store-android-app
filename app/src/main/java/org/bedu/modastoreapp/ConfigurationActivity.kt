@@ -31,7 +31,7 @@ class ConfigurationActivity : AppCompatActivity() {
         val userName = bundle?.getString(USERNAME)
 
         btn_return.setOnClickListener {
-            buttonShowDialog_onClick()
+            finish()
         }
 
         btn_LogOut.setOnClickListener {

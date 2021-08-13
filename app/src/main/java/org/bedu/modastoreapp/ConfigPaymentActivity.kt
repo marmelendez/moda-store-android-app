@@ -36,18 +36,7 @@ class ConfigPaymentActivity : AppCompatActivity() {
         val regUser = MYSTORE.getUserName(username.toString())
 
         returnIcon.setOnClickListener {
-            val bundle = Bundle()
-            if (regUser != null) {
-                bundle.putString(USERNAME, regUser.getName())
-            } else {
-                bundle.putString(USERNAME, username)
-            }
-
-            val intent = Intent(this, ConfigurationActivity::class.java).apply {
-                putExtras(bundle)
-            }
-
-            startActivity(intent)
+            finish()
         }
 
         if (regUser != null) {
