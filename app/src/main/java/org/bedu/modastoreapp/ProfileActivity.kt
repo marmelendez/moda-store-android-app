@@ -61,39 +61,12 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        bottomBar.onItemReselected = {
+            evalCase(it, userName)
+        }
+
         bottomBar.onItemSelected = {
-            when (it) {
-                0 -> {
-                    val bundle = Bundle()
-                    bundle.putString(USERNAME, userName)
-
-                    val intent = Intent(this, ShopActivity::class.java).apply {
-                        putExtras(bundle)
-                    }
-
-                    startActivity(intent)
-                }
-                1 -> {
-                    val bundle = Bundle()
-                    bundle.putString(USERNAME, userName)
-
-                    val intent = Intent(this, CartActivity::class.java).apply {
-                        putExtras(bundle)
-                    }
-
-                    startActivity(intent)
-                }
-                2 -> {
-                    val bundle = Bundle()
-                    bundle.putString(USERNAME, userName)
-
-                    val intent = Intent(this, ProfileActivity::class.java).apply {
-                        putExtras(bundle)
-                    }
-
-                    startActivity(intent)
-                }
-            }
+            evalCase(it, userName)
         }
 
         if (userName != null) {
@@ -113,6 +86,40 @@ class ProfileActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this,2)
         Adapter = RecyclerAdapter(this, products, userName)
         recyclerView.adapter = Adapter
+
+    }
+
+    private fun evalCase(it: Int, userName: String?) {
+        when (it) {
+            0 -> {
+                val bundle = Bundle()
+                bundle.putString(USERNAME, userName)
+
+                val intent = Intent(this, ShopActivity::class.java).apply {
+                    putExtras(bundle)
+                }
+
+                startActivity(intent)
+            }1 -> {
+            val bundle = Bundle()
+            bundle.putString(USERNAME, userName)
+
+            val intent = Intent(this, CartActivity::class.java).apply {
+                putExtras(bundle)
+            }
+
+            startActivity(intent)
+        }2 -> {
+            val bundle = Bundle()
+            bundle.putString(USERNAME, userName)
+
+            val intent = Intent(this, ProfileActivity::class.java).apply {
+                putExtras(bundle)
+            }
+
+            startActivity(intent)
+        }
+        }
 
     }
 }

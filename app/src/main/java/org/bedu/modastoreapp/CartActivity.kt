@@ -116,15 +116,15 @@ class CartActivity : AppCompatActivity() {
             }
 
             startActivity(intent)
-        }2 -> {
-            val bundle = Bundle()
-            bundle.putString(USERNAME, userName)
+            }2 -> {
+                val bundle = Bundle()
+                bundle.putString(USERNAME, userName)
 
-            val intent = Intent(this, ProfileActivity::class.java).apply {
-                putExtras(bundle)
-            }
+                val intent = Intent(this, ProfileActivity::class.java).apply {
+                    putExtras(bundle)
+                }
 
-            startActivity(intent)
+                startActivity(intent)
             }
         }
 

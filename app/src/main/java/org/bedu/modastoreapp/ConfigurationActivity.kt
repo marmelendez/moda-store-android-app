@@ -28,7 +28,14 @@ class ConfigurationActivity : AppCompatActivity() {
         val userName = bundle?.getString(USERNAME)
 
         btn_return.setOnClickListener {
-            finish()
+            val bundle = Bundle()
+            bundle.putString(USERNAME, userName)
+
+            val intent = Intent(this, ProfileActivity::class.java).apply {
+                putExtras(bundle)
+            }
+
+            startActivity(intent)
         }
 
         btn_LogOut.setOnClickListener {
