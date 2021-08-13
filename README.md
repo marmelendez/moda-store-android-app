@@ -41,7 +41,7 @@ Tienes la opción de:
 
 ### Videos
 #### Video general
-En el siguiente enlace se habla de forma general acerca del funcionamiento de la aplicación
+En el siguiente enlace se habla del proceso y resultado del proyecto [Video](https://youtu.be/p06Q9JMLbKc)
 
 ## Diseño 
 Puedes visualizar los mockups y wireframes meta de este proyecto en el siguiente [link](https://www.figma.com/file/CgTBCmmRmLiYO1QwHiP2KQ/MODA-Store-Project?node-id=0%3A1) 
