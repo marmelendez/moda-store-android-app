@@ -37,11 +37,11 @@ Tienes la opción de:
 - Cambiar configuracion de datos 
 - Cerrar sesión
 
-> Nota: Puedes ver el siguiente video para visualizar las funciones de la aplicaciones
+> Nota: Puedes ver el siguiente [video](https://youtu.be/eHQNc9gIU5w) para visualizar las funciones de la aplicaciones
 
 ### Videos
 #### Video general
-En el siguiente enlace se habla del proceso y resultado del proyecto [Video](https://youtu.be/p06Q9JMLbKc)
+En el siguiente [enlace](https://youtu.be/p06Q9JMLbKc) se habla del proceso y resultado del proyecto 
 
 ## Diseño 
 Puedes visualizar los mockups y wireframes meta de este proyecto en el siguiente [link](https://www.figma.com/file/CgTBCmmRmLiYO1QwHiP2KQ/MODA-Store-Project?node-id=0%3A1) 
