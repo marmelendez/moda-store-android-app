@@ -31,15 +31,17 @@ Tienes la opción de:
 - Iniciar sesión (con algunos de los usuarios de la tabla anterior)
 - Registrarte
 - Buscar un articulo
-- Ver tu carrito de compras
+- Agregar articula a favoritos o carrito de compras
+- Ver tu carrito de compras y realizar compra
+- Ver tus favoritos y compras en perfil
 - Cambiar configuracion de datos 
+- Cerrar sesión
+
+> Nota: Puedes ver el siguiente video para visualizar las funciones de la aplicaciones
 
 ### Videos
 #### Video general
 En el siguiente enlace se habla de forma general acerca del funcionamiento de la aplicación
-
-#### Video demostrativo
-Si quieres conocer todas las funcionalidades de la aplicación ve este video
 
 ## Diseño 
 Puedes visualizar los mockups y wireframes meta de este proyecto en el siguiente [link](https://www.figma.com/file/CgTBCmmRmLiYO1QwHiP2KQ/MODA-Store-Project?node-id=0%3A1) 
