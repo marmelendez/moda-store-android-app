@@ -18,7 +18,7 @@ class LogInActivity : AppCompatActivity() {
         input = findViewById(R.id.textName)
 
         boton.setOnClickListener {
-            val intent = Intent(this, ConfigurationActivity::class.java)
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
             /*val boxName = Bundle()
             boxName.putString(USER_NAME, input.text.toString())
