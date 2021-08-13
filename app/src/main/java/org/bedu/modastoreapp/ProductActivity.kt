@@ -34,16 +34,8 @@ class ProductActivity : AppCompatActivity() {
         val userName = bundle?.getString(USERNAME)
 
         btnReturn.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putString(USERNAME, userName)
-
-            val intent = Intent(this, SearchProductActivity::class.java).apply {
-                putExtras(bundle)
-            }
-
-            startActivity(intent)
+            finish()
         }
-
 
         if (product!=null) {
             imgProduct.setImageResource(product.image)

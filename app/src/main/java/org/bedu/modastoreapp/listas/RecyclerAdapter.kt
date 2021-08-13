@@ -8,14 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import org.bedu.modastoreapp.PRODUCTID
 import org.bedu.modastoreapp.ProductActivity
 import org.bedu.modastoreapp.R
 import org.bedu.modastoreapp.USERNAME
 import org.bedu.modastoreapp.modelos.Product
-import org.bedu.modastoreapp.modelos.RegisteredUser
 
 class RecyclerAdapter(
     private val context: Context,

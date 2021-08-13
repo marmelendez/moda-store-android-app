@@ -52,6 +52,10 @@ class RegisteredUser (
         return this.shoppingCart
     }
 
+    fun getFavorites(): MutableList<Product> {
+        return this.favorites
+    }
+
     fun getOrders(): MutableList<Order> {
         return this.orders
     }

@@ -1,6 +1,7 @@
 package org.bedu.modastoreapp
 
 import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
@@ -10,50 +11,50 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import me.ibrahimsn.lib.SmoothBottomBar
 import org.bedu.modastoreapp.listas.RecyclerAdapter
+import org.bedu.modastoreapp.listas.RecyclerAdapterOrder
+import org.bedu.modastoreapp.modelos.Order
 import org.bedu.modastoreapp.modelos.Product
 
+class OrderActivity : AppCompatActivity() {
 
-class ProfileActivity : AppCompatActivity() {
-
-    private lateinit var Adapter : RecyclerAdapter
+    private lateinit var Adapter : RecyclerAdapterOrder
     private lateinit var recyclerView : RecyclerView
     private lateinit var favoriteIcon: ImageView
     private lateinit var orderIcon: ImageView
-    private lateinit var configIcon: ImageButton
-    private lateinit var products: MutableList<Product>
+    private lateinit var ToolsButton: ImageButton
+    private lateinit var orders: MutableList<Order>
     private lateinit var bottomBar : SmoothBottomBar
     private lateinit var title : TextView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
+        setContentView(R.layout.activity_orders)
 
-        favoriteIcon=findViewById(R.id.FavoritesListButton)
-        orderIcon=findViewById(R.id.HistoryListButton)
-        configIcon=findViewById(R.id.configButton)
-        bottomBar = findViewById(R.id.bottomBarProfile)
-        title = findViewById(R.id.configUser)
+        favoriteIcon=findViewById(R.id.FavoritesListButtonOrder)
+        orderIcon=findViewById(R.id.HistoryListButtonOrder)
+        ToolsButton=findViewById(R.id.configButtonOrder)
+        bottomBar = findViewById(R.id.bottomBarOrders)
+        title = findViewById(R.id.configUserOrder)
 
         val bundle = intent.extras
         var userName = bundle?.getString(USERNAME)
 
-        orderIcon.setOnClickListener {
+        ToolsButton.setOnClickListener {
             val bundle = Bundle()
             bundle.putString(USERNAME, userName)
 
-            val intent = Intent(this, OrderActivity::class.java).apply {
+            val intent = Intent(this, ConfigurationActivity::class.java).apply {
                 putExtras(bundle)
             }
 
             startActivity(intent)
         }
 
-        configIcon.setOnClickListener {
+        favoriteIcon.setOnClickListener {
             val bundle = Bundle()
             bundle.putString(USERNAME, userName)
 
-            val intent = Intent(this, ConfigurationActivity::class.java).apply {
+            val intent = Intent(this, ProfileActivity::class.java).apply {
                 putExtras(bundle)
             }
 
@@ -99,22 +100,20 @@ class ProfileActivity : AppCompatActivity() {
             val regUser = MYSTORE.getUserName(userName)
             title.text = "¡Hola ${userName}!"
             if (regUser != null) {
-                products = regUser.getFavorites()
+                orders = regUser.getOrders()
             } else {
-                products = mutableListOf()
+                orders = mutableListOf()
             }
         } else {
             userName = ""
-            products = mutableListOf()
+            orders = mutableListOf()
         }
 
-        recyclerView=findViewById(R.id.favoriteslist)
-
+        recyclerView=findViewById(R.id.orderlist)
         recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = GridLayoutManager(this,2)
-        Adapter = RecyclerAdapter(this, products, userName)
+        recyclerView.layoutManager = GridLayoutManager(this,1)
+        Adapter = RecyclerAdapterOrder(this, orders)
         recyclerView.adapter = Adapter
 
     }
 }
-
