@@ -31,18 +31,6 @@ class LogInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
 
-        /*Quito AppBar
-        supportActionBar?.hide()
-
-        //Conexion a Sign In
-        var newAccount: TextView = findViewById(R.id.textCreate)
-
-        newAccount.setOnClickListener {
-          val intent = Intent(this, SignInActivity::class.java)
-
-            startActivity(intent)
-        }*/
-        
         buttonLogIn = findViewById(R.id.buttonLogin)
         buttonSignIn = findViewById(R.id.buttonSign)
         warningUser = findViewById(R.id.warningUser)

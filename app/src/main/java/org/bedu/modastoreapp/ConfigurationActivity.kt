@@ -6,9 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import org.bedu.modastoreapp.modelos.BaseDatos
-import org.bedu.modastoreapp.modelos.RegisteredUser
-import org.bedu.modastoreapp.modelos.Store
 
 class ConfigurationActivity : AppCompatActivity() {
     private lateinit var btn_return: Button

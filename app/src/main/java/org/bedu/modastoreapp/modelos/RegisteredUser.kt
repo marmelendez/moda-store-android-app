@@ -120,15 +120,7 @@ class RegisteredUser (
     fun addToFavorite(product: Product) {
         this.favorites.add(product)
     }
-
-    /**
-     * Remove a product from the favorite list
-     * @param product the product to remove
-     * */
-    private fun removeFromFavorites(product: Product) {
-        this.favorites.remove(product)
-    }
-
+    
     /**
      * Add a order to the orders list
      * @param order the order to add

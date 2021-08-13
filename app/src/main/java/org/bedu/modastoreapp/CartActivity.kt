@@ -51,25 +51,21 @@ class CartActivity : AppCompatActivity() {
             }
         }
 
-
         listFragment.setListener{
             val detailFragment = supportFragmentManager.findFragmentById(R.id.fragmentDetail) as? DetailFragment
 
-            // Pantalla grande, mostrar detalle en el fragment
             if(detailFragment!=null){
                 detailFragment.showProduct(it)
-            } else{ //pantalla pequeña, navegar a un nuevo Activity
-
-                //MOSTRAR PANTALLA DE PRODUCTO
+            } else{
                 val intent = Intent(this, DetailActivity::class.java)
                 intent.putExtra(DetailActivity.PRODUCT,it)
                 startActivity(intent)
             }
         }
+
         bottomBar.onItemReselected = {
             evalCase(it, userName)
         }
-
 
         bottomBar.onItemSelected = {
             evalCase(it, userName)

@@ -6,21 +6,17 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
-import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView;
 import me.ibrahimsn.lib.SmoothBottomBar
 import org.bedu.modastoreapp.listas.RecyclerAdapter
-import org.bedu.modastoreapp.modelos.BaseDatos
 import org.bedu.modastoreapp.modelos.Product
-import org.bedu.modastoreapp.modelos.Store
 
 class SearchProductActivity : AppCompatActivity() {
     private lateinit var dataList: RecyclerView
     private lateinit var products: MutableList<Product>
     private lateinit var inpSearch: EditText
     private lateinit var bottomBar : SmoothBottomBar
-    private var listener : (Product) ->Unit = {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,9 +74,7 @@ class SearchProductActivity : AppCompatActivity() {
         inpSearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
                 val result = MYSTORE.searchProduct(inpSearch.text.toString())
-                if (!result.isNotEmpty()) {
-                    Toast.makeText(applicationContext ,"Ups! no encontramos un producto con ese nombre pero esto es similar;)", Toast.LENGTH_LONG).show()
-                }  else {
+                if (result.isNotEmpty()) {
                     products = result.toMutableList()
                     if (userName != null) {
                         setAdapter(products,userName)
