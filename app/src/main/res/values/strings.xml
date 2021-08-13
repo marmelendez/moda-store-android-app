@@ -9,13 +9,6 @@
     <string name="txt_signIn">Registrarse</string>
     <string name="btn_addCart">Agregar a carrito</string>
 
-    <string name="font_family_light">sans-serif-light</string>
-    <string name="subtitulo2">sans-serif-medium</string>
-    <string name="subtitulo1">sans-serif</string>
-    <string name="font_family_condensed">sans-serif-condensed</string>
-    <string name="boton">sans-serif-black</string>
-    <string name="font_family_thin">sans-serif-thin</string>
-
     <string name="txt_configuration">Configuracion</string>
     <string name="txt_config_account">Datos de cuenta</string>
 
@@ -28,30 +21,22 @@
     <string name="label_address">Dirección</string>
     <string name="label_productname">Nombre del producto</string>
     <string name="label_productprice">Precio del producto</string>
+    <string name="label_favorite">Favoritos</string>
+    <string name="label_order">Compras</string>
 
     <string name="status_default">Default</string>
 
-    <string name="Favorites_Icon">Favoritos</string>
-    <string name="History_ICon">Compras</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="Product_Name">Product</string>
-    <string name="Price">$000.00</string>
+    <string name="product_name">Product</string>
+    <string name="product_price">$000.00</string>
     <string name="Id">Id: </string>
-    <string name="Total">Total</string>
-    <string name="Order_price">$000.00</string>
+    <string name="product_total">Total</string>
+    <string name="order_price">$000.00</string>
     <string name="Compra">Compra</string>
-    <string name="numero">#</string>
-    <string name="numero_articulos">Articulos en total</string>
 
-
-    <string name="explore">Explore</string>
-    <string name="search">Search</string>
-    <string name="favorite">Favorite</string>
-    <string name="shop">Shop</string>
-    <string name="shopping_cart">Shopping Cart</string>
-    <string name="profile">Profile</string>
-    <string name="cart">Cart</string>
+    <string name="search">Buscar</string>
+    <string name="shop">Inicio</string>
+    <string name="profile">Perfil</string>
+    <string name="cart">Carrito</string>
     <string name="mujer">MUJER</string>
     <string name="hombre">HOMBRE</string>
     <string name="ninos">NIÑOS</string>

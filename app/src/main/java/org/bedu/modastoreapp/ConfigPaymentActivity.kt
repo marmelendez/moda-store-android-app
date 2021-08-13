@@ -1,6 +1,7 @@
 package org.bedu.modastoreapp
 
 import android.app.AlertDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -35,7 +36,14 @@ class ConfigPaymentActivity : AppCompatActivity() {
         val regUser = MYSTORE.getUserName(username.toString())
 
         returnIcon.setOnClickListener {
-            finish()
+            val bundle = Bundle()
+            bundle.putString(USERNAME, regUser?.getName().toString())
+
+            val intent = Intent(this, ConfigurationActivity::class.java).apply {
+                putExtras(bundle)
+            }
+
+            startActivity(intent)
         }
 
         if (regUser != null) {
