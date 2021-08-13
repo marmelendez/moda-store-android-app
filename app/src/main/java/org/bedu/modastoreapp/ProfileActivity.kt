@@ -34,6 +34,7 @@ class ProfileActivity : AppCompatActivity() {
         configIcon=findViewById(R.id.configButton)
         bottomBar = findViewById(R.id.bottomBarProfile)
         title = findViewById(R.id.configUser)
+        recyclerView=findViewById(R.id.favoriteslist)
 
         val bundle = intent.extras
         var userName = bundle?.getString(USERNAME)
@@ -107,8 +108,6 @@ class ProfileActivity : AppCompatActivity() {
             userName = ""
             products = mutableListOf()
         }
-
-        recyclerView=findViewById(R.id.favoriteslist)
 
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = GridLayoutManager(this,2)

@@ -58,20 +58,6 @@ class Store(var name: String?) {
     }
 
     /**
-     * Get the Registered User that has a given id
-     * @param id the id of the Registered User
-     * @return RegisteredUser If the id user doesn't correspond to a RegisteredUser returns null
-     * */
-    fun getUser(id: Int?): RegisteredUser? {
-        val possibleUser = this.listOfUsers.filter{ it.idUser == id }
-        return try {
-            possibleUser[0]
-        } catch(e: Exception) {
-            null
-        }
-    }
-
-    /**
      * Get the Registered User that has a given username
      * @param username the username of the Registered User
      * @return RegisteredUser If the username user doesn't correspond to a RegisteredUser returns null
@@ -86,9 +72,9 @@ class Store(var name: String?) {
     }
 
     /**
-     * Get the Registered User that has a given id
-     * @param id the id of the Registered User
-     * @return RegisteredUser If the id user doesn't correspond to a RegisteredUser returns null
+     * Get the Product that has a given id
+     * @param id the id of the Product
+     * @return RegisteredUser If the id user doesn't correspond to a Product returns null
      * */
     fun getProduct(id: Int?): Product? {
         val product = this.catalogProduct.filter{ it.idProduct == id }
@@ -106,6 +92,6 @@ class Store(var name: String?) {
      * */
     fun searchProduct(productName : String) : List<Product> {
         val result = this.catalogProduct.filter { it.name.lowercase(Locale.getDefault()).contains(productName.lowercase(Locale.getDefault())) }
-        return result//.forEach { println("\t${it.idProduct} \t${it.name}") }
+        return result
     }
 }

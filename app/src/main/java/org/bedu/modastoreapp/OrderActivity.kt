@@ -10,10 +10,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import me.ibrahimsn.lib.SmoothBottomBar
-import org.bedu.modastoreapp.listas.RecyclerAdapter
 import org.bedu.modastoreapp.listas.RecyclerAdapterOrder
 import org.bedu.modastoreapp.modelos.Order
-import org.bedu.modastoreapp.modelos.Product
 
 class OrderActivity : AppCompatActivity() {
 
