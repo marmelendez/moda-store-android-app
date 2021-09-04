@@ -15,20 +15,21 @@ import org.bedu.modastoreapp.modelos.Product
 
 class ProfileActivity : AppCompatActivity() {
 
-    private lateinit var Adapter : RecyclerAdapter
-    private lateinit var recyclerView : RecyclerView
+    private lateinit var Adapter: RecyclerAdapter
+    private lateinit var recyclerView: RecyclerView
     private lateinit var favoriteIcon: ImageView
     private lateinit var orderIcon: ImageView
     private lateinit var configIcon: ImageButton
     private lateinit var products: MutableList<Product>
-    private lateinit var bottomBar : SmoothBottomBar
-    private lateinit var title : TextView
+    private lateinit var bottomBar: SmoothBottomBar
+    private lateinit var title: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-
+    }
+/*
         favoriteIcon=findViewById(R.id.FavoritesListButton)
         orderIcon=findViewById(R.id.HistoryListButton)
         configIcon=findViewById(R.id.configButton)
@@ -61,13 +62,13 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        bottomBar.onItemReselected = {
+        /*bottomBar.onItemReselected = {
             evalCase(it, userName)
         }
 
         bottomBar.onItemSelected = {
             evalCase(it, userName)
-        }
+        }*/
 
         if (userName != null) {
             val regUser = MYSTORE.getUserName(userName)
@@ -89,7 +90,7 @@ class ProfileActivity : AppCompatActivity() {
 
     }
 
-    private fun evalCase(it: Int, userName: String?) {
+    /*private fun evalCase(it: Int, userName: String?) {
         when (it) {
             0 -> {
                 val bundle = Bundle()
@@ -121,6 +122,8 @@ class ProfileActivity : AppCompatActivity() {
         }
         }
 
-    }
+    }*/
 }
 
+ */
+}

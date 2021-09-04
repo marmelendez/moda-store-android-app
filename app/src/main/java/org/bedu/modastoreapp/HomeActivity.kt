@@ -1,166 +1,85 @@
 package org.bedu.modastoreapp
 
-import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.Menu
-import android.widget.Button
+import android.view.View
+import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.CompositePageTransformer
-import androidx.viewpager2.widget.MarginPageTransformer
-import androidx.viewpager2.widget.ViewPager2
-import me.ibrahimsn.lib.SmoothBottomBar
-import org.bedu.modastoreapp.listas.ShopContainer
-import org.bedu.modastoreapp.listas.ShopContainerAdapter
-import java.util.ArrayList
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.bedu.modastoreapp.modelos.BaseDatos
+
+val STORE = BaseDatos.start()
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var bottomBar : SmoothBottomBar
-    private lateinit var searchInp : Button
+    private lateinit var menu_bar : BottomNavigationView
+    private lateinit var input_search : EditText
+    private lateinit var fragment_inicio : FragmentHome
+    private lateinit var fragment_search : FragmentSearchList
 
     override fun onCreate(saveWomenInstanceState: Bundle?) {
         super.onCreate(saveWomenInstanceState)
         setContentView(R.layout.activity_shop)
 
-        bottomBar = findViewById(R.id.bottomBar)
-        searchInp = findViewById(R.id.search_input)
+        fragment_inicio = FragmentHome()
+        fragment_search = FragmentSearchList()
 
-        val womenViewPager = findViewById<ViewPager2>(R.id.WomenSlider)
-        val sliderWomen: MutableList<ShopContainer> = ArrayList()
+        menu_bar = findViewById(R.id.home_menu)
+        input_search = findViewById(R.id.home_search)
+        setFragment(fragment_inicio)
 
-        val bundle = intent.extras
-        val userName = bundle?.getString(USERNAME)
-
-        searchInp.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putString(USERNAME, userName)
-
-            val intent = Intent(this, SearchProductActivity::class.java).apply {
-                putExtras(bundle)
-            }
-
-            startActivity(intent)
-        }
-
-        bottomBar.onItemSelected = {
-            when (it) {
-                1 -> {
-                    val bundle = Bundle()
-                    bundle.putString(USERNAME, userName)
-
-                    val intent = Intent(this, CartActivity::class.java).apply {
-                        putExtras(bundle)
-                    }
-
-                    startActivity(intent)
+        menu_bar.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.menu_home -> {
+                    setFragment(fragment_inicio)
+                    Toast.makeText(this, "ESTAS EN INICIO", Toast.LENGTH_SHORT).show()
                 }
-                2 -> {
-                    val bundle = Bundle()
-                    bundle.putString(USERNAME, userName)
-
-                    val intent = Intent(this, ProfileActivity::class.java).apply {
-                        putExtras(bundle)
-                    }
-
-                    startActivity(intent)
+                R.id.menu_shopping_cart -> {
+                    Toast.makeText(this, "CARRITO", Toast.LENGTH_SHORT).show()
+                    //val intent = Intent(this, CartActivity::class.java)
+                    //startActivity(intent)
+                }
+                R.id.menu_profile -> {
+                    Toast.makeText(this, "PERFIL", Toast.LENGTH_SHORT).show()
+                    //val intent = Intent(this, ProfileActivity::class.java)
+                    //startActivity(intent)
                 }
             }
+            true
         }
 
-        val products = MYSTORE.catalogProduct
+        input_search.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                setFragment(fragment_search)
+                Toast.makeText(this@HomeActivity, "ESTAS EN BUSQUEDA", Toast.LENGTH_SHORT).show()
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+    }
 
-        for (i in 1..5) {
-            val sliderWomenv = ShopContainer()
-            sliderWomenv.image = products[i].image
-            sliderWomenv.title = products[i].name
-            sliderWomenv.location = products[i].price
-            sliderWomen.add(sliderWomenv)
+    fun setFragment(fragment: Fragment) {
+        val fragmentoActual = supportFragmentManager.findFragmentByTag(TAG_FRAGMENTO)
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        if(fragmentoActual != null){
+            fragmentTransaction.remove(fragmentoActual)
         }
-
-        womenViewPager.adapter = ShopContainerAdapter(sliderWomen)
-        womenViewPager.clipToPadding = false
-        womenViewPager.clipChildren = false
-        womenViewPager.offscreenPageLimit = 3
-        womenViewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-        val compositeWomenPageTransformer = CompositePageTransformer()
-        compositeWomenPageTransformer.addTransformer(MarginPageTransformer(40))
-        compositeWomenPageTransformer.addTransformer { page, position ->
-            val r = 1 - Math.abs(position)
-            page.scaleY = 0.95f + r * 0.05f
-        }
-        womenViewPager.setPageTransformer(compositeWomenPageTransformer)
-
-        val menViewPager = findViewById<ViewPager2>(R.id.MenSlider)
-        val sliderMEN: MutableList<ShopContainer> = ArrayList()
-
-        for (i in 11..15) {
-            val sliderMenv1 = ShopContainer()
-            sliderMenv1.image = products[i].image
-            sliderMenv1.title = products[i].name
-            sliderMenv1.location = products[i].price
-            sliderMEN.add(sliderMenv1)
-        }
-
-        menViewPager.adapter = ShopContainerAdapter(sliderMEN)
-        menViewPager.clipToPadding = false
-        menViewPager.clipChildren = false
-        menViewPager.offscreenPageLimit = 3
-        menViewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-        val compositeMenPageTransformer = CompositePageTransformer()
-        compositeMenPageTransformer.addTransformer(MarginPageTransformer(40))
-        compositeMenPageTransformer.addTransformer { page, position ->
-            val r = 1 - Math.abs(position)
-            page.scaleY = 0.95f + r * 0.05f
-        }
-        menViewPager.setPageTransformer(compositeMenPageTransformer)
-
-
-        val kidViewPager = findViewById<ViewPager2>(R.id.KidSlider)
-        val sliderKid: MutableList<ShopContainer> = ArrayList()
-
-        val sliderKidv1 = ShopContainer()
-        sliderKidv1.image = R.drawable.image_n1
-        sliderKidv1.title = "Chamarra negra "
-        sliderKidv1.location = 400.0F
-        sliderKid.add(sliderKidv1)
-
-        val sliderKidv2 = ShopContainer()
-        sliderKidv2.image = R.drawable.image_n2
-        sliderKidv2.title = "Gorra naranja"
-        sliderKidv2.location = 100.0F
-        sliderKid.add(sliderKidv2)
-
-        val sliderKidv3 = ShopContainer()
-        sliderKidv3.image = R.drawable.image_n3
-        sliderKidv3.title = "Chaleco azul"
-        sliderKidv3.location = 200.0F
-        sliderKid.add(sliderKidv3)
-
-        val sliderKidv4 = ShopContainer()
-        sliderKidv4.image = R.drawable.image_n4
-        sliderKidv4.title = "Chamarra gris"
-        sliderKidv4.location = 300.0F
-        sliderKid.add(sliderKidv4)
-
-        kidViewPager.adapter = ShopContainerAdapter(sliderKid)
-        kidViewPager.clipToPadding = false
-        kidViewPager.clipChildren = false
-        kidViewPager.offscreenPageLimit = 3
-        kidViewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-        val compositeKidPageTransformer = CompositePageTransformer()
-        compositeKidPageTransformer.addTransformer(MarginPageTransformer(40))
-        compositeKidPageTransformer.addTransformer { page, position ->
-            val r = 1 - Math.abs(position)
-            page.scaleY = 0.95f + r * 0.05f
-        }
-        kidViewPager.setPageTransformer(compositeKidPageTransformer)
+        fragmentTransaction.add(R.id.home_fragment_container, fragment, TAG_FRAGMENTO)
+        fragmentTransaction.commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.navigation_menu, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    companion object {
+        private const val TAG_FRAGMENTO = "fragmento_inicio"
     }
 }
 

@@ -22,8 +22,8 @@ class SearchProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_product)
 
-        products = MYSTORE.catalogProduct
-        dataList = findViewById(R.id.datalist)
+        products = STORE.catalogProduct
+        dataList = findViewById(R.id.home_product_list)
         inpSearch = findViewById(R.id.inp_Search)
         bottomBar = findViewById(R.id.bottomBarSearch)
 
@@ -73,7 +73,7 @@ class SearchProductActivity : AppCompatActivity() {
 
         inpSearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
-                val result = MYSTORE.searchProduct(inpSearch.text.toString())
+                val result = STORE.searchProduct(inpSearch.text.toString())
                 if (result.isNotEmpty()) {
                     products = result.toMutableList()
                     if (userName != null) {

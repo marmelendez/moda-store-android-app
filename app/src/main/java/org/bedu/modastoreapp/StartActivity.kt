@@ -79,6 +79,8 @@ class StartActivity : AppCompatActivity() {
             Toast.makeText(this, "SIN USUARIO",Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this, Firebase.auth.currentUser?.email,Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
         }
     }
 

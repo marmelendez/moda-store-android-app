@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_list.*
-import org.bedu.modastoreapp.MYSTORE
+import org.bedu.modastoreapp.STORE
 import org.bedu.modastoreapp.modelos.ProductPar
 import org.bedu.modastoreapp.R
 
@@ -46,10 +46,10 @@ class ListFragment : Fragment() {
     }
 
     private fun getProducts(): MutableList<org.bedu.modastoreapp.modelos.Product> {
-        if (MYSTORE.getUserName(username)?.getShoppingCart() != null) {
-            return MYSTORE.getUserName(username)!!.getShoppingCart()
+        if (STORE.getUserName(username)?.getShoppingCart() != null) {
+            return STORE.getUserName(username)!!.getShoppingCart()
         } else {
-            return MYSTORE.catalogProduct
+            return STORE.catalogProduct
         }
     }
 }

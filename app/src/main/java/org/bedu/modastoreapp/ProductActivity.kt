@@ -29,7 +29,7 @@ class ProductActivity : AppCompatActivity() {
 
         val bundle = intent.extras
         val productId = bundle?.getInt(PRODUCTID)
-        val product = MYSTORE.getProduct(productId)
+        val product = STORE.getProduct(productId)
         val userName = bundle?.getString(USERNAME)
 
         btnReturn.setOnClickListener {
@@ -44,7 +44,7 @@ class ProductActivity : AppCompatActivity() {
 
         btnAddFav.setOnClickListener {
             if (userName != null && userName != "" && product != null) {
-                MYSTORE.getUserName(userName)?.addToFavorite(product)
+                STORE.getUserName(userName)?.addToFavorite(product)
                 btnAddFav.setImageResource(R.drawable.ic_productfav)
                 Toast.makeText(applicationContext ,"El producto ha sido añadido a tus favoritos", Toast.LENGTH_LONG).show()
             } else {
@@ -54,7 +54,7 @@ class ProductActivity : AppCompatActivity() {
 
         btnAddCart.setOnClickListener {
             if (userName != null && userName != "" && product != null) {
-                MYSTORE.getUserName(userName)?.addToCart(product)
+                STORE.getUserName(userName)?.addToCart(product)
                 Toast.makeText(applicationContext ,"El producto ha sido añadido a tu carrito", Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(applicationContext ,"Inicia sesión", Toast.LENGTH_LONG).show()

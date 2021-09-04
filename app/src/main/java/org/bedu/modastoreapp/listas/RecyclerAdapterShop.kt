@@ -57,7 +57,7 @@ class RecyclerAdapterShop (
 
             deleteIcon.setOnClickListener{
                 if (username != null && username != "" && product != null) {
-                    MYSTORE.getUserName(username)?.removeFromCart(product)
+                    STORE.getUserName(username)?.removeFromCart(product)
                     Toast.makeText(it.context ,"El producto ha sido eliminado de tu carrito", Toast.LENGTH_LONG).show()
                 } else {
                     Toast.makeText(it.context ,"Inicia sesión", Toast.LENGTH_LONG).show()

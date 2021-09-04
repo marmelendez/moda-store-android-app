@@ -33,7 +33,7 @@ class ConfigPaymentActivity : AppCompatActivity() {
 
         val bundle = intent.extras
         val username = bundle?.getString(USERNAME)
-        val regUser = MYSTORE.getUserName(username.toString())
+        val regUser = STORE.getUserName(username.toString())
 
         returnIcon.setOnClickListener {
             val bundle = Bundle()

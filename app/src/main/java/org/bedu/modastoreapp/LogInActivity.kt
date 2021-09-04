@@ -47,7 +47,7 @@ class LogInActivity : AppCompatActivity() {
 
         inputName.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
-                if (MYSTORE.getUserName(inputName.text.toString()) == null) {
+                if (STORE.getUserName(inputName.text.toString()) == null) {
                     warningUser.isVisible = true
                     warningUser.setText("Usuario no registrado")
                     buttonLogIn.isEnabled = false
@@ -55,7 +55,7 @@ class LogInActivity : AppCompatActivity() {
                     inpUser = inputName.text.toString()
                     warningUser.isVisible = false
                     inputPassword.isVisible = true
-                    regUser = MYSTORE.getUserName(inputName.text.toString())!!
+                    regUser = STORE.getUserName(inputName.text.toString())!!
                 }
             }
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}

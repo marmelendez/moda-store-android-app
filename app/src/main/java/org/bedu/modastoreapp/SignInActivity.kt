@@ -52,7 +52,7 @@ class SignInActivity : AppCompatActivity() {
                 if (!validateUsername(inputUsername.text.toString())) {
                     warnUsername.isVisible = true
                     warnUsername.setText("Ingresa un nombre de usuario valido: empieza con letra, minimo 6 caracteres, letras y numeros")
-                } else if (!MYSTORE.isInListOfUsersUsername(inputUsername.text.toString())) {
+                } else if (!STORE.isInListOfUsersUsername(inputUsername.text.toString())) {
                     warnUsername.isVisible = true
                     warnUsername.setText("Este nombre de usuario ya esta registrado, escoge otro disponible")
                 } else {
@@ -69,7 +69,7 @@ class SignInActivity : AppCompatActivity() {
                 if (!validateEmail(inputEmail.text.toString())) {
                     warnEmail.isVisible = true
                     warnEmail.setText("Ingresa un correo valido: termina con @domain.com")
-                } else if (!MYSTORE.isInListOfUsersEmail(inputEmail.text.toString())) {
+                } else if (!STORE.isInListOfUsersEmail(inputEmail.text.toString())) {
                     warnEmail.isVisible = true
                     warnEmail.setText("Este correo ya esta registrado")
                 } else {
@@ -98,7 +98,7 @@ class SignInActivity : AppCompatActivity() {
         })
 
         signInButton.setOnClickListener {
-            MYSTORE.addUser(RegisteredUser(MYSTORE.catalogProduct.size,inputUsername.text.toString(), inputEmail.text.toString(),inputPassword.text.toString()))
+            STORE.addUser(RegisteredUser(STORE.catalogProduct.size,inputUsername.text.toString(), inputEmail.text.toString(),inputPassword.text.toString()))
             Toast.makeText(applicationContext ,"Bienvenido ${inputUsername.text}", Toast.LENGTH_LONG).show()
 
             val bundle = Bundle()

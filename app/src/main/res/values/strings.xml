@@ -7,6 +7,17 @@
     <string name="btn_logIn">Iniciar sesión</string>
     <string name="btn_signIn">Registrarse</string>
 
+    <string name="search">Buscar</string>
+
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_cart">Carrito</string>
+    <string name="menu_profile">Perfil</string>
+
+    <string name="mujer">MUJER</string>
+    <string name="hombre">HOMBRE</string>
+    <string name="ninos">NIÑOS</string>
+
     <string name="btn_paymentMethods">Metodos de pago</string>
     <string name="btn_address">Direcciones</string>
     <string name="btn_logout">Cerrar sesión</string>
@@ -35,16 +46,13 @@
     <string name="order_price">$000.00</string>
     <string name="Compra">Compra</string>
 
-    <string name="search">Buscar</string>
-    <string name="shop">Inicio</string>
-    <string name="profile">Perfil</string>
-    <string name="cart">Carrito</string>
-    <string name="mujer">MUJER</string>
-    <string name="hombre">HOMBRE</string>
-    <string name="ninos">NIÑOS</string>
+
+
     <string name="cartmessage">Carrito de compras</string>
 
     <string name="warning">error</string>
     <string name="ok">Ok</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

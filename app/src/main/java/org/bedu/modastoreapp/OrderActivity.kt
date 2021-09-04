@@ -95,7 +95,7 @@ class OrderActivity : AppCompatActivity() {
         }
 
         if (userName != null) {
-            val regUser = MYSTORE.getUserName(userName)
+            val regUser = STORE.getUserName(userName)
             title.text = "¡Hola ${userName}!"
             if (regUser != null) {
                 orders = regUser.getOrders()

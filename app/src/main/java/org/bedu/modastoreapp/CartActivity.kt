@@ -23,8 +23,9 @@ class CartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
+    }
 
-        bottomBar = findViewById(R.id.bottomBar)
+        /*bottomBar = findViewById(R.id.bottomBar)
         payButton = findViewById(R.id.next_button)
         totalPrice = findViewById(R.id.priceTotal)
 
@@ -128,5 +129,5 @@ class CartActivity : AppCompatActivity() {
             }
         }
 
-    }
+    }*/
 }
