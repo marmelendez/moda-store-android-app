@@ -40,10 +40,12 @@
         <entry key="app/src/main/res/layout/activity_search_product.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_shop.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_start.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/card_item.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/card_order.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/fragment_list.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/grid_layout.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/item_contact.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/item_container_location.xml" value="0.1" />

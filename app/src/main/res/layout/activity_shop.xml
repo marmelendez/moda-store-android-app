@@ -19,7 +19,7 @@
         >
 
         <ImageView
-            android:id="@+id/imageLogo"
+            android:id="@+id/start_img_logo"
             android:layout_width="24dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -40,7 +40,7 @@
             android:textStyle="bold"
             android:fontFamily="@font/pacifico"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageLogo"/>
+            app:layout_constraintStart_toEndOf="@+id/start_img_logo"/>
 
         <Button
             android:id="@+id/search_input"

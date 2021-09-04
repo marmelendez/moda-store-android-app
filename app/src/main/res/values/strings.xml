@@ -1,19 +1,21 @@
 <resources>
     <string name="app_name">Moda store</string>
 
+    <string name="label_username">Nombre de usuario</string>
+    <string name="label_email">Correo</string>
+
+    <string name="btn_logIn">Iniciar sesión</string>
+    <string name="btn_signIn">Registrarse</string>
+
     <string name="btn_paymentMethods">Metodos de pago</string>
     <string name="btn_address">Direcciones</string>
     <string name="btn_logout">Cerrar sesión</string>
     <string name="btn_submit">Actualizar</string>
-    <string name="btn_logIn">Iniciar sesión</string>
-    <string name="txt_signIn">Registrarse</string>
     <string name="btn_addCart">Agregar a carrito</string>
 
     <string name="txt_configuration">Configuracion</string>
     <string name="txt_config_account">Datos de cuenta</string>
 
-    <string name="label_username">Nombre de usuario</string>
-    <string name="label_email">Correo</string>
     <string name="label_telephone">Telefono</string>
     <string name="label_password">Contraseña</string>
     <string name="label_creditCard">Tarjeta de credito</string>

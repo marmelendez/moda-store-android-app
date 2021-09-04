@@ -30,9 +30,9 @@
             android:textColor="#393E46"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:fontFamily="@font/nunitoregular"
+            android:fontFamily="@font/nunito_regular"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageLogo"/>
+            app:layout_constraintStart_toEndOf="@+id/start_img_logo"/>
 
     </LinearLayout>
 
