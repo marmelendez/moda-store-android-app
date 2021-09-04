@@ -65,7 +65,7 @@ class OrderActivity : AppCompatActivity() {
                     val bundle = Bundle()
                     bundle.putString(USERNAME, userName)
 
-                    val intent = Intent(this, ShopActivity::class.java).apply {
+                    val intent = Intent(this, HomeActivity::class.java).apply {
                         putExtras(bundle)
                     }
 

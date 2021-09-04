@@ -33,10 +33,10 @@ class LogInActivity : AppCompatActivity() {
 
         buttonLogIn = findViewById(R.id.buttonLogin)
         buttonSignIn = findViewById(R.id.buttonSign)
-        warningUser = findViewById(R.id.warningUser)
+        warningUser = findViewById(R.id.start_warn_password)
         warningPassword = findViewById(R.id.warningPassword)
-        inputName = findViewById(R.id.textName)
-        inputPassword = findViewById(R.id.textPassword)
+        inputName = findViewById(R.id.start_input_username)
+        inputPassword = findViewById(R.id.start_input_password)
 
         warningUser.isVisible = false
         warningPassword.isVisible = false
@@ -83,7 +83,7 @@ class LogInActivity : AppCompatActivity() {
             val bundle = Bundle()
             bundle.putString(USERNAME, inputName.text.toString())
 
-            val intent = Intent(this, ShopActivity::class.java).apply {
+            val intent = Intent(this, HomeActivity::class.java).apply {
                 putExtras(bundle)
             }
 

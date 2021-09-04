@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "910776652619",
+    "project_id": "moda-store-app",
+    "storage_bucket": "moda-store-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910776652619:android:e94422bed68c6b29ef8ece",
+        "android_client_info": {
+          "package_name": "org.bedu.modastoreapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910776652619-645ne2r1jrmurhlv17irtdsi0312fhdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAuwDYHLK8LPzfLfKjBXrYomM-wcBKN7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910776652619-645ne2r1jrmurhlv17irtdsi0312fhdk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

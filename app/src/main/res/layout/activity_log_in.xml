@@ -8,7 +8,7 @@
     tools:context=".LogInActivity">
 
     <ImageView
-        android:id="@+id/imageLogo"
+        android:id="@+id/start_img_logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/logo1" />
 
     <TextView
-        android:id="@+id/moda"
+        android:id="@+id/start_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/pacifico"
@@ -27,10 +27,10 @@
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/start_img_logo" />
 
     <EditText
-        android:id="@+id/textName"
+        android:id="@+id/start_input_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -43,20 +43,20 @@
         android:textAllCaps="false"
         android:textColor="@color/grey"
         android:textColorHint="@color/grey"
-        android:fontFamily="@font/nunitoregular"
+        android:fontFamily="@font/nunito_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/moda" />
+        app:layout_constraintTop_toBottomOf="@+id/start_title" />
 
     <EditText
-        android:id="@+id/textPassword"
+        android:id="@+id/start_input_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:drawableStart="@drawable/ic_lock"
         android:ems="10"
         android:focusable="auto"
-        android:fontFamily="@font/nunitoregular"
+        android:fontFamily="@font/nunito_regular"
         android:hint="@string/label_password"
         android:inputType="textPassword"
         android:singleLine="false"
@@ -66,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textName" />
+        app:layout_constraintTop_toBottomOf="@+id/start_input_username" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonLogin"
@@ -78,7 +78,7 @@
         android:text="@string/btn_logIn"
         app:cornerRadius="16dp"
         android:textColor="@color/white"
-        android:fontFamily="@font/nunitoregular"
+        android:fontFamily="@font/nunito_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,26 +94,26 @@
         android:textColor="@color/blue"
         app:strokeColor="@color/blue"
         app:strokeWidth="2dp"
-        android:text="@string/txt_signIn"
+        android:text="@string/btn_signIn"
         app:cornerRadius="16dp"
-        android:fontFamily="@font/nunitoregular"
+        android:fontFamily="@font/nunito_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
     <TextView
-        android:id="@+id/warningUser"
+        android:id="@+id/start_warn_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textColor="@color/red"
         android:text="error"
-        android:fontFamily="@font/nunitoregular"
-        app:layout_constraintBottom_toTopOf="@+id/textPassword"
+        android:fontFamily="@font/nunito_regular"
+        app:layout_constraintBottom_toTopOf="@+id/start_input_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textName" />
+        app:layout_constraintTop_toBottomOf="@+id/start_input_username" />
 
     <TextView
         android:id="@+id/warningPassword"
@@ -122,11 +122,11 @@
         android:layout_marginTop="8dp"
         android:textColor="@color/red"
         android:text="error"
-        android:fontFamily="@font/nunitoregular"
+        android:fontFamily="@font/nunito_regular"
         app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/start_input_password" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

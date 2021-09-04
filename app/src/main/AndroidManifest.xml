@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OrderActivity"></activity>
+        <activity
+            android:name=".StartActivity"
+            android:exported="true" />
+        <activity android:name=".OrderActivity" />
         <activity android:name=".ProfileActivity" />
         <activity
             android:name=".ProductActivity"
@@ -26,7 +29,7 @@
         <activity android:name=".ConfigurationActivity" />
         <activity android:name=".ConfigAccountDataActivity" />
         <activity android:name=".LogInActivity" />
-        <activity android:name=".ShopActivity" />
+        <activity android:name=".HomeActivity" />
         <activity
             android:name=".CartActivity"
             tools:ignore="Instantiatable" />
@@ -43,7 +46,3 @@
     </application>
 
 </manifest>
-
-    <!--android:theme="@style/Theme.ModaStoreApp">
-            <activity android:name=".Orders"></activity>
-            <activity android:name=".ProfileActivity" />-->

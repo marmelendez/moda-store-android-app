@@ -14,7 +14,7 @@ import org.bedu.modastoreapp.listas.ShopContainer
 import org.bedu.modastoreapp.listas.ShopContainerAdapter
 import java.util.ArrayList
 
-class ShopActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var bottomBar : SmoothBottomBar
     private lateinit var searchInp : Button
