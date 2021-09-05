@@ -105,7 +105,7 @@
         app:layout_constraintTop_toBottomOf="@+id/config_pay_label_debit" />
 
     <Button
-        android:id="@+id/config_data_btn_update"
+        android:id="@+id/config_pay_btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
