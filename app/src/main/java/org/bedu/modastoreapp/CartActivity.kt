@@ -31,19 +31,21 @@ class CartActivity : AppCompatActivity() {
 
         val username = "tomas11"
         val regUser = STORE.getUserName(username)
+
         if (regUser != null) {
             total_price.text = "$ ${regUser.getTotal()}"
         }
+
+        button_pay.setOnClickListener{
+            Toast.makeText(applicationContext, "PAGAR", Toast.LENGTH_SHORT).show()
+        }
+
 
         val listFragment = supportFragmentManager.findFragmentById(R.id.cart_fragment_container) as ListFragment
         if (username != null) {
             listFragment.setUsername(username)
         } else {
             listFragment.setUsername("tomas11")
-        }
-
-        button_pay.setOnClickListener{
-            Toast.makeText(applicationContext, "PAGAR", Toast.LENGTH_SHORT).show()
         }
 
         listFragment.setListener{

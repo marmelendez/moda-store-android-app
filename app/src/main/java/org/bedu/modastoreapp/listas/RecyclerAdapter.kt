@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import org.bedu.modastoreapp.PRODUCTID
+//import org.bedu.modastoreapp.PRODUCTID
 import org.bedu.modastoreapp.ProductActivity
 import org.bedu.modastoreapp.R
-import org.bedu.modastoreapp.USERNAME
+//import org.bedu.modastoreapp.USERNAME
 import org.bedu.modastoreapp.modelos.Product
 
 class RecyclerAdapter(
@@ -46,8 +46,8 @@ class RecyclerAdapter(
 
             itemView.setOnClickListener { v ->
                 val bundle = Bundle()
-                bundle.putInt(PRODUCTID, product.idProduct)
-                bundle.putString(USERNAME, username)
+                //bundle.putInt(PRODUCTID, product.idProduct)
+                //bundle.putString(USERNAME, username)
 
                 val intent = Intent(v.context, ProductActivity::class.java).apply {
                     putExtras(bundle)

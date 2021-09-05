@@ -3,17 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FragmentSearchList">
+    tools:context=".HomeActivity">
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_product_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp" />
+
+    <!--<ScrollView
         android:id="@+id/home_search_scrollView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topbarSearch">
+        android:layout_height="0dp"">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,11 +25,7 @@
                 android:id="@+id/home_product_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/bottomBarSearch"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_margin="16dp"/>
         </LinearLayout>
-    </ScrollView>
+    </ScrollView>-->
 </FrameLayout>

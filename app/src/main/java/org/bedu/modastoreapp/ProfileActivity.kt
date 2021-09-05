@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import org.bedu.modastoreapp.listas.DetailFragment
+import org.bedu.modastoreapp.listas.ListFragment
 import org.bedu.modastoreapp.listas.RecyclerAdapter
 import org.bedu.modastoreapp.modelos.Product
 
@@ -24,7 +26,6 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var orderIcon: ImageView
     private lateinit var btn_config: ImageButton
     private lateinit var products: MutableList<Product>
-    private lateinit var menu_bar : BottomNavigationView
     private lateinit var title: TextView
 
 
@@ -32,7 +33,8 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        menu_bar = findViewById(R.id.profile_menu)
+        val menu_bar = findViewById<BottomNavigationView>(R.id.profile_menu)
+        var icon_orders = findViewById<ImageButton>(R.id.profile_img_history)
 
         menu_bar.setOnItemSelectedListener {
             when (it.itemId) {
@@ -46,6 +48,33 @@ class ProfileActivity : AppCompatActivity() {
                 }
             }
             true
+        }
+
+        orderIcon.setOnClickListener {
+            //cambio de fragmentos
+        }
+
+
+        val username = "tomas11"
+        val regUser = STORE.getUserName(username)
+
+        val listFragment = supportFragmentManager.findFragmentById(R.id.profile_fragment_container) as ListFragment
+        if (username != null) {
+            listFragment.setUsername(username)
+        } else {
+            listFragment.setUsername("tomas11")
+        }
+
+        listFragment.setListener{
+            val detailFragment = supportFragmentManager.findFragmentById(R.id.fragmentDetail) as? DetailFragment
+
+            if(detailFragment!=null){
+                detailFragment.showProduct(it)
+            } else{
+                val intent = Intent(this, DetailActivity::class.java)
+                intent.putExtra(DetailActivity.PRODUCT,it)
+                startActivity(intent)
+            }
         }
     }
 
@@ -121,25 +150,6 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        configIcon.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putString(USERNAME, userName)
-
-            val intent = Intent(this, ConfigurationActivity::class.java).apply {
-                putExtras(bundle)
-            }
-
-            startActivity(intent)
-        }
-
-        /*bottomBar.onItemReselected = {
-            evalCase(it, userName)
-        }
-
-        bottomBar.onItemSelected = {
-            evalCase(it, userName)
-        }*/
-
         if (userName != null) {
             val regUser = MYSTORE.getUserName(userName)
             title.text = "¡Hola ${userName}!"
@@ -158,42 +168,5 @@ class ProfileActivity : AppCompatActivity() {
         Adapter = RecyclerAdapter(this, products, userName)
         recyclerView.adapter = Adapter
 
-    }
-
-    /*private fun evalCase(it: Int, userName: String?) {
-        when (it) {
-            0 -> {
-                val bundle = Bundle()
-                bundle.putString(USERNAME, userName)
-
-                val intent = Intent(this, ShopActivity::class.java).apply {
-                    putExtras(bundle)
-                }
-
-                startActivity(intent)
-            }1 -> {
-            val bundle = Bundle()
-            bundle.putString(USERNAME, userName)
-
-            val intent = Intent(this, CartActivity::class.java).apply {
-                putExtras(bundle)
-            }
-
-            startActivity(intent)
-        }2 -> {
-            val bundle = Bundle()
-            bundle.putString(USERNAME, userName)
-
-            val intent = Intent(this, ProfileActivity::class.java).apply {
-                putExtras(bundle)
-            }
-
-            startActivity(intent)
-        }
-        }
-
-    }*/
-}
-
- */
+    } */
 }

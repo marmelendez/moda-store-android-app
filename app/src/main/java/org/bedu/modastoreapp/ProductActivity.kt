@@ -20,45 +20,47 @@ class ProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
 
-        btnReturn = findViewById(R.id.config_data_btn_return)
-        btnAddCart = findViewById(R.id.btn_addcart)
+        btnReturn = findViewById(R.id.product_btn_return)
+        btnAddCart = findViewById(R.id.product_btn_addcart)
         btnAddFav = findViewById(R.id.product_btn_addfavorites)
         imgProduct = findViewById(R.id.product_img)
         txtProductName = findViewById(R.id.product_name)
         txtProductPrice = findViewById(R.id.product_price)
 
-        val bundle = intent.extras
+        /*val bundle = intent.extras
         val productId = bundle?.getInt(PRODUCTID)
         val product = STORE.getProduct(productId)
-        val userName = bundle?.getString(USERNAME)
+        val userName = bundle?.getString(USERNAME)*/
 
         btnReturn.setOnClickListener {
             finish()
         }
 
-        if (product!=null) {
+        /*if (product!=null) {
             imgProduct.setImageResource(product.image)
             txtProductName.text = product.name
             txtProductPrice.text = "$ ${product.price}"
-        }
+        }*/
 
         btnAddFav.setOnClickListener {
-            if (userName != null && userName != "" && product != null) {
+            Toast.makeText(applicationContext ,"El producto ha sido añadido a tus favoritos", Toast.LENGTH_LONG).show()
+            /*if (userName != null && userName != "" && product != null) {
                 STORE.getUserName(userName)?.addToFavorite(product)
                 btnAddFav.setImageResource(R.drawable.ic_productfav)
                 Toast.makeText(applicationContext ,"El producto ha sido añadido a tus favoritos", Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(applicationContext ,"Inicia sesión", Toast.LENGTH_LONG).show()
-            }
+            }*/
         }
 
         btnAddCart.setOnClickListener {
-            if (userName != null && userName != "" && product != null) {
+            Toast.makeText(applicationContext ,"El producto ha sido añadido a tu carrito", Toast.LENGTH_LONG).show()
+            /*if (userName != null && userName != "" && product != null) {
                 STORE.getUserName(userName)?.addToCart(product)
                 Toast.makeText(applicationContext ,"El producto ha sido añadido a tu carrito", Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(applicationContext ,"Inicia sesión", Toast.LENGTH_LONG).show()
-            }
+            }*/
         }
     }
 }

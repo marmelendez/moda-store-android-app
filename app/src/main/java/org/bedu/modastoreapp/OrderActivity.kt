@@ -15,7 +15,7 @@ import org.bedu.modastoreapp.modelos.Order
 
 class OrderActivity : AppCompatActivity() {
 
-    private lateinit var Adapter : RecyclerAdapterOrder
+    /*private lateinit var Adapter : RecyclerAdapterOrder
     private lateinit var recyclerView : RecyclerView
     private lateinit var favoriteIcon: ImageView
     private lateinit var orderIcon: ImageView
@@ -113,5 +113,5 @@ class OrderActivity : AppCompatActivity() {
         Adapter = RecyclerAdapterOrder(this, orders)
         recyclerView.adapter = Adapter
 
-    }
+    }*/
 }
