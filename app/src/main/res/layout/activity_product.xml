@@ -7,7 +7,7 @@
     tools:context=".ProductActivity">
 
     <Button
-        android:id="@+id/btn_Return"
+        android:id="@+id/product_btn_return"
         style="@style/returnButton"
         android:background="@color/gray"
         android:layout_marginTop="16dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/productImage"
+        android:id="@+id/product_img"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:scaleType="centerCrop"
@@ -30,53 +30,48 @@
         app:srcCompat="@drawable/productm2" />
 
     <TextView
-        android:id="@+id/productName"
+        android:id="@+id/product_name"
         style="@style/config_account_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_productname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productImage" />
-
-    <ImageView
-        android:id="@+id/btn_addfav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_favorite"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        android:text="@string/label_productname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_img" />
+
+    <ImageView
+        android:id="@+id/product_btn_add_fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/ic_favorite"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/productName"
-        app:layout_constraintTop_toBottomOf="@+id/productImage"/>
+        app:layout_constraintTop_toBottomOf="@+id/product_img" />
 
     <TextView
-        android:id="@+id/productPrice"
-        android:layout_width="match_parent"
+        android:id="@+id/product_price"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/nunitobold"
         android:textSize="18dp"
         android:textColor="@color/black"
-        android:layout_marginHorizontal="32dp"
+        android:layout_marginStart="32dp"
         android:text="@string/label_productprice"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productName" />
+        app:layout_constraintTop_toBottomOf="@+id/product_name" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_addcart"
+    <Button
+        android:id="@+id/product_btn_add_cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_addCart"
-        android:layout_gravity="center"
-        android:layout_marginTop="32dp"
-        app:cornerRadius="16dp"
+        android:layout_margin="24dp"
         android:fontFamily="@font/nunitobold"
-        android:backgroundTint="@color/primaryColor"
+        android:text="@string/btn_addCart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/product_price" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

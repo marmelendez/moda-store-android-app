@@ -2,13 +2,17 @@ package org.bedu.modastoreapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.Menu
 import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import me.ibrahimsn.lib.SmoothBottomBar
 import org.bedu.modastoreapp.listas.ShopContainer
 import org.bedu.modastoreapp.listas.ShopContainerAdapter
@@ -16,38 +20,19 @@ import java.util.ArrayList
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var bottomBar : SmoothBottomBar
-    private lateinit var searchInp : Button
-
     override fun onCreate(saveWomenInstanceState: Bundle?) {
         super.onCreate(saveWomenInstanceState)
         setContentView(R.layout.activity_shop)
 
-        bottomBar = findViewById(R.id.bottomBar)
-        searchInp = findViewById(R.id.search_input)
+        val menu_bar = findViewById<BottomNavigationView>(R.id.home_menu)
+        val input_search = findViewById<EditText>(R.id.home_search)
+        val username = "tomas11"
 
-        val womenViewPager = findViewById<ViewPager2>(R.id.WomenSlider)
-        val sliderWomen: MutableList<ShopContainer> = ArrayList()
-
-        val bundle = intent.extras
-        val userName = bundle?.getString(USERNAME)
-
-        searchInp.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putString(USERNAME, userName)
-
-            val intent = Intent(this, SearchProductActivity::class.java).apply {
-                putExtras(bundle)
-            }
-
-            startActivity(intent)
-        }
-
-        bottomBar.onItemSelected = {
-            when (it) {
-                1 -> {
+        menu_bar.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.menu_shopping_cart -> {
                     val bundle = Bundle()
-                    bundle.putString(USERNAME, userName)
+                    bundle.putString(USERNAME, username)
 
                     val intent = Intent(this, CartActivity::class.java).apply {
                         putExtras(bundle)
@@ -55,9 +40,9 @@ class HomeActivity : AppCompatActivity() {
 
                     startActivity(intent)
                 }
-                2 -> {
+                R.id.menu_profile -> {
                     val bundle = Bundle()
-                    bundle.putString(USERNAME, userName)
+                    bundle.putString(USERNAME, username)
 
                     val intent = Intent(this, ProfileActivity::class.java).apply {
                         putExtras(bundle)
@@ -66,9 +51,24 @@ class HomeActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
             }
+            true
+        }
+
+        input_search.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString(USERNAME, username)
+
+            val intent = Intent(this, SearchProductActivity::class.java).apply {
+                putExtras(bundle)
+            }
+
+            startActivity(intent)
         }
 
         val products = MYSTORE.catalogProduct
+
+        val womenViewPager = findViewById<ViewPager2>(R.id.WomenSlider)
+        val sliderWomen: MutableList<ShopContainer> = ArrayList()
 
         for (i in 1..5) {
             val sliderWomenv = ShopContainer()
