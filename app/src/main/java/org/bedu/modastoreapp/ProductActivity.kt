@@ -1,6 +1,5 @@
 package org.bedu.modastoreapp
 
-import android.animation.Animator
 import android.animation.AnimatorInflater
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,42 +14,43 @@ class ProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
 
-        val btnReturn = findViewById<Button>(R.id.btn_Return)
-        val btnAddCart = findViewById<Button>(R.id.btn_addcart)
-        val btnAddFav = findViewById<ImageView>(R.id.btn_addfav)
-        val imgProduct = findViewById<ImageView>(R.id.productImage)
-        val txtProductName = findViewById<TextView>(R.id.productName)
-        val txtProductPrice = findViewById<TextView>(R.id.productPrice)
+        val btn_return = findViewById<Button>(R.id.product_btn_return)
+        val btn_add_cart = findViewById<Button>(R.id.product_btn_add_cart)
+        val btn_add_fav = findViewById<ImageView>(R.id.product_btn_add_fav)
+        val product_img = findViewById<ImageView>(R.id.product_img)
+        val product_name = findViewById<TextView>(R.id.product_name)
+        val product_price = findViewById<TextView>(R.id.product_price)
 
         val bundle = intent.extras
         val productId = bundle?.getInt(PRODUCTID)
         val product = MYSTORE.getProduct(productId)
         val userName = bundle?.getString(USERNAME)
 
-        btnReturn.setOnClickListener {
+        btn_return.setOnClickListener {
             finish()
         }
 
         if (product!=null) {
-            imgProduct.setImageResource(product.image)
-            txtProductName.text = product.name
-            txtProductPrice.text = "$ ${product.price}"
+            product_img.setImageResource(product.image)
+            product_name.text = product.name
+            product_price.text = "$ ${product.price}"
         }
 
-        btnAddFav.setOnClickListener {
+        btn_add_fav.setOnClickListener {
             if (userName != null && userName != "" && product != null) {
                 MYSTORE.getUserName(userName)?.addToFavorite(product)
-                btnAddFav.setImageResource(R.drawable.ic_productfav)
-                blink(btnAddFav)
+                btn_add_fav.setImageResource(R.drawable.ic_productfav)
+                blink(btn_add_fav)
                 Toast.makeText(applicationContext ,"El producto ha sido añadido a tus favoritos", Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(applicationContext ,"Inicia sesión", Toast.LENGTH_LONG).show()
             }
         }
 
-        btnAddCart.setOnClickListener {
+        btn_add_cart.setOnClickListener {
             if (userName != null && userName != "" && product != null) {
                 MYSTORE.getUserName(userName)?.addToCart(product)
+                shrink(btn_add_cart)
                 Toast.makeText(applicationContext ,"El producto ha sido añadido a tu carrito", Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(applicationContext ,"Inicia sesión", Toast.LENGTH_LONG).show()
@@ -61,6 +61,13 @@ class ProductActivity : AppCompatActivity() {
     private fun blink(btnAddFav : ImageView) {
         AnimatorInflater.loadAnimator(this, R.animator.blinking).apply {
             setTarget(btnAddFav)
+            start()
+        }
+    }
+
+    private fun shrink(button: Button) {
+        AnimatorInflater.loadAnimator(this, R.animator.shrink).apply {
+            setTarget(button)
             start()
         }
     }
