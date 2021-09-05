@@ -22,10 +22,10 @@ class ProductActivity : AppCompatActivity() {
 
         btnReturn = findViewById(R.id.config_data_btn_return)
         btnAddCart = findViewById(R.id.btn_addcart)
-        btnAddFav = findViewById(R.id.btn_addfav)
-        imgProduct = findViewById(R.id.productImage)
-        txtProductName = findViewById(R.id.productName)
-        txtProductPrice = findViewById(R.id.productPrice)
+        btnAddFav = findViewById(R.id.product_btn_addfavorites)
+        imgProduct = findViewById(R.id.product_img)
+        txtProductName = findViewById(R.id.product_name)
+        txtProductPrice = findViewById(R.id.product_price)
 
         val bundle = intent.extras
         val productId = bundle?.getInt(PRODUCTID)

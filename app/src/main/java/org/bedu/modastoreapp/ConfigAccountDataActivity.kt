@@ -68,54 +68,6 @@ class ConfigAccountDataActivity : AppCompatActivity() {
         btn_update.setOnClickListener {
             confirmDialog()
         }
-
-        /*if (regUser != null) {
-            inputUsername.hint = regUser.getName()
-            inputEmail.hint = regUser.getEmail()
-
-            editUsernameIcon.setOnClickListener{
-                inputUsername.isEnabled = true
-            }
-
-            editEmailIcon.setOnClickListener{
-                inputEmail.isEnabled = true
-            }
-
-            editPasswordIcon.setOnClickListener{
-                inputPassword.isEnabled = true
-            }
-
-            inputUsername.addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(s: Editable) {
-                    updateButton.isVisible = true
-                }
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-            })
-
-            inputEmail.addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(s: Editable) {
-                    updateButton.isVisible = true
-                }
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-            })
-
-            inputPassword.addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(s: Editable) {
-                    updateButton.isVisible = true
-                }
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-            })
-
-            updateButton.setOnClickListener {
-                buttonShowDialog_onClick(regUser)
-            }
-
-        } else {
-            Toast.makeText(applicationContext ,"Inicia sesión o crea una cuenta :)" , Toast.LENGTH_LONG).show()
-        }*/
     }
 
     private fun confirmDialog() {

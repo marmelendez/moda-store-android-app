@@ -3,8 +3,9 @@
 
     <string name="label_username">Nombre de usuario</string>
     <string name="label_email">Correo</string>
-    <string name="label_nombre_producto">Correo</string>
-    <string name="label_precio_producto">Correo</string>
+    <string name="label_password">Contraseña</string>
+    <string name="label_nombre_producto">Nombre producto</string>
+    <string name="label_precio_producto">Precio producto</string>
 
     <string name="btn_logIn">Iniciar sesión</string>
     <string name="btn_signIn">Registrarse</string>
@@ -42,20 +43,5 @@
     <string name="producto_total">$ 100.0</string>
     <string name="label_cantidad">Productos: </string>
     <string name="cantidad">5</string>
-
-
-
-
-    <string name="btn_submit">Actualizar</string>
-
-
-    <string name="label_telephone">Telefono</string>
-    <string name="label_password">Contraseña</string>
-    <string name="label_address">Dirección</string>
-    <string name="label_productname">Nombre del producto</string>
-    <string name="label_productprice">Precio del producto</string>
-
-
-    <string name="warning">error</string>
 
 </resources>
