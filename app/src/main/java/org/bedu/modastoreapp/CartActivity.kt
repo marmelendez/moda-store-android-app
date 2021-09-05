@@ -1,5 +1,6 @@
 package org.bedu.modastoreapp
 
+import android.animation.AnimatorInflater
 import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -37,6 +38,7 @@ class CartActivity : AppCompatActivity() {
         }
 
         button_pay.setOnClickListener{
+            shrink(button_pay)
             if (regUser != null) {
                 confirmDialog(regUser)
             }
@@ -111,5 +113,12 @@ class CartActivity : AppCompatActivity() {
 
         val dialog = builder.create()
         dialog.show()
+    }
+
+    private fun shrink(button: Button) {
+        AnimatorInflater.loadAnimator(this, R.animator.shrink).apply {
+            setTarget(button)
+            start()
+        }
     }
 }
