@@ -1,5 +1,6 @@
 package org.bedu.modastoreapp
 
+import android.animation.AnimatorInflater
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class StartActivity : AppCompatActivity() {
 
@@ -28,11 +30,22 @@ class StartActivity : AppCompatActivity() {
         btn_signin = findViewById(R.id.start_btn_signin)
 
         btn_login.setOnClickListener {
-            iniciarSesion(inp_username, inp_password)
+            shrink(btn_login)
+            if (inp_username.text != null && inp_username.text != null) {
+                iniciarSesion(inp_username, inp_password)
+            } else {
+                Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         btn_signin.setOnClickListener {
-            registrarse(inp_username, inp_password)
+            shrink(btn_signin)
+            if (inp_username.text != null && inp_username.text != null) {
+                registrarse(inp_username, inp_password)
+            } else {
+                Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -79,6 +92,13 @@ class StartActivity : AppCompatActivity() {
             Toast.makeText(this, "SIN USUARIO",Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this, Firebase.auth.currentUser?.email,Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun shrink(button: Button) {
+        AnimatorInflater.loadAnimator(this, R.animator.shrink).apply {
+            setTarget(button)
+            start()
         }
     }
 
