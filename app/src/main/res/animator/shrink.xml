@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="sequentially">
+
+    <!--Encojimiento-->
+    <set
+        android:ordering="together">
+        <objectAnimator
+            android:propertyName="scaleX"
+            android:duration="300"
+            android:valueTo="0.7"
+            android:valueType="floatType"
+            android:interpolator="@android:anim/decelerate_interpolator">
+        </objectAnimator>
+        <objectAnimator
+            android:propertyName="scaleY"
+            android:duration="300"
+            android:valueTo="0.7"
+            android:valueType="floatType"
+            android:interpolator="@android:anim/decelerate_interpolator">
+        </objectAnimator>
+    </set>
+
+    <!--Engrandecimiento -->
+    <set
+        android:ordering="together">
+        <!-- startOffset: Se queda dos segundos asi -->
+        <objectAnimator
+            android:startOffset="100"
+            android:propertyName="scaleX"
+            android:duration="300"
+            android:valueTo="1"
+            android:valueType="floatType"
+            android:interpolator="@android:anim/accelerate_interpolator">
+        </objectAnimator>
+        <objectAnimator
+            android:startOffset="100"
+            android:propertyName="scaleY"
+            android:duration="300"
+            android:valueTo="1"
+            android:valueType="floatType"
+            android:interpolator="@android:anim/accelerate_interpolator">
+        </objectAnimator>
+    </set>
+
+</set>

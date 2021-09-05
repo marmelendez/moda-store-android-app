@@ -1,5 +1,7 @@
 package org.bedu.modastoreapp
 
+import android.animation.Animator
+import android.animation.AnimatorInflater
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -9,23 +11,16 @@ import android.widget.Toast
 
 class ProductActivity : AppCompatActivity() {
 
-    private lateinit var btnReturn : Button
-    private lateinit var btnAddCart : Button
-    private lateinit var btnAddFav : ImageView
-    private lateinit var imgProduct : ImageView
-    private lateinit var txtProductName : TextView
-    private lateinit var txtProductPrice : TextView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
 
-        btnReturn = findViewById(R.id.btn_Return)
-        btnAddCart = findViewById(R.id.btn_addcart)
-        btnAddFav = findViewById(R.id.btn_addfav)
-        imgProduct = findViewById(R.id.productImage)
-        txtProductName = findViewById(R.id.productName)
-        txtProductPrice = findViewById(R.id.productPrice)
+        val btnReturn = findViewById<Button>(R.id.btn_Return)
+        val btnAddCart = findViewById<Button>(R.id.btn_addcart)
+        val btnAddFav = findViewById<ImageView>(R.id.btn_addfav)
+        val imgProduct = findViewById<ImageView>(R.id.productImage)
+        val txtProductName = findViewById<TextView>(R.id.productName)
+        val txtProductPrice = findViewById<TextView>(R.id.productPrice)
 
         val bundle = intent.extras
         val productId = bundle?.getInt(PRODUCTID)
@@ -46,6 +41,7 @@ class ProductActivity : AppCompatActivity() {
             if (userName != null && userName != "" && product != null) {
                 MYSTORE.getUserName(userName)?.addToFavorite(product)
                 btnAddFav.setImageResource(R.drawable.ic_productfav)
+                blink(btnAddFav)
                 Toast.makeText(applicationContext ,"El producto ha sido añadido a tus favoritos", Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(applicationContext ,"Inicia sesión", Toast.LENGTH_LONG).show()
@@ -59,6 +55,13 @@ class ProductActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(applicationContext ,"Inicia sesión", Toast.LENGTH_LONG).show()
             }
+        }
+    }
+
+    private fun blink(btnAddFav : ImageView) {
+        AnimatorInflater.loadAnimator(this, R.animator.blinking).apply {
+            setTarget(btnAddFav)
+            start()
         }
     }
 }
