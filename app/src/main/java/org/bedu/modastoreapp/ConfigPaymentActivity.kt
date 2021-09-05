@@ -1,5 +1,6 @@
 package org.bedu.modastoreapp
 
+import android.animation.AnimatorInflater
 import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -24,12 +25,12 @@ class ConfigPaymentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_config_payment)
 
-        returnIcon = findViewById(R.id.btn_Return)
-        editDebitCard = findViewById(R.id.btn_EditDebitCard)
-        editCreditCard = findViewById(R.id.btn_EditCreditCard)
-        inputDebitCard = findViewById(R.id.input_DebitCard)
-        inputCreditCard = findViewById(R.id.input_CreditCard)
-        updateButton = findViewById(R.id.btn_Submit)
+        returnIcon = findViewById(R.id.config_pay_btn_return)
+        editDebitCard = findViewById(R.id.config_pay_btn_edit_debit)
+        editCreditCard = findViewById(R.id.config_pay_btn_edit_credit)
+        inputDebitCard = findViewById(R.id.config_pay_input_debit)
+        inputCreditCard = findViewById(R.id.config_pay_input_credit)
+        updateButton = findViewById(R.id.config_pay_btn_update)
 
         val bundle = intent.extras
         val username = bundle?.getString(USERNAME)
@@ -75,6 +76,7 @@ class ConfigPaymentActivity : AppCompatActivity() {
             })
 
             updateButton.setOnClickListener {
+                shrink(updateButton)
                 buttonShowDialog_onClick(regUser)
             }
         }else {
@@ -102,5 +104,12 @@ class ConfigPaymentActivity : AppCompatActivity() {
 
         val dialog = builder.create()
         dialog.show()
+    }
+
+    private fun shrink(button: Button) {
+        AnimatorInflater.loadAnimator(this, R.animator.shrink).apply {
+            setTarget(button)
+            start()
+        }
     }
 }

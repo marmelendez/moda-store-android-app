@@ -4,137 +4,147 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/topbarConfigData"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/config_data_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:orientation="horizontal"
-        android:elevation="8dp"
+        android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/labelUserName"
-        >
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/btn_Return"
+            android:id="@+id/config_data_btn_return"
             style="@style/returnButton"
-            android:layout_marginStart="16dp"
             android:layout_gravity="center_vertical"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toStartOf="@+id/title_Data"
+            app:layout_constraintEnd_toStartOf="@+id/config_data"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/title_Data"
-            style="@style/header_title"
-            android:layout_marginEnd="70dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="center_vertical"
-            android:layout_width="match_parent"
+            android:id="@+id/config_data"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_config_account" />
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/menu_data"
+            android:textColor="#393E46"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <TextView
-        android:id="@+id/labelUserName"
+        android:id="@+id/config_data_label_username"
         style="@style/config_account_label"
         android:layout_marginTop="28dp"
+        android:layout_marginStart="32dp"
         android:text="@string/label_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topbarConfigData" />
+        app:layout_constraintTop_toBottomOf="@+id/config_data_top_bar" />
 
     <Button
-        android:id="@+id/btnEditUserName"
+        android:id="@+id/config_data_btn_edit_username"
         style="@style/editButton"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/inpUsername"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/config_data_input_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/labelUserName" />
+        app:layout_constraintStart_toEndOf="@+id/config_data_label_username" />
 
     <EditText
-        android:id="@+id/inpUsername"
+        android:id="@+id/config_data_input_username"
         style="@style/config_account_field"
         android:hint="@string/label_username"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelUserName"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/config_data_label_username" />
 
     <TextView
-        android:id="@+id/labelEmail"
+        android:id="@+id/config_data_label_email"
         style="@style/config_account_label"
         android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
         android:text="@string/label_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inpUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/config_data_input_username" />
 
     <Button
-        android:id="@+id/btnEditEmail"
+        android:id="@+id/config_data_btn_edit_email"
         style="@style/editButton"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/inpEmail"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/config_data_input_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/labelEmail" />
+        app:layout_constraintStart_toEndOf="@+id/config_data_label_email" />
 
     <EditText
-        android:id="@+id/inpEmail"
+        android:id="@+id/config_data_input_email"
         style="@style/config_account_field"
         android:hint="@string/label_email"
+        android:layout_marginHorizontal="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/config_data_label_email" />
 
     <TextView
-        android:id="@+id/labelPassword"
+        android:id="@+id/config_data_label_password"
         style="@style/config_account_label"
         android:layout_marginTop="28dp"
         android:text="@string/label_password"
+        android:layout_marginStart="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inpEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/config_data_input_email" />
 
     <Button
-        android:id="@+id/btnEditPassword"
+        android:id="@+id/config_data_btn_edit_password"
         style="@style/editButton"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/inpPassword"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/config_data_input_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/labelPassword" />
+        app:layout_constraintStart_toEndOf="@+id/config_data_label_password" />
 
     <EditText
-        android:id="@+id/inpPassword"
+        android:id="@+id/config_data_input_password"
         style="@style/config_account_field"
         android:hint="@string/label_password"
         android:inputType="textPassword"
+        android:layout_marginHorizontal="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/config_data_label_password" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_Submit"
+    <Button
+        android:id="@+id/config_data_btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_submit"
-        android:layout_gravity="center"
-        android:visibility="invisible"
-        app:cornerRadius="16dp"
+        android:layout_margin="16dp"
         android:fontFamily="@font/nunitobold"
-        android:backgroundTint="@color/primaryColor"
+        android:text="@string/btn_submit"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inpPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/config_data_input_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

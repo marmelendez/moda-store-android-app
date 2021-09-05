@@ -1,5 +1,6 @@
 package org.bedu.modastoreapp
 
+import android.animation.AnimatorInflater
 import android.content.Intent
 
 import androidx.appcompat.app.AppCompatActivity
@@ -39,6 +40,8 @@ class OrderActivity : AppCompatActivity() {
 
         val bundle = intent.extras
         username = bundle?.getString(USERNAME).toString()
+
+        blink(orderIcon)
 
 
         favoriteIcon.setOnClickListener {
@@ -140,6 +143,13 @@ class OrderActivity : AppCompatActivity() {
             true
         }
         popupMenu.show()
+    }
+
+    private fun blink(btnAddFav : ImageView) {
+        AnimatorInflater.loadAnimator(this, R.animator.blinking).apply {
+            setTarget(btnAddFav)
+            start()
+        }
     }
 
     private fun confirmDialog() {
