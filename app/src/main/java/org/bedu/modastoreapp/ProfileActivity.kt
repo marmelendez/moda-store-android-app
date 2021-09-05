@@ -28,6 +28,8 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var configIcon: ImageButton
     private lateinit var products: MutableList<Product>
     private lateinit var menu_bar : BottomNavigationView
+    private lateinit var username : String
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +43,7 @@ class ProfileActivity : AppCompatActivity() {
         recyclerView=findViewById(R.id.favoriteslist)
 
         val bundle = intent.extras
-        var username = bundle?.getString(USERNAME)
+        username = bundle?.getString(USERNAME).toString()
 
         orderIcon.setOnClickListener {
             val bundle = Bundle()
@@ -107,15 +109,33 @@ class ProfileActivity : AppCompatActivity() {
         popupMenu.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_data -> {
-                    val intent = Intent(this, ConfigAccountDataActivity::class.java)
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, username)
+
+                    val intent = Intent(this, ConfigAccountDataActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
                     startActivity(intent)
                 }
                 R.id.menu_address -> {
-                    val intent = Intent(this, ConfigAddressActivity::class.java)
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, username)
+
+                    val intent = Intent(this, ConfigAddressActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
                     startActivity(intent)
                 }
                 R.id.menu_payment -> {
-                    val intent = Intent(this, ConfigPaymentActivity::class.java)
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, username)
+
+                    val intent = Intent(this, ConfigPaymentActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
                     startActivity(intent)
                 }
                 R.id.menu_logout -> {
