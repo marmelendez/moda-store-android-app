@@ -16,7 +16,7 @@
         >
 
         <Button
-            android:id="@+id/btn_Return"
+            android:id="@+id/config_data_btn_return"
             style="@style/returnButton"
             android:layout_marginStart="16dp"
             android:layout_gravity="center_vertical"

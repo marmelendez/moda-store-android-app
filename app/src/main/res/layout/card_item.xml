@@ -38,7 +38,7 @@
                 android:id="@+id/product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/product_name"
+                android:text="@string/label_nombre_producto"
                 android:textSize="14sp" />
             <LinearLayout
                 android:orientation="horizontal"
@@ -47,7 +47,7 @@
                 <TextView
                     android:layout_marginStart="10dp"
                     android:id="@+id/price"
-                    android:text="@string/product_price"
+                    android:text="@string/label_precio_producto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"/>

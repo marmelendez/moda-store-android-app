@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_data"
+        android:title="@string/menu_data"/>
+
+    <item
+        android:id="@+id/menu_address"
+        android:title="@string/menu_address" />
+
+    <item
+        android:id="@+id/menu_payment"
+        android:title="@string/menu_payment"/>
+
+    <item
+        android:id="@+id/menu_logout"
+        android:title="@string/menu_logout"/>
+
+</menu>

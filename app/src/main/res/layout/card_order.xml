@@ -34,7 +34,7 @@
                 <TextView
                     android:layout_margin="10dp"
                     android:id="@+id/Id"
-                    android:text="@string/Id"
+                    android:text="@string/label_id_compra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"/>
@@ -43,7 +43,7 @@
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/Compra"
+                    android:text="@string/id_compra"
                     android:textSize="14sp"/>
             </LinearLayout>
 
@@ -56,14 +56,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
-                    android:text="@string/product_total"
+                    android:text="@string/label_producto_total"
                     android:textSize="14sp"/>
                 <TextView
                     android:id="@+id/OrderPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
-                    android:text="@string/order_price"
+                    android:text="@string/producto_total"
                     android:textSize="14sp"
                     android:layout_marginLeft="4dp"/>
             </LinearLayout>
@@ -78,14 +78,14 @@
                     android:layout_margin="10dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="Cantidad"
+                    android:text="@string/label_cantidad"
                     android:textSize="14sp"/>
                 <TextView
                     android:id="@+id/orderProducts"
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="c0"
+                    android:text="@string/cantidad"
                     android:textSize="14sp"
                     android:layout_marginLeft="4dp"/>
             </LinearLayout>

@@ -16,7 +16,7 @@ import org.bedu.modastoreapp.modelos.BaseDatos
 
 
 
-class FragmentHome : Fragment(R.layout.fragment_home_view) {
+class FragmentHome : Fragment() {
 
     /*override fun onCreateView(
         inflater: LayoutInflater,

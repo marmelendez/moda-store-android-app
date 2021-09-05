@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import me.ibrahimsn.lib.SmoothBottomBar
 import org.bedu.modastoreapp.listas.DetailFragment
 import org.bedu.modastoreapp.listas.ListFragment
@@ -16,40 +17,33 @@ import org.bedu.modastoreapp.modelos.RegisteredUser
 
 class CartActivity : AppCompatActivity() {
 
-    private lateinit var bottomBar : SmoothBottomBar
-    private lateinit var payButton : Button
-    private lateinit var totalPrice : TextView
+    private lateinit var menu_bar : BottomNavigationView
+    private lateinit var button_pay : Button
+    private lateinit var total_price : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
-    }
 
-        /*bottomBar = findViewById(R.id.bottomBar)
-        payButton = findViewById(R.id.next_button)
-        totalPrice = findViewById(R.id.priceTotal)
+        menu_bar = findViewById(R.id.cart_menu)
+        button_pay = findViewById(R.id.cart_btn_shop)
+        total_price = findViewById(R.id.cart_txt_total)
 
-        val bundle = intent.extras
-        val userName = bundle?.getString(USERNAME)
-
-        val regUser = MYSTORE.getUserName(userName.toString())
+        val username = "tomas11"
+        val regUser = STORE.getUserName(username)
         if (regUser != null) {
-            totalPrice.text = "$ ${regUser.getTotal().toString()}"
+            total_price.text = "$ ${regUser.getTotal()}"
         }
 
-        val listFragment = supportFragmentManager.findFragmentById(R.id.fragmentList) as ListFragment
-        if (userName != null) {
-            listFragment.setUsername(userName)
+        val listFragment = supportFragmentManager.findFragmentById(R.id.cart_fragment_container) as ListFragment
+        if (username != null) {
+            listFragment.setUsername(username)
         } else {
             listFragment.setUsername("tomas11")
         }
 
-        payButton.setOnClickListener{
-            if (regUser != null) {
-                buttonShowDialog_onClick(regUser)
-            } else {
-                Toast.makeText(applicationContext, "Inicia sesión", Toast.LENGTH_SHORT).show()
-            }
+        button_pay.setOnClickListener{
+            Toast.makeText(applicationContext, "PAGAR", Toast.LENGTH_SHORT).show()
         }
 
         listFragment.setListener{
@@ -64,12 +58,18 @@ class CartActivity : AppCompatActivity() {
             }
         }
 
-        bottomBar.onItemReselected = {
-            evalCase(it, userName)
-        }
-
-        bottomBar.onItemSelected = {
-            evalCase(it, userName)
+        menu_bar.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.menu_home -> {
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.menu_profile -> {
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
         }
     }
 
@@ -84,7 +84,7 @@ class CartActivity : AppCompatActivity() {
         ) { dialog, which -> }
 
         builder.setPositiveButton(
-            R.string.ok
+            "ok"
         ) { dialogInterface, i ->
             val order = Order(regUser.getOrders().size,regUser.getShoppingCart(),regUser.getTotal(),regUser.getAddress())
             regUser.addOrder(order)
@@ -96,38 +96,4 @@ class CartActivity : AppCompatActivity() {
         val dialog = builder.create()
         dialog.show()
     }
-
-    private fun evalCase(it: Int, userName: String?) {
-        when (it) {
-            0 -> {
-                val bundle = Bundle()
-                bundle.putString(USERNAME, userName)
-
-                val intent = Intent(this, HomeActivity::class.java).apply {
-                    putExtras(bundle)
-                }
-
-                startActivity(intent)
-            }1 -> {
-            val bundle = Bundle()
-            bundle.putString(USERNAME, userName)
-
-            val intent = Intent(this, CartActivity::class.java).apply {
-                putExtras(bundle)
-            }
-
-            startActivity(intent)
-            }2 -> {
-                val bundle = Bundle()
-                bundle.putString(USERNAME, userName)
-
-                val intent = Intent(this, ProfileActivity::class.java).apply {
-                    putExtras(bundle)
-                }
-
-                startActivity(intent)
-            }
-        }
-
-    }*/
 }

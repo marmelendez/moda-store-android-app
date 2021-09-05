@@ -18,7 +18,7 @@ class ConfigurationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configuration)
 
-        btn_return = findViewById(R.id.btn_Return)
+        btn_return = findViewById(R.id.config_data_btn_return)
         btn_Account = findViewById(R.id.btn_Account)
         btn_Payment = findViewById(R.id.btn_PaymentMethod)
         btn_Address = findViewById(R.id.btn_Addresses)
@@ -87,7 +87,7 @@ class ConfigurationActivity : AppCompatActivity() {
         ) { dialog, which -> }
 
         builder.setPositiveButton(
-            R.string.ok
+            "ok"
         ) { dialogInterface, i ->
             val intent = Intent(this, LogInActivity::class.java)
             startActivity(intent)

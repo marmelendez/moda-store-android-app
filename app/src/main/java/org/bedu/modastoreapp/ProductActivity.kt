@@ -20,7 +20,7 @@ class ProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
 
-        btnReturn = findViewById(R.id.btn_Return)
+        btnReturn = findViewById(R.id.config_data_btn_return)
         btnAddCart = findViewById(R.id.btn_addcart)
         btnAddFav = findViewById(R.id.btn_addfav)
         imgProduct = findViewById(R.id.productImage)

@@ -23,8 +23,9 @@ class ConfigPaymentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_config_payment)
+    }
 
-        returnIcon = findViewById(R.id.btn_Return)
+        /*returnIcon = findViewById(R.id.config_data_btn_return)
         editDebitCard = findViewById(R.id.btn_EditDebitCard)
         editCreditCard = findViewById(R.id.btn_EditCreditCard)
         inputDebitCard = findViewById(R.id.input_DebitCard)
@@ -92,7 +93,7 @@ class ConfigPaymentActivity : AppCompatActivity() {
         ) { dialog, which -> }
 
         builder.setPositiveButton(
-            R.string.ok
+            "ok"
         ) { dialogInterface, i ->
             if (inputCreditCard.text.toString()!="") regUser.setCreditCard(inputCreditCard.text.toString())
             if (inputDebitCard.text.toString()!="") regUser.setDebitCard(inputDebitCard.text.toString())
@@ -102,5 +103,5 @@ class ConfigPaymentActivity : AppCompatActivity() {
 
         val dialog = builder.create()
         dialog.show()
-    }
+    }*/
 }

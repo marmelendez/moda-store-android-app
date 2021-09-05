@@ -1,5 +1,6 @@
 package org.bedu.modastoreapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -39,14 +40,12 @@ class HomeActivity : AppCompatActivity() {
                     Toast.makeText(this, "ESTAS EN INICIO", Toast.LENGTH_SHORT).show()
                 }
                 R.id.menu_shopping_cart -> {
-                    Toast.makeText(this, "CARRITO", Toast.LENGTH_SHORT).show()
-                    //val intent = Intent(this, CartActivity::class.java)
-                    //startActivity(intent)
+                    val intent = Intent(this, CartActivity::class.java)
+                    startActivity(intent)
                 }
                 R.id.menu_profile -> {
-                    Toast.makeText(this, "PERFIL", Toast.LENGTH_SHORT).show()
-                    //val intent = Intent(this, ProfileActivity::class.java)
-                    //startActivity(intent)
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
                 }
             }
             true

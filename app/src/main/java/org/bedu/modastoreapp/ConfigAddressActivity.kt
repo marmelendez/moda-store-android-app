@@ -21,8 +21,9 @@ class ConfigAddressActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_config_address)
+    }
 
-        returnIcon = findViewById(R.id.btn_Return)
+        /*returnIcon = findViewById(R.id.config_data_btn_return)
         editAddress = findViewById(R.id.btn_EditAddress)
         inputAddress = findViewById(R.id.input_Address)
         updateButton = findViewById(R.id.btn_Submit)
@@ -77,7 +78,7 @@ class ConfigAddressActivity : AppCompatActivity() {
         ) { dialog, which -> }
 
         builder.setPositiveButton(
-            R.string.ok
+            "ok"
         ) { dialogInterface, i ->
             if (inputAddress.text.toString()!="") regUser.setAddress(inputAddress.text.toString())
             Toast.makeText(applicationContext, "Tus datos han sido actualizados", Toast.LENGTH_SHORT).show()
@@ -86,6 +87,6 @@ class ConfigAddressActivity : AppCompatActivity() {
 
         val dialog = builder.create()
         dialog.show()
-    }
+    }*/
 }
 

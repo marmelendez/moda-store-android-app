@@ -27,7 +27,7 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        returnIcon = findViewById(R.id.btn_Return)
+        returnIcon = findViewById(R.id.config_data_btn_return)
         signInButton = findViewById(R.id.btn_SignIn)
         inputUsername = findViewById(R.id.inp_AskUsername)
         inputEmail = findViewById(R.id.inp_AskEmail)

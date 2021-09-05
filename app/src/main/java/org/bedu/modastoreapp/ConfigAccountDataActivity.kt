@@ -25,14 +25,15 @@ class ConfigAccountDataActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_config_account_data)
+    }
 
-        returnIcon = findViewById(R.id.btn_Return)
-        editUsernameIcon = findViewById(R.id.btnEditUserName)
-        editEmailIcon = findViewById(R.id.btnEditEmail)
-        editPasswordIcon = findViewById(R.id.btnEditPassword)
-        inputUsername = findViewById(R.id.inpUsername)
-        inputEmail = findViewById(R.id.inpEmail)
-        inputPassword = findViewById(R.id.inpPassword)
+        /*returnIcon = findViewById(R.id.config_data_btn_return)
+        editUsernameIcon = findViewById(R.id.config_data_btn_edit_username)
+        editEmailIcon = findViewById(R.id.config_data_btn_edit_email)
+        editPasswordIcon = findViewById(R.id.config_data_btn_edit_password)
+        inputUsername = findViewById(R.id.config_data_input_username)
+        inputEmail = findViewById(R.id.config_data_input_email)
+        inputPassword = findViewById(R.id.config_data_input_password)
         updateButton = findViewById(R.id.btn_Submit)
 
         val bundle = intent.extras
@@ -110,7 +111,7 @@ class ConfigAccountDataActivity : AppCompatActivity() {
         ) { dialog, which -> }
 
         builder.setPositiveButton(
-            R.string.ok
+            "ok"
         ) { dialogInterface, i ->
             if (inputUsername.text.toString()!="") regUser.setName(inputUsername.text.toString())
             if (inputEmail.text.toString()!="") regUser.setEmail(inputEmail.text.toString())
@@ -121,5 +122,5 @@ class ConfigAccountDataActivity : AppCompatActivity() {
 
         val dialog = builder.create()
         dialog.show()
-    }
+    }*/
 }

@@ -16,7 +16,7 @@
         >
 
         <Button
-            android:id="@+id/btn_Return"
+            android:id="@+id/config_data_btn_return"
             style="@style/returnButton"
             android:layout_marginStart="16dp"
             android:layout_gravity="center_vertical"
@@ -35,7 +35,7 @@
             android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/txt_configuration" />
+            android:text="@string/label_configuration" />
 
     </LinearLayout>
 
@@ -43,7 +43,7 @@
         android:id="@+id/btn_Account"
         style="@style/configButtons"
         android:drawableRight="@drawable/ic_next"
-        android:text="@string/txt_config_account"
+        android:text="@string/menu_data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topbarConfig" />
@@ -52,7 +52,7 @@
         android:id="@+id/btn_PaymentMethod"
         style="@style/configButtons"
         android:drawableRight="@drawable/ic_next"
-        android:text="@string/btn_paymentMethods"
+        android:text="@string/menu_payment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_Account" />
@@ -61,7 +61,7 @@
         android:id="@+id/btn_Addresses"
         style="@style/configButtons"
         android:drawableRight="@drawable/ic_next"
-        android:text="@string/btn_address"
+        android:text="@string/menu_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_PaymentMethod" />
@@ -69,7 +69,7 @@
     <Button
         android:id="@+id/btn_LogOut"
         style="@style/configButtons"
-        android:text="@string/btn_logout"
+        android:text="@string/menu_logout"
         android:fontFamily = "@font/nunitobold"
         android:textAlignment="center"
         android:textColor="@color/red"

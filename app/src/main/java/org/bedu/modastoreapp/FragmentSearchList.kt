@@ -10,18 +10,19 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.bedu.modastoreapp.listas.RecyclerAdapter
 
-class FragmentSearchList : Fragment(R.layout.fragment_search_list) {
+class FragmentSearchList : Fragment() {
     /*override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
 
         val view = inflater.inflate(R.layout.fragment_search_list, container, false)
 
         val products = STORE.catalogProduct
         val dataList = view.findViewById<RecyclerView>(R.id.home_product_list)
 
-        val adapter = RecyclerAdapter(cont, products, "")
+        val adapter = RecyclerAdapter(this, products, "")
         val gridLayoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
         dataList.setLayoutManager(gridLayoutManager)
         dataList.setAdapter(adapter)
