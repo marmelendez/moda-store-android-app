@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Moda store</string>
+    <string name="menu_data">Cuenta</string>
+    <string name="menu_address">Dirección</string>
+    <string name="menu_payment">Métodos de pago</string>
+    <string name="menu_logout">Cerrar sesion</string>
 
     <string name="label_username">Nombre de usuario</string>
     <string name="label_email">Correo</string>
