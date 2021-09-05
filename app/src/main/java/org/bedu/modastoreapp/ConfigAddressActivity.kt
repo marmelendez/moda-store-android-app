@@ -1,5 +1,6 @@
 package org.bedu.modastoreapp
 
+import android.animation.AnimatorInflater
 import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -22,10 +23,10 @@ class ConfigAddressActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_config_address)
 
-        returnIcon = findViewById(R.id.btn_Return)
-        editAddress = findViewById(R.id.btn_EditAddress)
-        inputAddress = findViewById(R.id.input_Address)
-        updateButton = findViewById(R.id.btn_Submit)
+        returnIcon = findViewById(R.id.config_address_btn_return)
+        editAddress = findViewById(R.id.config_address_btn_edit_address)
+        inputAddress = findViewById(R.id.config_address_input_address)
+        updateButton = findViewById(R.id.config_adress_btn_update)
 
         val bundle = intent.extras
         val username = bundle?.getString(USERNAME)
@@ -35,7 +36,7 @@ class ConfigAddressActivity : AppCompatActivity() {
             val bundle = Bundle()
             bundle.putString(USERNAME, regUser?.getName().toString())
 
-            val intent = Intent(this, ConfigurationActivity::class.java).apply {
+            val intent = Intent(this, ProfileActivity::class.java).apply {
                 putExtras(bundle)
             }
 
@@ -58,6 +59,7 @@ class ConfigAddressActivity : AppCompatActivity() {
             })
 
             updateButton.setOnClickListener {
+                shrink(updateButton)
                 buttonShowDialog_onClick(regUser)
             }
 
@@ -86,6 +88,13 @@ class ConfigAddressActivity : AppCompatActivity() {
 
         val dialog = builder.create()
         dialog.show()
+    }
+
+    private fun shrink(button: Button) {
+        AnimatorInflater.loadAnimator(this, R.animator.shrink).apply {
+            setTarget(button)
+            start()
+        }
     }
 }
 

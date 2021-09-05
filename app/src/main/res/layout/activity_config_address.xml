@@ -4,80 +4,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/topbarConfigAddress"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/config_address_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:orientation="horizontal"
-        android:elevation="8dp"
+        android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/labelAddress"
-        >
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/btn_Return"
+            android:id="@+id/config_address_btn_return"
             style="@style/returnButton"
-            android:layout_marginStart="16dp"
             android:layout_gravity="center_vertical"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toStartOf="@+id/title_Address"
+            app:layout_constraintEnd_toStartOf="@+id/config_address"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/title_Address"
-            style="@style/header_title"
-            android:layout_marginEnd="70dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="center_vertical"
-            android:layout_width="match_parent"
+            android:id="@+id/config_address"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_address" />
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/menu_address"
+            android:textColor="#393E46"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <TextView
-        android:id="@+id/labelAddress"
+        android:id="@+id/config_address_label_address"
         style="@style/config_account_label"
         android:layout_marginTop="28dp"
-        android:text="@string/label_address"
+        android:layout_marginStart="32dp"
+        android:text="@string/menu_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topbarConfigAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/config_address_top_bar" />
 
     <Button
-        android:id="@+id/btn_EditAddress"
+        android:id="@+id/config_address_btn_edit_address"
         style="@style/editButton"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/input_Address"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/config_address_input_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/labelAddress" />
+        app:layout_constraintStart_toEndOf="@+id/config_address_label_address" />
 
     <EditText
-        android:id="@+id/input_Address"
+        android:id="@+id/config_address_input_address"
         style="@style/config_account_field"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:hint="@string/menu_address"
+        android:layout_marginHorizontal="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelAddress"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/config_address_label_address" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_Submit"
+    <Button
+        android:id="@+id/config_adress_btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/nunitobold"
         android:text="@string/btn_submit"
-        android:layout_gravity="center"
         android:visibility="invisible"
-        app:cornerRadius="16dp"
-        android:backgroundTint="@color/primaryColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_Address" />
+        app:layout_constraintTop_toBottomOf="@+id/config_address_input_address" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
