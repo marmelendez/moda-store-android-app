@@ -1,19 +1,23 @@
 package org.bedu.modastoreapp
 
 import android.animation.AnimatorInflater
+import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import android.transition.Transition
+import android.transition.TransitionInflater
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_sign_in.*
+import android.view.View
 
 class StartActivity : AppCompatActivity() {
 
+    private lateinit var exitTransition: Transition
     private lateinit var inp_username: EditText
     private lateinit var inp_password: EditText
     private lateinit var btn_login: Button
@@ -29,6 +33,18 @@ class StartActivity : AppCompatActivity() {
         btn_login = findViewById(R.id.start_btn_login)
         btn_signin = findViewById(R.id.start_btn_signin)
 
+
+        val transitionXml = TransitionInflater
+            .from(this).inflateTransition(R.transition.transition_activity).apply {
+                excludeTarget(window.decorView.findViewById<View>(R.id.action_bar_container), true)
+                excludeTarget(android.R.id.statusBarBackground, true)
+                excludeTarget(android.R.id.navigationBarBackground, true)
+            }
+
+
+        window.exitTransition = transitionXml
+
+
         btn_login.setOnClickListener {
             shrink(btn_login)
             if (inp_username.text != null && inp_username.text != null) {
@@ -36,7 +52,6 @@ class StartActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT).show()
             }
-
         }
 
         btn_signin.setOnClickListener {
@@ -58,7 +73,7 @@ class StartActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     Toast.makeText(this, "INICIO DE SESIÓN EXITOSO", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, HomeActivity::class.java)
-                    startActivity(intent)
+                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
                 } else {
                     Toast.makeText(this, "ERROR: ${it.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
@@ -75,7 +90,7 @@ class StartActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, HomeActivity::class.java)
-                    startActivity(intent)
+                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
                 } else {
                     Toast.makeText(this, "ERROR: ${it.exception?.message}", Toast.LENGTH_SHORT).show()
                 }

@@ -4,7 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.transition.Slide
+import android.view.Gravity
 import android.view.Menu
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +30,15 @@ class HomeActivity : AppCompatActivity() {
         val menu_bar = findViewById<BottomNavigationView>(R.id.home_menu)
         val input_search = findViewById<EditText>(R.id.home_search)
         val username = "tomas11"
+
+        val transition = Slide(Gravity.TOP).apply {
+            duration = 500
+            excludeTarget(window.decorView.findViewById<View>(R.id.action_bar_container), true)
+            excludeTarget(android.R.id.statusBarBackground, true)
+            excludeTarget(android.R.id.navigationBarBackground, true)
+        }
+
+        window.enterTransition = transition
 
         menu_bar.setOnItemSelectedListener {
             when (it.itemId) {
