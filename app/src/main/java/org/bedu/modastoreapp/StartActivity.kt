@@ -3,6 +3,7 @@ package org.bedu.modastoreapp
 import android.animation.AnimatorInflater
 import android.app.ActivityOptions
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -23,12 +24,11 @@ const val PRODUCTID = "org.bedu.activity.PRODUCTID" //ubicacion donde el bundle 
 
 class StartActivity : AppCompatActivity() {
 
-    private lateinit var exitTransition: Transition
     private lateinit var inp_username: EditText
     private lateinit var inp_password: EditText
     private lateinit var btn_login: Button
     private lateinit var btn_signin: Button
-    private lateinit var auth: FirebaseAuth;
+    private lateinit var prefs: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -122,6 +122,28 @@ class StartActivity : AppCompatActivity() {
             setTarget(button)
             start()
         }
+    }
+
+    // Obtener preferencias
+    private fun getPreferences() {
+        prefs = getSharedPreferences(FILE, MODE_PRIVATE)
+        //r = prefs.getInt("valorR", 255)
+        //g = prefs.getInt("valorG", 255)
+        //b = prefs.getInt("valorB", 255)
+        Toast.makeText(this, "BACKGROUND COLOR CHANGED", Toast.LENGTH_SHORT).show()
+    }
+
+    // Guardar preferencias
+    private fun savePreferences() {
+        val editor = prefs.edit()
+        //editor.putInt("valorR", r)
+        //editor.putInt("valorG", g)
+        //editor.putInt("valorB", b)
+        editor.apply()
+    }
+
+    companion object {
+        private const val FILE = "MisPrefs"
     }
 
 }
