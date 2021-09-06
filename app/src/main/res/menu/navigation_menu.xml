@@ -13,6 +13,11 @@
         android:title="@string/menu_cart" />
 
     <item
+        android:id="@+id/menu_community"
+        android:icon="@drawable/ic_community"
+        android:title="@string/community"/>
+
+    <item
         android:id="@+id/menu_profile"
         android:icon="@drawable/ic_user"
         android:title="@string/menu_profile"/>

@@ -71,6 +71,17 @@ class ProfileActivity : AppCompatActivity() {
 
                     startActivity(intent)
                 }
+                R.id.menu_community -> {
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, username)
+
+                    val intent = Intent(this, CommunityActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
+                    startActivity(intent)
+
+                }
                 R.id.menu_shopping_cart -> {
                     val bundle = Bundle()
                     bundle.putString(USERNAME, username)
