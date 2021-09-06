@@ -7,6 +7,9 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Address
+import android.location.Geocoder
+import android.location.Location
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,7 +23,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.view.isVisible
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.Task
 import org.bedu.modastoreapp.modelos.RegisteredUser
+import java.util.*
 
 class ConfigAddressActivity : AppCompatActivity() {
     private lateinit var returnIcon: Button
@@ -28,8 +34,6 @@ class ConfigAddressActivity : AppCompatActivity() {
     private lateinit var obtenerDireccion: Button
     private lateinit var inputAddress: EditText
     private lateinit var updateButton: Button
-    private lateinit var tvLatitude: TextView
-    private lateinit var tvLongitude: TextView
     private lateinit var mFusedLocationClient : FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +53,8 @@ class ConfigAddressActivity : AppCompatActivity() {
 
         obtenerDireccion.setOnClickListener {
             getLocation()
+            inputAddress.isEnabled = true
+            updateButton.isVisible = true
         }
         //getLocation()
 
@@ -121,11 +127,23 @@ class ConfigAddressActivity : AppCompatActivity() {
     private fun getLocation() {
         if (checkPermissions()) {
             if (isLocationEnabled()) {
-                mFusedLocationClient.lastLocation.addOnSuccessListener (this){
-                    inputAddress.isEnabled = true
-                    updateButton.isVisible = true
-                    inputAddress.setText("${it?.latitude.toString()}   ${it?.longitude.toString()}")
-                }
+                mFusedLocationClient.lastLocation.addOnCompleteListener(OnCompleteListener {
+                    val location = it.result
+                    if (location != null) {
+                        try {
+                            val geoCoder = Geocoder(this, Locale.getDefault())
+                            val addresses = geoCoder.getFromLocation(location.latitude, location.longitude, 1)
+                            inputAddress.setText(addresses[0].getAddressLine(0).toString())
+                            // addresses[0].getLocality().toString()
+                            // addresses[0].getCountryName().toString()
+                        } catch (e : Exception) {
+                            Toast.makeText(this, "No pudimos encontrar tu direccion", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    else {
+                        Toast.makeText(this, "No pudimos encontrar tu direccion", Toast.LENGTH_SHORT).show()
+                    }
+                })
             }
         } else {
             requestPermission()
@@ -158,4 +176,5 @@ class ConfigAddressActivity : AppCompatActivity() {
                 checkGranted(Manifest.permission.ACCESS_COARSE_LOCATION) )
     }
 }
+
 
