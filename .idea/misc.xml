@@ -49,6 +49,7 @@
         <entry key="app/src/main/res/drawable/ic_star.xml" value="0.14583333333333334" />
         <entry key="app/src/main/res/drawable/ic_user.xml" value="0.14583333333333334" />
         <entry key="app/src/main/res/layout/activity_cart.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/activity_community.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_config_account_data.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_config_address.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_config_payment.xml" value="0.253125" />

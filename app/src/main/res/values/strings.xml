@@ -25,6 +25,7 @@
     <string name="productname">Nombre del producto</string>
     <string name="productprice">Precio del producto</string>
     <string name="quantity">Cantidad</string>
+    <string name="community">Comunidad</string>
 
     <string name="favorite">Favoritos</string>
     <string name="orders">Compras</string>
