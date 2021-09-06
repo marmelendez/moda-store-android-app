@@ -108,11 +108,11 @@ class ConfigAccountDataActivity : AppCompatActivity() {
         builder.setMessage("¿Deseas cambiar tus datos?")
 
         builder.setNegativeButton(
-            "Cancelar"
+            "No"
         ) { dialog, which -> }
 
         builder.setPositiveButton(
-            R.string.ok
+            "Si"
         ) { dialogInterface, i ->
             if (inputUsername.text.toString()!="") regUser.setName(inputUsername.text.toString())
             if (inputEmail.text.toString()!="") regUser.setEmail(inputEmail.text.toString())

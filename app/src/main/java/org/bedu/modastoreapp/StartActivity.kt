@@ -14,6 +14,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import android.view.View
+import org.bedu.modastoreapp.modelos.BaseDatos
+
+
+val MYSTORE = BaseDatos.start()
+const val USERNAME = "org.bedu.activity.USERNAME" //ubicacion donde el bundle guardara variable
+const val PRODUCTID = "org.bedu.activity.PRODUCTID" //ubicacion donde el bundle guardara variable
 
 class StartActivity : AppCompatActivity() {
 

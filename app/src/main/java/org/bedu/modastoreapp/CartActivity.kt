@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import me.ibrahimsn.lib.SmoothBottomBar
+import org.bedu.modastoreapp.fragmentos.DetailActivity
 import org.bedu.modastoreapp.listas.DetailFragment
 import org.bedu.modastoreapp.listas.ListFragment
 import org.bedu.modastoreapp.modelos.Order
