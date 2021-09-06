@@ -65,7 +65,7 @@
             android:layout_height="32dp"
             android:layout_marginStart="60dp"
             android:contentDescription="@string/label_favorite"
-            android:background="@drawable/ic_favorites"
+            android:background="@drawable/ic_favorite"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -28,7 +28,6 @@
         <activity android:name=".SignInActivity" />
         <activity android:name=".ConfigAddressActivity" />
         <activity android:name=".ConfigPaymentActivity" />
-        <activity android:name=".ConfigurationActivity" />
         <activity android:name=".ConfigAccountDataActivity" />
         <activity android:name=".LogInActivity" />
         <activity android:name=".HomeActivity" />
