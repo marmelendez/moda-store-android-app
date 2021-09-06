@@ -75,6 +75,17 @@
         app:layout_constraintTop_toBottomOf="@+id/config_address_label_address" />
 
     <Button
+        android:id="@+id/config_adress_btn_obtener"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/nunitobold"
+        android:text="Obtener direccion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/config_address_input_address" />
+
+    <Button
         android:id="@+id/config_adress_btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,6 +95,6 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/config_address_input_address" />
+        app:layout_constraintTop_toBottomOf="@+id/config_adress_btn_obtener" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

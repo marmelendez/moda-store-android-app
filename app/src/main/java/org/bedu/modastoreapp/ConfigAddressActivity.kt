@@ -1,23 +1,36 @@
 package org.bedu.modastoreapp
 
+import android.Manifest
 import android.animation.AnimatorInflater
+import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import androidx.core.view.isVisible
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import org.bedu.modastoreapp.modelos.RegisteredUser
 
 class ConfigAddressActivity : AppCompatActivity() {
     private lateinit var returnIcon: Button
     private lateinit var editAddress: Button
+    private lateinit var obtenerDireccion: Button
     private lateinit var inputAddress: EditText
     private lateinit var updateButton: Button
+    private lateinit var tvLatitude: TextView
+    private lateinit var tvLongitude: TextView
+    private lateinit var mFusedLocationClient : FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +39,18 @@ class ConfigAddressActivity : AppCompatActivity() {
         returnIcon = findViewById(R.id.config_address_btn_return)
         editAddress = findViewById(R.id.config_address_btn_edit_address)
         inputAddress = findViewById(R.id.config_address_input_address)
+        obtenerDireccion = findViewById(R.id.config_adress_btn_obtener)
         updateButton = findViewById(R.id.config_adress_btn_update)
 
         val bundle = intent.extras
         val username = bundle?.getString(USERNAME)
         val regUser = MYSTORE.getUserName(username.toString())
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        obtenerDireccion.setOnClickListener {
+            getLocation()
+        }
+        //getLocation()
 
         returnIcon.setOnClickListener {
             val bundle = Bundle()
@@ -95,6 +115,47 @@ class ConfigAddressActivity : AppCompatActivity() {
             setTarget(button)
             start()
         }
+    }
+
+    @SuppressLint("MissingPermission", "SetTextI18n")
+    private fun getLocation() {
+        if (checkPermissions()) {
+            if (isLocationEnabled()) {
+                mFusedLocationClient.lastLocation.addOnSuccessListener (this){
+                    inputAddress.isEnabled = true
+                    updateButton.isVisible = true
+                    inputAddress.setText("${it?.latitude.toString()}   ${it?.longitude.toString()}")
+                }
+            }
+        } else {
+            requestPermission()
+
+        }
+    }
+
+    private fun requestPermission() {
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION),
+            PERMISSION_ID)
+    }
+
+    private fun isLocationEnabled() : Boolean {
+        val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+    }
+
+    companion object{
+        const val PERMISSION_ID = 33
+    }
+
+    private fun checkGranted(permission : String) : Boolean {
+        return ActivityCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun checkPermissions(): Boolean {
+        return ( checkGranted(Manifest.permission.ACCESS_COARSE_LOCATION) &&
+                checkGranted(Manifest.permission.ACCESS_COARSE_LOCATION) )
     }
 }
 
