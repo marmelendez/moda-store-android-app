@@ -24,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:scaleType="centerCrop"
+        android:contentDescription="@string/product"
         android:transitionName="product_image_full"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginStart="32dp"
-        android:text="@string/label_productname"
+        android:text="@string/productname"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_img" />
 
@@ -47,6 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
+        android:contentDescription="@string/favorite"
         android:src="@drawable/ic_favorite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_img" />
@@ -57,10 +59,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/nunitobold"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textColor="@color/black"
         android:layout_marginStart="32dp"
-        android:text="@string/label_productprice"
+        android:text="@string/productprice"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_name" />
 

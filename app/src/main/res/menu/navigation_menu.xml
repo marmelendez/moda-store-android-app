@@ -5,16 +5,16 @@
     <item
         android:id="@+id/menu_home"
         android:icon="@drawable/ic_shop"
-        android:title="@string/shop"/>
+        android:title="@string/menu_home"/>
 
     <item
         android:id="@+id/menu_shopping_cart"
         android:icon="@drawable/ic_shoppingcart"
-        android:title="@string/cart" />
+        android:title="@string/menu_cart" />
 
     <item
         android:id="@+id/menu_profile"
         android:icon="@drawable/ic_user"
-        android:title="@string/profile"/>
+        android:title="@string/menu_profile"/>
 
 </menu>

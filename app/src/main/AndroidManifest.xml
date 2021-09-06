@@ -25,11 +25,9 @@
         <activity
             android:name=".SearchProductActivity"
             android:exported="true" />
-        <activity android:name=".SignInActivity" />
         <activity android:name=".ConfigAddressActivity" />
         <activity android:name=".ConfigPaymentActivity" />
         <activity android:name=".ConfigAccountDataActivity" />
-        <activity android:name=".LogInActivity" />
         <activity android:name=".HomeActivity" />
         <activity
             android:name=".CartActivity"
