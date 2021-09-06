@@ -1,8 +1,10 @@
 package org.bedu.modastoreapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.bedu.modastoreapp.retrofit.interfaz.JsonPlaceHolderAPI
 import org.bedu.modastoreapp.retrofit.modelos.Post
 import retrofit2.Call
@@ -19,8 +21,59 @@ class CommunityActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_community)
 
+        val menu_bar = findViewById<BottomNavigationView>(R.id.community_menu)
         jsonText = findViewById(R.id.comunnity_json_text)
         getPosts()
+
+        val bundle = intent.extras
+        val username = bundle?.getString(USERNAME)
+
+        menu_bar.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.menu_home -> {
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, username)
+
+                    val intent = Intent(this, HomeActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
+                    startActivity(intent)
+                }
+                R.id.menu_shopping_cart -> {
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, username)
+
+                    val intent = Intent(this, CartActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
+                    startActivity(intent)
+                }
+                R.id.menu_community -> {
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, username)
+
+                    val intent = Intent(this, CommunityActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
+                    startActivity(intent)
+
+                }
+                R.id.menu_profile -> {
+                    val bundle = Bundle()
+                    bundle.putString(USERNAME, username)
+
+                    val intent = Intent(this, ProfileActivity::class.java).apply {
+                        putExtras(bundle)
+                    }
+
+                    startActivity(intent)
+                }
+            }
+            true
+        }
 
     }
 
