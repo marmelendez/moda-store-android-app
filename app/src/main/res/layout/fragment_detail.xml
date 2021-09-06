@@ -12,7 +12,7 @@
         android:id="@+id/nameCProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Producto"
+        android:text="@string/product"
         android:textSize="32sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
@@ -26,7 +26,7 @@
         android:textStyle="bold"
         android:textColor="#000"
         android:textSize="24sp"
-        android:text="$1,000"
+        android:text="@string/ex_productprice"
         app:layout_constraintTop_toBottomOf="@id/imgCProduct"
         app:layout_constraintStart_toStartOf="@id/guideline4"/>
 
@@ -35,6 +35,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:src="@drawable/productm1"
+        android:contentDescription="@string/product"
         app:layout_constraintTop_toBottomOf="@id/priceCProduct"
         app:layout_constraintStart_toStartOf="@id/guideline5"
         app:layout_constraintEnd_toEndOf="@id/guideline6"/>

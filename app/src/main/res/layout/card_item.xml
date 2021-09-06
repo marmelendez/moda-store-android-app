@@ -31,6 +31,7 @@
                 android:id="@+id/ProductImage"
                 android:transitionName="product_image"
                 android:layout_width="match_parent"
+                android:contentDescription="@string/product"
                 android:layout_height="180dp"
                 android:scaleType="centerInside"/>
 
@@ -39,27 +40,28 @@
                 android:id="@+id/product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/product_name"
+                android:text="@string/product"
                 android:textSize="14sp" />
-            <LinearLayout
+            <TextView
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_marginStart="10dp"
                     android:id="@+id/price"
-                    android:text="@string/product_price"
+                    android:text="@string/ex_productprice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"/>
                 <ImageView
                     android:id="@+id/Iconbag"
+                    android:contentDescription="@string/product"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/ic_shop"
                     android:layout_marginStart="64dp"/>
 
-            </LinearLayout>
+            </TextView>
 
 
         </LinearLayout>

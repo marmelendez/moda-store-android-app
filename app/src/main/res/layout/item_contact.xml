@@ -10,9 +10,10 @@
         android:id="@+id/itemImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
         android:transitionName="product_image"
         android:src="@drawable/productm1"
+        android:contentDescription="@string/product"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
@@ -50,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Producto"
+        android:text="@string/product"
         android:fontFamily="@font/nunito_regular"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -63,7 +64,7 @@
         android:layout_height="19dp"
         android:fontFamily="@font/nunitobold"
         android:textColor="#000"
-        android:text="$1,000"
+        android:text="@string/ex_productprice"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
@@ -72,6 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_delete"
+        android:contentDescription="@string/delete"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/itemName" />
 
