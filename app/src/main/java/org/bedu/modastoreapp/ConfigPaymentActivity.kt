@@ -40,7 +40,7 @@ class ConfigPaymentActivity : AppCompatActivity() {
             val bundle = Bundle()
             bundle.putString(USERNAME, regUser?.getName().toString())
 
-            val intent = Intent(this, ConfigurationActivity::class.java).apply {
+            val intent = Intent(this, ProfileActivity::class.java).apply {
                 putExtras(bundle)
             }
 
