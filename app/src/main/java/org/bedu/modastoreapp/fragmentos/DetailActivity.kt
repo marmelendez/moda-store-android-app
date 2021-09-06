@@ -1,7 +1,8 @@
-package org.bedu.modastoreapp
+package org.bedu.modastoreapp.fragmentos
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import org.bedu.modastoreapp.R
 import org.bedu.modastoreapp.listas.DetailFragment
 import org.bedu.modastoreapp.modelos.ProductPar
 

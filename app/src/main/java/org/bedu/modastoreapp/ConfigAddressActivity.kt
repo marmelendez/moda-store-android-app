@@ -95,11 +95,11 @@ class ConfigAddressActivity : AppCompatActivity() {
         builder.setMessage("¿Deseas cambiar tus datos?")
 
         builder.setNegativeButton(
-            "Cancelar"
+            "No"
         ) { dialog, which -> }
 
         builder.setPositiveButton(
-            R.string.ok
+            "Si"
         ) { dialogInterface, i ->
             if (inputAddress.text.toString()!="") regUser.setAddress(inputAddress.text.toString())
             Toast.makeText(applicationContext, "Tus datos han sido actualizados", Toast.LENGTH_SHORT).show()

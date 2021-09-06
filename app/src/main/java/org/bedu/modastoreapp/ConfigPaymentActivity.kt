@@ -90,11 +90,11 @@ class ConfigPaymentActivity : AppCompatActivity() {
         builder.setMessage("¿Deseas cambiar tus datos?")
 
         builder.setNegativeButton(
-            "Cancelar"
+            "No"
         ) { dialog, which -> }
 
         builder.setPositiveButton(
-            R.string.ok
+            "Si"
         ) { dialogInterface, i ->
             if (inputCreditCard.text.toString()!="") regUser.setCreditCard(inputCreditCard.text.toString())
             if (inputDebitCard.text.toString()!="") regUser.setDebitCard(inputDebitCard.text.toString())
