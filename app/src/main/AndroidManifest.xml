@@ -36,6 +36,7 @@
             android:name=".CartActivity"
             tools:ignore="Instantiatable" />
         <activity android:name=".fragmentos.DetailActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

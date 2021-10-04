@@ -45,4 +45,23 @@
 
     <string name="warning">error</string>
     <string name="delete">eliminar</string>
+
+    <string name="channel_client">Compras</string>
+    <string name="transaction_description">Notificaciones relacionado a compras realizadas</string>
+
+    <string name="action_title">Compra Exitosa</string>
+    <string name="action_body">¡Tu compra se ha realizado correctamente, continua explorando en nuestra tienda!</string>
+
+    <string name="action_title_data_config">Datos Actualizados</string>
+    <string name="action_body_data_config">¡Tu información personal ha sido actualizada correctamente!</string>
+
+    <string name="action_title_address_config">Dirección Actualizada</string>
+    <string name="action_body_address_config">¡Tu dirección ha sido actualizada correctamente!</string>
+
+    <string name="action_title_cards_config">Metodo de Pago Actualizado</string>
+    <string name="action_body_cards_config">¡Tu método de pago ha sido actualizado correctamente!</string>
+
+    <string name="action_title_welcome">¡Hola de nuevo!</string>
+    <string name="action_body_welcome">Conoce las nuevas reseñas en nuestra comunidad</string>
+
 </resources>

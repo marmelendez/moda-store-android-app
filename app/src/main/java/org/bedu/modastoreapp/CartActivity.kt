@@ -2,13 +2,23 @@ package org.bedu.modastoreapp
 
 import android.animation.AnimatorInflater
 import android.app.AlertDialog
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.bedu.modastoreapp.databinding.ActivityMainBinding
 import org.bedu.modastoreapp.fragmentos.DetailActivity
 import org.bedu.modastoreapp.listas.DetailFragment
 import org.bedu.modastoreapp.listas.ListFragment
@@ -22,9 +32,20 @@ class CartActivity : AppCompatActivity() {
     private lateinit var button_pay : Button
     private lateinit var total_price : TextView
 
+
+    private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater)}
+
+    companion object {
+        const val CHANNEL_CLIENT = "CHANNEL_COURSES"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            setNotificationChannel()
+        }
 
         menu_bar = findViewById(R.id.cart_menu)
         button_pay = findViewById(R.id.cart_btn_shop)
@@ -120,6 +141,8 @@ class CartActivity : AppCompatActivity() {
             regUser.setShoppingCart(mutableListOf<Product>())
             Toast.makeText(applicationContext, "Gracias por tu compra ID: ${order.id}", Toast.LENGTH_SHORT).show()
             dialogInterface.dismiss()
+
+            touchNotification()
         }
 
         val dialog = builder.create()
@@ -130,6 +153,43 @@ class CartActivity : AppCompatActivity() {
         AnimatorInflater.loadAnimator(this, R.animator.shrink).apply {
             setTarget(button)
             start()
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setNotificationChannel() {
+        val name = getString(R.string.channel_client)
+        val descriptionText = getString(R.string.transaction_description)
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
+
+        val channel = NotificationChannel(CHANNEL_CLIENT, name, importance).apply {
+            description = descriptionText
+        }
+
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        notificationManager.createNotificationChannel(channel)
+    }
+
+    private fun touchNotification(){
+        val intent = Intent(this,HomeActivity::class.java).apply{
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
+
+        val notification = NotificationCompat.Builder(this, CHANNEL_CLIENT)
+            .setSmallIcon(R.drawable.ic_logo)
+            .setColor(ContextCompat.getColor(this,R.color.blue))
+            .setContentTitle(getString(R.string.action_title))
+            .setContentText(getString(R.string.action_body))
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
+            .build()
+
+        NotificationManagerCompat.from(this).run{
+            notify(20,notification)
         }
     }
 }
