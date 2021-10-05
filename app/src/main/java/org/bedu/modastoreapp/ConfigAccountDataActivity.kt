@@ -153,6 +153,7 @@ class ConfigAccountDataActivity : AppCompatActivity() {
     }
 
 
+
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setNotificationChannel() {
         val name = getString(R.string.channel_client)
@@ -182,5 +183,4 @@ class ConfigAccountDataActivity : AppCompatActivity() {
             notify(21,notification)
         }
     }
-
 }

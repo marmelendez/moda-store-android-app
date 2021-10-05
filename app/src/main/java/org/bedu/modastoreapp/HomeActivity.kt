@@ -242,6 +242,5 @@ class HomeActivity : AppCompatActivity() {
             notify(24,notification)
         }
     }
-
 }
 

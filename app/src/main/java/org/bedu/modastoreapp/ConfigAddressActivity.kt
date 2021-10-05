@@ -218,7 +218,6 @@ class ConfigAddressActivity : AppCompatActivity() {
             notify(22,notification)
         }
     }
-
 }
 
 

@@ -39,6 +39,7 @@ class CartActivity : AppCompatActivity() {
         const val CHANNEL_CLIENT = "CHANNEL_COURSES"
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
@@ -190,6 +191,5 @@ class CartActivity : AppCompatActivity() {
 
         NotificationManagerCompat.from(this).run{
             notify(20,notification)
-        }
     }
 }

@@ -159,5 +159,4 @@ class ConfigPaymentActivity : AppCompatActivity() {
             notify(23,notification)
         }
     }
-
 }
