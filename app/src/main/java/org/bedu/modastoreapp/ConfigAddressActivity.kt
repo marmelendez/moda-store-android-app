@@ -4,6 +4,8 @@ import android.Manifest
 import android.animation.AnimatorInflater
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -11,6 +13,7 @@ import android.location.Address
 import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -19,7 +22,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -39,6 +46,10 @@ class ConfigAddressActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_config_address)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            setNotificationChannel()
+        }
 
         returnIcon = findViewById(R.id.config_address_btn_return)
         editAddress = findViewById(R.id.config_address_btn_edit_address)
@@ -110,6 +121,7 @@ class ConfigAddressActivity : AppCompatActivity() {
             if (inputAddress.text.toString()!="") regUser.setAddress(inputAddress.text.toString())
             Toast.makeText(applicationContext, "Tus datos han sido actualizados", Toast.LENGTH_SHORT).show()
             dialogInterface.dismiss()
+            simpleNotification()
         }
 
         val dialog = builder.create()
@@ -165,6 +177,7 @@ class ConfigAddressActivity : AppCompatActivity() {
 
     companion object{
         const val PERMISSION_ID = 33
+        const val CHANNEL_CLIENT = "CHANNEL_COURSES"
     }
 
     private fun checkGranted(permission : String) : Boolean {
@@ -174,6 +187,36 @@ class ConfigAddressActivity : AppCompatActivity() {
     private fun checkPermissions(): Boolean {
         return ( checkGranted(Manifest.permission.ACCESS_COARSE_LOCATION) &&
                 checkGranted(Manifest.permission.ACCESS_COARSE_LOCATION) )
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setNotificationChannel() {
+        val name = getString(R.string.channel_client)
+        val descriptionText = getString(R.string.transaction_description)
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
+
+        val channel = NotificationChannel(CartActivity.CHANNEL_CLIENT, name, importance).apply {
+            description = descriptionText
+        }
+
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        notificationManager.createNotificationChannel(channel)
+    }
+
+    private fun simpleNotification(){
+        val notification = NotificationCompat.Builder(this, CHANNEL_CLIENT)
+            .setSmallIcon(R.drawable.ic_logo)
+            .setColor(ContextCompat.getColor(this,R.color.blue))
+            .setContentTitle(getString(R.string.action_title_address_config))
+            .setContentText(getString(R.string.action_body_address_config))
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setAutoCancel(true)
+            .build()
+
+        NotificationManagerCompat.from(this).run{
+            notify(22,notification)
+        }
     }
 }
 

@@ -1,6 +1,11 @@
 package org.bedu.modastoreapp
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,7 +15,12 @@ import android.view.Menu
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.toBitmap
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
@@ -23,9 +33,18 @@ import java.util.ArrayList
 
 class HomeActivity : AppCompatActivity() {
 
+    companion object {
+        const val CHANNEL_CLIENT = "CHANNEL_COURSES"
+    }
+
     override fun onCreate(saveWomenInstanceState: Bundle?) {
         super.onCreate(saveWomenInstanceState)
         setContentView(R.layout.activity_shop)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            setNotificationChannel()
+        }
+        touchNotification()
 
         val menu_bar = findViewById<BottomNavigationView>(R.id.home_menu)
         val input_search = findViewById<EditText>(R.id.home_search)
@@ -184,6 +203,44 @@ class HomeActivity : AppCompatActivity() {
         val inflater = menuInflater
         inflater.inflate(R.menu.navigation_menu, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setNotificationChannel() {
+        val name = getString(R.string.channel_client)
+        val descriptionText = getString(R.string.transaction_description)
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
+
+        val channel = NotificationChannel(CartActivity.CHANNEL_CLIENT, name, importance).apply {
+            description = descriptionText
+        }
+
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        notificationManager.createNotificationChannel(channel)
+    }
+
+    private fun touchNotification(){
+        val intent = Intent(this,CommunityActivity::class.java).apply{
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
+
+        val notification = NotificationCompat.Builder(this, CHANNEL_CLIENT)
+            .setSmallIcon(R.drawable.ic_logo)
+            .setColor(ContextCompat.getColor(this,R.color.blue))
+            .setContentTitle(getString(R.string.action_title_welcome))
+            .setContentText(getString(R.string.action_body_welcome))
+            .setLargeIcon(getDrawable(R.drawable.producth10)?.toBitmap())
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
+            .build()
+
+        NotificationManagerCompat.from(this).run{
+            notify(24,notification)
+        }
     }
 }
 
