@@ -11,10 +11,17 @@ import android.widget.EditText
 import android.widget.Toast
 import android.transition.Transition
 import android.transition.TransitionInflater
+import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import android.view.View
+import androidx.core.widget.doAfterTextChanged
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseUser
+import mx.itesm.clothingstore.ui.login.Utility
+import mx.itesm.clothingstore.ui.login.Utility.hideKeyboard
+import org.bedu.modastoreapp.databinding.ActivityStartBinding
 import org.bedu.modastoreapp.modelos.BaseDatos
 
 
@@ -22,7 +29,11 @@ val MYSTORE = BaseDatos.start()
 const val USERNAME = "org.bedu.activity.USERNAME" //ubicacion donde el bundle guardara variable
 const val PRODUCTID = "org.bedu.activity.PRODUCTID" //ubicacion donde el bundle guardara variable
 
+
 class StartActivity : AppCompatActivity() {
+
+    private lateinit var binding:ActivityStartBinding
+    private lateinit var auth: FirebaseAuth
 
     private lateinit var inp_username: EditText
     private lateinit var inp_password: EditText
@@ -32,12 +43,20 @@ class StartActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_start)
+        binding = ActivityStartBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
+        FirebaseApp.initializeApp(this)
+
+        auth = Firebase.auth
+
+        handleClick()
+/*
         inp_username = findViewById(R.id.start_input_username)
         inp_password = findViewById(R.id.start_input_password)
-        btn_login = findViewById(R.id.start_btn_login)
-        btn_signin = findViewById(R.id.start_btn_signin)
+        btn_login = findViewById(R.id.btnLogin)
+        btn_signin = findViewById(R.id.btnRegister)
 
 
         val transitionXml = TransitionInflater
@@ -50,63 +69,85 @@ class StartActivity : AppCompatActivity() {
 
         window.exitTransition = transitionXml
 
+ */
 
-        btn_login.setOnClickListener {
-            shrink(btn_login)
-            if (inp_username.text != null && inp_username.text != null) {
-                iniciarSesion(inp_username, inp_password)
-            } else {
-                Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT).show()
-            }
+
+
+    }
+
+    private fun handleClick() {
+
+        binding.btnLogin.setOnClickListener {
+            it.hideKeyboard()
+
+            binding.btnLogin.visibility = View.GONE
+            binding.loading.visibility = View.VISIBLE
+
+            val email = binding.startInputUsername.text.toString()
+            val password = binding.startInputPassword.text.toString()
+
+            signIn(email, password)
+        }
+        binding.btnRegister.setOnClickListener {
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
         }
 
-        btn_signin.setOnClickListener {
-            shrink(btn_signin)
-            if (inp_username.text != null && inp_username.text != null) {
-                registrarse(inp_username, inp_password)
-            } else {
-                Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT).show()
-            }
+        binding.startInputUsername.doAfterTextChanged {
+            val email = binding.startInputUsername.text.toString()
+            val password = binding.startInputPassword.text.toString()
+
+            binding.btnLogin.isEnabled = email.isNotEmpty() && password.isNotEmpty()
+            binding.btnRegister.isEnabled = email.isNotEmpty() && password.isNotEmpty()
+        }
+
+        binding.startInputPassword.doAfterTextChanged {
+            val email = binding.startInputUsername.text.toString()
+            val password = binding.startInputPassword.text.toString()
+
+            binding.btnLogin.isEnabled = email.isNotEmpty() && password.isNotEmpty()
+            binding.btnRegister.isEnabled = email.isNotEmpty() && password.isNotEmpty()
         }
     }
 
-    fun iniciarSesion(username: EditText, password: EditText) {
-        Firebase.auth.signInWithEmailAndPassword(
-            username.text.toString(),
-            password.text.toString()
-        )
-            .addOnCompleteListener {
-                if (it.isSuccessful) {
-                    Toast.makeText(this, "INICIO DE SESIÓN EXITOSO", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, HomeActivity::class.java)
-                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
-                } else {
-                    Toast.makeText(this, "ERROR: ${it.exception?.message}", Toast.LENGTH_SHORT).show()
-                }
-            }
 
-    }
-
-    fun registrarse(username: EditText, password: EditText) {
-        Firebase.auth.createUserWithEmailAndPassword(
-            username.text.toString(),
-            password.text.toString()
-        )
-            .addOnCompleteListener {
-                if (it.isSuccessful) {
-                    Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, HomeActivity::class.java)
-                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+    private fun signIn(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Log.d(TAG, "INICIO DE SESIÓN EXITOSO")
+                    val user = auth.currentUser
+                    updateUI(user, null)
                 } else {
-                    Toast.makeText(this, "ERROR: ${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                    Log.w(TAG, "ERROR", task.exception)
+                    updateUI(null, task.exception)
                 }
             }
     }
 
+
+    private fun updateUI(user: FirebaseUser?, exception: Exception?) {
+        if (exception != null) {
+            binding.loading.visibility = View.GONE
+            binding.btnLogin.visibility = View.VISIBLE
+            Utility.displaySnackBar(binding.root, exception.message.toString(), this, R.color.red)
+        } else {
+            Utility.displaySnackBar(binding.root, "Inicio de sesión exitoso", this, R.color.green)
+            binding.loading.visibility = View.GONE
+            binding.btnLogin.visibility = View.VISIBLE
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    /*
     override fun onStart() {
         super.onStart()
         verificarUsuarioGeneral() }
 
+     */
+
+    /*
     fun verificarUsuarioGeneral() {
         if (Firebase.auth.currentUser == null) {
             Toast.makeText(this, "SIN USUARIO",Toast.LENGTH_SHORT).show()
@@ -117,6 +158,8 @@ class StartActivity : AppCompatActivity() {
         }
     }
 
+     */
+/*
     private fun shrink(button: Button) {
         AnimatorInflater.loadAnimator(this, R.animator.shrink).apply {
             setTarget(button)
@@ -140,17 +183,14 @@ class StartActivity : AppCompatActivity() {
         //editor.putInt("valorG", g)
         //editor.putInt("valorB", b)
         editor.apply()
+
     }
+
+ */
 
     companion object {
         private const val FILE = "MisPrefs"
+        private const val TAG = "EmailPassword"
     }
 
 }
-
-    /*private fun setFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.start_fragment, fragment)
-        fragmentTransaction.commit()
-    }*/

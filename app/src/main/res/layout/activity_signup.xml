@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/start_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="120dp"
+        android:fontFamily="@font/pacifico"
+        android:text="¡Vistete con MODA!"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/subtitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Ingresa tus datos para crear tu cuenta"
+        android:textColor="@color/darkgrey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start_title"
+        />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:autofillHints="name"
+        android:drawableStart="@drawable/ic_user"
+        android:fontFamily="@font/nunito_regular"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darkgrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitleText" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/surname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:autofillHints="password"
+        android:drawableStart="@drawable/ic_user"
+        android:fontFamily="@font/nunito_regular"
+        android:hint="Apellido"
+        android:singleLine="false"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darkgrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:autofillHints="password"
+        android:drawableStart="@drawable/ic_email"
+        android:fontFamily="@font/nunito_regular"
+        android:hint="Correo electronico"
+        android:singleLine="false"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darkgrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surname" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:autofillHints="password"
+        android:drawableStart="@drawable/ic_lock"
+        android:fontFamily="@font/nunito_regular"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:singleLine="false"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darkgrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:autofillHints="password"
+        android:drawableStart="@drawable/ic_phone"
+        android:fontFamily="@font/nunito_regular"
+        android:hint="Telefono"
+        android:singleLine="false"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darkgrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:fontFamily="@font/nunitobold"
+        android:text="Registrarse"
+        app:cornerRadius="16dp"
+        android:backgroundTint="@color/primaryColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone"/>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

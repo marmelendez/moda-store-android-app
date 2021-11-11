@@ -28,12 +28,12 @@ import org.bedu.modastoreapp.modelos.RegisteredUser
 
 class CartActivity : AppCompatActivity() {
 
-    private lateinit var menu_bar : BottomNavigationView
-    private lateinit var button_pay : Button
-    private lateinit var total_price : TextView
+    private lateinit var menu_bar: BottomNavigationView
+    private lateinit var button_pay: Button
+    private lateinit var total_price: TextView
 
 
-    private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater)}
+    private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     companion object {
         const val CHANNEL_CLIENT = "CHANNEL_COURSES"
@@ -59,7 +59,7 @@ class CartActivity : AppCompatActivity() {
             total_price.text = "$ ${regUser.getTotal()}"
         }
 
-        button_pay.setOnClickListener{
+        button_pay.setOnClickListener {
             shrink(button_pay)
             if (regUser != null) {
                 confirmDialog(regUser)
@@ -67,21 +67,23 @@ class CartActivity : AppCompatActivity() {
         }
 
 
-        val listFragment = supportFragmentManager.findFragmentById(R.id.cart_fragment_container) as ListFragment
+        val listFragment =
+            supportFragmentManager.findFragmentById(R.id.cart_fragment_container) as ListFragment
         if (username != null) {
             listFragment.setUsername(username)
         } else {
             listFragment.setUsername("tomas11")
         }
 
-        listFragment.setListener{
-            val detailFragment = supportFragmentManager.findFragmentById(R.id.fragmentDetail) as? DetailFragment
+        listFragment.setListener {
+            val detailFragment =
+                supportFragmentManager.findFragmentById(R.id.fragmentDetail) as? DetailFragment
 
-            if(detailFragment!=null){
+            if (detailFragment != null) {
                 detailFragment.showProduct(it)
-            } else{
+            } else {
                 val intent = Intent(this, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.PRODUCT,it)
+                intent.putExtra(DetailActivity.PRODUCT, it)
                 startActivity(intent)
             }
         }
@@ -137,10 +139,19 @@ class CartActivity : AppCompatActivity() {
         builder.setPositiveButton(
             "ok"
         ) { dialogInterface, i ->
-            val order = Order(regUser.getOrders().size,regUser.getShoppingCart(),regUser.getTotal(),regUser.getAddress())
+            val order = Order(
+                regUser.getOrders().size,
+                regUser.getShoppingCart(),
+                regUser.getTotal(),
+                regUser.getAddress()
+            )
             regUser.addOrder(order)
             regUser.setShoppingCart(mutableListOf<Product>())
-            Toast.makeText(applicationContext, "Gracias por tu compra ID: ${order.id}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                applicationContext,
+                "Gracias por tu compra ID: ${order.id}",
+                Toast.LENGTH_SHORT
+            ).show()
             dialogInterface.dismiss()
 
             touchNotification()
@@ -167,13 +178,14 @@ class CartActivity : AppCompatActivity() {
             description = descriptionText
         }
 
-        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         notificationManager.createNotificationChannel(channel)
     }
 
-    private fun touchNotification(){
-        val intent = Intent(this,HomeActivity::class.java).apply{
+    private fun touchNotification() {
+        val intent = Intent(this, HomeActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
 
@@ -181,7 +193,7 @@ class CartActivity : AppCompatActivity() {
 
         val notification = NotificationCompat.Builder(this, CHANNEL_CLIENT)
             .setSmallIcon(R.drawable.ic_logo)
-            .setColor(ContextCompat.getColor(this,R.color.blue))
+            .setColor(ContextCompat.getColor(this, R.color.blue))
             .setContentTitle(getString(R.string.action_title))
             .setContentText(getString(R.string.action_body))
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
@@ -189,7 +201,8 @@ class CartActivity : AppCompatActivity() {
             .setAutoCancel(true)
             .build()
 
-        NotificationManagerCompat.from(this).run{
-            notify(20,notification)
+        NotificationManagerCompat.from(this).run {
+            notify(20, notification)
+        }
     }
 }

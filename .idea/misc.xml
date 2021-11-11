@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/drawable/background_star_rating.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/drawable/button_general.xml" value="0.2203125" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.2203125" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/drawable/ic_delete.xml" value="0.2203125" />
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/drawable/ic_search.xml" value="0.2203125" />
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_cart.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_config_address.xml" value="0.33" />
@@ -11,7 +14,10 @@
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_detail.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_home.xml" value="0.5" />
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_log_in.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_main.xml" value="0.16847826086956522" />
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_shop.xml" value="0.22" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_signup.xml" value="0.33" />
+        <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/activity_start.xml" value="0.33" />
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/fragment_detail.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/fragment_list.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/campo/AndroidStudioProjects/moda-store-android-app/app/src/main/res/layout/item_contact.xml" value="0.5" />

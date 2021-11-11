@@ -1,33 +1,70 @@
 {
   "project_info": {
-    "project_number": "910776652619",
-    "project_id": "moda-store-app",
-    "storage_bucket": "moda-store-app.appspot.com"
+    "project_number": "998582073871",
+    "project_id": "moda-store-e2d42",
+    "storage_bucket": "moda-store-e2d42.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:910776652619:android:e94422bed68c6b29ef8ece",
+        "mobilesdk_app_id": "1:998582073871:android:b27433c57f1e07bc68417a",
         "android_client_info": {
-          "package_name": "org.bedu.modastoreapp"
+          "package_name": "mx.itesm.clothingstore"
         }
       },
       "oauth_client": [
         {
-          "client_id": "910776652619-645ne2r1jrmurhlv17irtdsi0312fhdk.apps.googleusercontent.com",
+          "client_id": "998582073871-7mc91qm7ef2q81ljlqs28eejtd35bnb7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDAuwDYHLK8LPzfLfKjBXrYomM-wcBKN7o"
+          "current_key": "AIzaSyDd-Iz8SNb56Gf1d65C8uNXYZwqisq1Ii8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "910776652619-645ne2r1jrmurhlv17irtdsi0312fhdk.apps.googleusercontent.com",
+              "client_id": "998582073871-7mc91qm7ef2q81ljlqs28eejtd35bnb7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998582073871:android:ab2372e6452345b068417a",
+        "android_client_info": {
+          "package_name": "org.bedu.modastoreapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998582073871-k17ju359h5l15brkgl2aqpt7u59g6ast.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.bedu.modastoreapp",
+            "certificate_hash": "46fe28506366f0c37c37c70606b58d066ddedd46"
+          }
+        },
+        {
+          "client_id": "998582073871-7mc91qm7ef2q81ljlqs28eejtd35bnb7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd-Iz8SNb56Gf1d65C8uNXYZwqisq1Ii8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998582073871-7mc91qm7ef2q81ljlqs28eejtd35bnb7.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

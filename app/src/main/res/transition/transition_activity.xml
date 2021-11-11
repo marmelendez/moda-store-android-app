@@ -13,7 +13,7 @@
         android:slideEdge="bottom">
         <targets>
             <target
-                android:targetId="@id/start_btn_login"/>
+                android:targetId="@id/btnLogin"/>
         </targets>
     </slide>
 </transitionSet>
